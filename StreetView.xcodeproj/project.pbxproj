@@ -1,0 +1,475 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		69D095BC185CC3D200B6BE29 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69D095BB185CC3D200B6BE29 /* Foundation.framework */; };
+		69D095BE185CC3D200B6BE29 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69D095BD185CC3D200B6BE29 /* CoreGraphics.framework */; };
+		69D095C0185CC3D200B6BE29 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69D095BF185CC3D200B6BE29 /* UIKit.framework */; };
+		69D095C6185CC3D300B6BE29 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 69D095C4185CC3D300B6BE29 /* InfoPlist.strings */; };
+		69D095C8185CC3D300B6BE29 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 69D095C7185CC3D300B6BE29 /* main.m */; };
+		69D095CC185CC3D300B6BE29 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 69D095CB185CC3D300B6BE29 /* AppDelegate.m */; };
+		69D095CF185CC3D300B6BE29 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 69D095CD185CC3D300B6BE29 /* Main.storyboard */; };
+		69D095D2185CC3D300B6BE29 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 69D095D1185CC3D300B6BE29 /* ViewController.m */; };
+		69D095D4185CC3D400B6BE29 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 69D095D3185CC3D400B6BE29 /* Images.xcassets */; };
+		69D095DB185CC3D400B6BE29 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69D095DA185CC3D400B6BE29 /* XCTest.framework */; };
+		69D095DC185CC3D400B6BE29 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69D095BB185CC3D200B6BE29 /* Foundation.framework */; };
+		69D095DD185CC3D400B6BE29 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69D095BF185CC3D200B6BE29 /* UIKit.framework */; };
+		69D095E5185CC3D500B6BE29 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 69D095E3185CC3D500B6BE29 /* InfoPlist.strings */; };
+		69D095E7185CC3D500B6BE29 /* StreetViewTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 69D095E6185CC3D500B6BE29 /* StreetViewTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		69D095DE185CC3D400B6BE29 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 69D095B0185CC3D200B6BE29 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 69D095B7185CC3D200B6BE29;
+			remoteInfo = StreetView;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		69D095B8185CC3D200B6BE29 /* StreetView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StreetView.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		69D095BB185CC3D200B6BE29 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		69D095BD185CC3D200B6BE29 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		69D095BF185CC3D200B6BE29 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		69D095C3185CC3D200B6BE29 /* StreetView-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "StreetView-Info.plist"; sourceTree = "<group>"; };
+		69D095C5185CC3D300B6BE29 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		69D095C7185CC3D300B6BE29 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		69D095C9185CC3D300B6BE29 /* StreetView-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "StreetView-Prefix.pch"; sourceTree = "<group>"; };
+		69D095CA185CC3D300B6BE29 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		69D095CB185CC3D300B6BE29 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		69D095CE185CC3D300B6BE29 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		69D095D0185CC3D300B6BE29 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		69D095D1185CC3D300B6BE29 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		69D095D3185CC3D400B6BE29 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		69D095D9185CC3D400B6BE29 /* StreetViewTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StreetViewTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		69D095DA185CC3D400B6BE29 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		69D095E2185CC3D500B6BE29 /* StreetViewTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "StreetViewTests-Info.plist"; sourceTree = "<group>"; };
+		69D095E4185CC3D500B6BE29 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		69D095E6185CC3D500B6BE29 /* StreetViewTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StreetViewTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		69D095B5185CC3D200B6BE29 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				69D095BE185CC3D200B6BE29 /* CoreGraphics.framework in Frameworks */,
+				69D095C0185CC3D200B6BE29 /* UIKit.framework in Frameworks */,
+				69D095BC185CC3D200B6BE29 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		69D095D6185CC3D400B6BE29 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				69D095DB185CC3D400B6BE29 /* XCTest.framework in Frameworks */,
+				69D095DD185CC3D400B6BE29 /* UIKit.framework in Frameworks */,
+				69D095DC185CC3D400B6BE29 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		69D095AF185CC3D200B6BE29 = {
+			isa = PBXGroup;
+			children = (
+				69D095C1185CC3D200B6BE29 /* StreetView */,
+				69D095E0185CC3D400B6BE29 /* StreetViewTests */,
+				69D095BA185CC3D200B6BE29 /* Frameworks */,
+				69D095B9185CC3D200B6BE29 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		69D095B9185CC3D200B6BE29 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				69D095B8185CC3D200B6BE29 /* StreetView.app */,
+				69D095D9185CC3D400B6BE29 /* StreetViewTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		69D095BA185CC3D200B6BE29 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				69D095BB185CC3D200B6BE29 /* Foundation.framework */,
+				69D095BD185CC3D200B6BE29 /* CoreGraphics.framework */,
+				69D095BF185CC3D200B6BE29 /* UIKit.framework */,
+				69D095DA185CC3D400B6BE29 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		69D095C1185CC3D200B6BE29 /* StreetView */ = {
+			isa = PBXGroup;
+			children = (
+				69D095CA185CC3D300B6BE29 /* AppDelegate.h */,
+				69D095CB185CC3D300B6BE29 /* AppDelegate.m */,
+				69D095CD185CC3D300B6BE29 /* Main.storyboard */,
+				69D095D0185CC3D300B6BE29 /* ViewController.h */,
+				69D095D1185CC3D300B6BE29 /* ViewController.m */,
+				69D095D3185CC3D400B6BE29 /* Images.xcassets */,
+				69D095C2185CC3D200B6BE29 /* Supporting Files */,
+			);
+			path = StreetView;
+			sourceTree = "<group>";
+		};
+		69D095C2185CC3D200B6BE29 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				69D095C3185CC3D200B6BE29 /* StreetView-Info.plist */,
+				69D095C4185CC3D300B6BE29 /* InfoPlist.strings */,
+				69D095C7185CC3D300B6BE29 /* main.m */,
+				69D095C9185CC3D300B6BE29 /* StreetView-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		69D095E0185CC3D400B6BE29 /* StreetViewTests */ = {
+			isa = PBXGroup;
+			children = (
+				69D095E6185CC3D500B6BE29 /* StreetViewTests.m */,
+				69D095E1185CC3D500B6BE29 /* Supporting Files */,
+			);
+			path = StreetViewTests;
+			sourceTree = "<group>";
+		};
+		69D095E1185CC3D500B6BE29 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				69D095E2185CC3D500B6BE29 /* StreetViewTests-Info.plist */,
+				69D095E3185CC3D500B6BE29 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		69D095B7185CC3D200B6BE29 /* StreetView */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 69D095EA185CC3D500B6BE29 /* Build configuration list for PBXNativeTarget "StreetView" */;
+			buildPhases = (
+				69D095B4185CC3D200B6BE29 /* Sources */,
+				69D095B5185CC3D200B6BE29 /* Frameworks */,
+				69D095B6185CC3D200B6BE29 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = StreetView;
+			productName = StreetView;
+			productReference = 69D095B8185CC3D200B6BE29 /* StreetView.app */;
+			productType = "com.apple.product-type.application";
+		};
+		69D095D8185CC3D400B6BE29 /* StreetViewTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 69D095ED185CC3D500B6BE29 /* Build configuration list for PBXNativeTarget "StreetViewTests" */;
+			buildPhases = (
+				69D095D5185CC3D400B6BE29 /* Sources */,
+				69D095D6185CC3D400B6BE29 /* Frameworks */,
+				69D095D7185CC3D400B6BE29 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				69D095DF185CC3D400B6BE29 /* PBXTargetDependency */,
+			);
+			name = StreetViewTests;
+			productName = StreetViewTests;
+			productReference = 69D095D9185CC3D400B6BE29 /* StreetViewTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		69D095B0185CC3D200B6BE29 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0500;
+				ORGANIZATIONNAME = "James Burns";
+				TargetAttributes = {
+					69D095D8185CC3D400B6BE29 = {
+						TestTargetID = 69D095B7185CC3D200B6BE29;
+					};
+				};
+			};
+			buildConfigurationList = 69D095B3185CC3D200B6BE29 /* Build configuration list for PBXProject "StreetView" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 69D095AF185CC3D200B6BE29;
+			productRefGroup = 69D095B9185CC3D200B6BE29 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				69D095B7185CC3D200B6BE29 /* StreetView */,
+				69D095D8185CC3D400B6BE29 /* StreetViewTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		69D095B6185CC3D200B6BE29 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				69D095D4185CC3D400B6BE29 /* Images.xcassets in Resources */,
+				69D095C6185CC3D300B6BE29 /* InfoPlist.strings in Resources */,
+				69D095CF185CC3D300B6BE29 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		69D095D7185CC3D400B6BE29 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				69D095E5185CC3D500B6BE29 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		69D095B4185CC3D200B6BE29 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				69D095D2185CC3D300B6BE29 /* ViewController.m in Sources */,
+				69D095CC185CC3D300B6BE29 /* AppDelegate.m in Sources */,
+				69D095C8185CC3D300B6BE29 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		69D095D5185CC3D400B6BE29 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				69D095E7185CC3D500B6BE29 /* StreetViewTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		69D095DF185CC3D400B6BE29 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 69D095B7185CC3D200B6BE29 /* StreetView */;
+			targetProxy = 69D095DE185CC3D400B6BE29 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		69D095C4185CC3D300B6BE29 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				69D095C5185CC3D300B6BE29 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		69D095CD185CC3D300B6BE29 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				69D095CE185CC3D300B6BE29 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		69D095E3185CC3D500B6BE29 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				69D095E4185CC3D500B6BE29 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		69D095E8185CC3D500B6BE29 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		69D095E9185CC3D500B6BE29 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		69D095EB185CC3D500B6BE29 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "StreetView/StreetView-Prefix.pch";
+				INFOPLIST_FILE = "StreetView/StreetView-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		69D095EC185CC3D500B6BE29 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "StreetView/StreetView-Prefix.pch";
+				INFOPLIST_FILE = "StreetView/StreetView-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		69D095EE185CC3D500B6BE29 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/StreetView.app/StreetView";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "StreetView/StreetView-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "StreetViewTests/StreetViewTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		69D095EF185CC3D500B6BE29 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/StreetView.app/StreetView";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "StreetView/StreetView-Prefix.pch";
+				INFOPLIST_FILE = "StreetViewTests/StreetViewTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		69D095B3185CC3D200B6BE29 /* Build configuration list for PBXProject "StreetView" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				69D095E8185CC3D500B6BE29 /* Debug */,
+				69D095E9185CC3D500B6BE29 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		69D095EA185CC3D500B6BE29 /* Build configuration list for PBXNativeTarget "StreetView" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				69D095EB185CC3D500B6BE29 /* Debug */,
+				69D095EC185CC3D500B6BE29 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		69D095ED185CC3D500B6BE29 /* Build configuration list for PBXNativeTarget "StreetViewTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				69D095EE185CC3D500B6BE29 /* Debug */,
+				69D095EF185CC3D500B6BE29 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 69D095B0185CC3D200B6BE29 /* Project object */;
+}
