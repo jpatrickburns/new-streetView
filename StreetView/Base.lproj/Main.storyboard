@@ -20,7 +20,9 @@
                                 <rect key="frame" x="46" y="20" width="100" height="120"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="4O2-03-y7P"/>
                                     <constraint firstAttribute="width" constant="100" id="kzf-yV-6G6"/>
+                                    <constraint firstAttribute="height" constant="120" id="tJ8-A2-9Fj"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <inset key="titleEdgeInsets" minX="0.0" minY="6" maxX="0.0" maxY="0.0"/>
@@ -29,9 +31,13 @@
                                     <action selector="changeScene:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="odF-gN-m7A"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="top" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="tailTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lKC-Wj-gGJ">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="top" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="tailTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lKC-Wj-gGJ">
                                 <rect key="frame" x="174" y="20" width="100" height="120"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="OHI-mU-8Ug"/>
+                                    <constraint firstAttribute="height" constant="120" id="h6e-v3-IvX"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <inset key="titleEdgeInsets" minX="0.0" minY="6" maxX="0.0" maxY="0.0"/>
                                 <state key="normal" title="Attractions" backgroundImage="attractions"/>
@@ -42,16 +48,24 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="top" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="tailTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JK0-fF-QtI">
                                 <rect key="frame" x="46" y="148" width="100" height="120"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="120" id="2Nr-eq-YxJ"/>
+                                    <constraint firstAttribute="width" constant="100" id="RBl-Zz-xaX"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <inset key="titleEdgeInsets" minX="0.0" minY="6" maxX="0.0" maxY="0.0"/>
-                                <state key="normal" title="Neighborhood" backgroundImage="neighborhood"/>
+                                <state key="normal" title="Neighborhoods" backgroundImage="neighborhood"/>
                                 <connections>
                                     <action selector="changeScene:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="c0b-it-bPf"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="top" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="tailTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cCQ-T3-IQF">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="top" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="tailTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cCQ-T3-IQF">
                                 <rect key="frame" x="174" y="148" width="100" height="120"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="Ugz-Td-ENR"/>
+                                    <constraint firstAttribute="height" constant="120" id="dCh-C1-qAJ"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <inset key="titleEdgeInsets" minX="0.0" minY="6" maxX="0.0" maxY="0.0"/>
                                 <state key="normal" title="Only in the ATL" backgroundImage="atl"/>
@@ -62,16 +76,25 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="top" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="tailTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ox1-EB-Z5S">
                                 <rect key="frame" x="46" y="276" width="100" height="120"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="GD7-Mu-OD8"/>
+                                    <constraint firstAttribute="height" constant="120" id="fEf-Hl-Hbb"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <inset key="titleEdgeInsets" minX="0.0" minY="6" maxX="0.0" maxY="0.0"/>
                                 <state key="normal" title="What's Near Me?" backgroundImage="where"/>
                                 <connections>
                                     <action selector="changeScene:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="7LT-j0-O2c"/>
+                                    <segue destination="pcE-Z3-UBx" kind="push" identifier="map" id="ICx-Kd-QuK"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="top" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="tailTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yr6-Ag-nWL">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="top" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="tailTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yr6-Ag-nWL">
                                 <rect key="frame" x="174" y="276" width="100" height="120"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="D90-dk-gSG"/>
+                                    <constraint firstAttribute="height" constant="120" id="JRH-Ap-86U"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <inset key="titleEdgeInsets" minX="0.0" minY="6" maxX="0.0" maxY="0.0"/>
                                 <state key="normal" title="Special Offers" backgroundImage="special"/>
@@ -82,6 +105,7 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="tintColor" red="0.11718632280826569" green="0.3692258894443512" blue="0.63452231884002686" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="lKC-Wj-gGJ" firstAttribute="leading" secondItem="zvR-N1-feX" secondAttribute="trailing" constant="28" id="0Nj-rO-kcj"/>
                             <constraint firstItem="lKC-Wj-gGJ" firstAttribute="top" secondItem="zND-eZ-XTo" secondAttribute="bottom" constant="20" id="7Wc-dv-K3Y"/>
@@ -106,6 +130,37 @@
             </objects>
             <point key="canvasLocation" x="707" y="312"/>
         </scene>
+        <!--My Map View Controller - What's Near Me?-->
+        <scene sceneID="WdE-ae-gCr">
+            <objects>
+                <viewController id="pcE-Z3-UBx" customClass="MyMapViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Ko0-cl-kBj"/>
+                        <viewControllerLayoutGuide type="bottom" id="THq-Ox-kNc"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="gP8-Tf-UYm">
+                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="C9M-jR-QH2">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="416"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <connections>
+                                    <outlet property="delegate" destination="pcE-Z3-UBx" id="h6Z-Yq-AoB"/>
+                                </connections>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="What's Near Me?" id="Z6I-At-fP7"/>
+                    <connections>
+                        <outlet property="myMapView" destination="C9M-jR-QH2" id="x51-5q-UQ2"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JfJ-qu-aOl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1097" y="798"/>
+        </scene>
         <!--Specials View Controller - Special Offers-->
         <scene sceneID="fNX-Qd-tfr">
             <objects>
@@ -123,7 +178,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </activityIndicatorView>
                             <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6gw-Zz-sZF">
-                                <rect key="frame" x="0.0" y="-2" width="320" height="420"/>
+                                <rect key="frame" x="0.0" y="-2" width="320" height="418"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </webView>

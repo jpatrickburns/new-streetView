@@ -10,6 +10,9 @@
 		69521282185F4D9400ACC79E /* specials.html in Resources */ = {isa = PBXBuildFile; fileRef = 6952127F185F4D9400ACC79E /* specials.html */; };
 		69521283185F4D9400ACC79E /* SpecialsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 69521281185F4D9400ACC79E /* SpecialsViewController.m */; };
 		69521286185F54E300ACC79E /* MyNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 69521285185F54E300ACC79E /* MyNavigationController.m */; };
+		69521289185F5A5600ACC79E /* MyMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 69521288185F5A5600ACC79E /* MyMapViewController.m */; };
+		6952128B185F5B7900ACC79E /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6952128A185F5B7900ACC79E /* MapKit.framework */; };
+		6952128D185F5F8500ACC79E /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6952128C185F5F8500ACC79E /* CoreLocation.framework */; };
 		69D095BC185CC3D200B6BE29 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69D095BB185CC3D200B6BE29 /* Foundation.framework */; };
 		69D095BE185CC3D200B6BE29 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69D095BD185CC3D200B6BE29 /* CoreGraphics.framework */; };
 		69D095C0185CC3D200B6BE29 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69D095BF185CC3D200B6BE29 /* UIKit.framework */; };
@@ -42,6 +45,10 @@
 		69521281185F4D9400ACC79E /* SpecialsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpecialsViewController.m; sourceTree = "<group>"; };
 		69521284185F54E300ACC79E /* MyNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyNavigationController.h; sourceTree = "<group>"; };
 		69521285185F54E300ACC79E /* MyNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyNavigationController.m; sourceTree = "<group>"; };
+		69521287185F5A5600ACC79E /* MyMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyMapViewController.h; sourceTree = "<group>"; };
+		69521288185F5A5600ACC79E /* MyMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyMapViewController.m; sourceTree = "<group>"; };
+		6952128A185F5B7900ACC79E /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		6952128C185F5F8500ACC79E /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		69D095B8185CC3D200B6BE29 /* StreetView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StreetView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		69D095BB185CC3D200B6BE29 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		69D095BD185CC3D200B6BE29 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -68,8 +75,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6952128D185F5F8500ACC79E /* CoreLocation.framework in Frameworks */,
 				69D095BE185CC3D200B6BE29 /* CoreGraphics.framework in Frameworks */,
 				69D095C0185CC3D200B6BE29 /* UIKit.framework in Frameworks */,
+				6952128B185F5B7900ACC79E /* MapKit.framework in Frameworks */,
 				69D095BC185CC3D200B6BE29 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -109,6 +118,8 @@
 		69D095BA185CC3D200B6BE29 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				6952128C185F5F8500ACC79E /* CoreLocation.framework */,
+				6952128A185F5B7900ACC79E /* MapKit.framework */,
 				69D095BB185CC3D200B6BE29 /* Foundation.framework */,
 				69D095BD185CC3D200B6BE29 /* CoreGraphics.framework */,
 				69D095BF185CC3D200B6BE29 /* UIKit.framework */,
@@ -123,6 +134,8 @@
 				69D095CA185CC3D300B6BE29 /* AppDelegate.h */,
 				69D095CB185CC3D300B6BE29 /* AppDelegate.m */,
 				69D095CD185CC3D300B6BE29 /* Main.storyboard */,
+				69521287185F5A5600ACC79E /* MyMapViewController.h */,
+				69521288185F5A5600ACC79E /* MyMapViewController.m */,
 				69521284185F54E300ACC79E /* MyNavigationController.h */,
 				69521285185F54E300ACC79E /* MyNavigationController.m */,
 				6952127F185F4D9400ACC79E /* specials.html */,
@@ -212,6 +225,13 @@
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = "James Burns";
 				TargetAttributes = {
+					69D095B7185CC3D200B6BE29 = {
+						SystemCapabilities = {
+							com.apple.iOS = {
+								enabled = 1;
+							};
+						};
+					};
 					69D095D8185CC3D400B6BE29 = {
 						TestTargetID = 69D095B7185CC3D200B6BE29;
 					};
@@ -268,6 +288,7 @@
 				69521283185F4D9400ACC79E /* SpecialsViewController.m in Sources */,
 				69D095C8185CC3D300B6BE29 /* main.m in Sources */,
 				69521286185F54E300ACC79E /* MyNavigationController.m in Sources */,
+				69521289185F5A5600ACC79E /* MyMapViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
