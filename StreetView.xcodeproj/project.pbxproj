@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		69521282185F4D9400ACC79E /* specials.html in Resources */ = {isa = PBXBuildFile; fileRef = 6952127F185F4D9400ACC79E /* specials.html */; };
+		69521283185F4D9400ACC79E /* SpecialsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 69521281185F4D9400ACC79E /* SpecialsViewController.m */; };
+		69521286185F54E300ACC79E /* MyNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 69521285185F54E300ACC79E /* MyNavigationController.m */; };
 		69D095BC185CC3D200B6BE29 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69D095BB185CC3D200B6BE29 /* Foundation.framework */; };
 		69D095BE185CC3D200B6BE29 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69D095BD185CC3D200B6BE29 /* CoreGraphics.framework */; };
 		69D095C0185CC3D200B6BE29 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69D095BF185CC3D200B6BE29 /* UIKit.framework */; };
@@ -34,6 +37,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6952127F185F4D9400ACC79E /* specials.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = specials.html; sourceTree = "<group>"; };
+		69521280185F4D9400ACC79E /* SpecialsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpecialsViewController.h; sourceTree = "<group>"; };
+		69521281185F4D9400ACC79E /* SpecialsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpecialsViewController.m; sourceTree = "<group>"; };
+		69521284185F54E300ACC79E /* MyNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyNavigationController.h; sourceTree = "<group>"; };
+		69521285185F54E300ACC79E /* MyNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyNavigationController.m; sourceTree = "<group>"; };
 		69D095B8185CC3D200B6BE29 /* StreetView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StreetView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		69D095BB185CC3D200B6BE29 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		69D095BD185CC3D200B6BE29 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -115,6 +123,11 @@
 				69D095CA185CC3D300B6BE29 /* AppDelegate.h */,
 				69D095CB185CC3D300B6BE29 /* AppDelegate.m */,
 				69D095CD185CC3D300B6BE29 /* Main.storyboard */,
+				69521284185F54E300ACC79E /* MyNavigationController.h */,
+				69521285185F54E300ACC79E /* MyNavigationController.m */,
+				6952127F185F4D9400ACC79E /* specials.html */,
+				69521280185F4D9400ACC79E /* SpecialsViewController.h */,
+				69521281185F4D9400ACC79E /* SpecialsViewController.m */,
 				69D095D0185CC3D300B6BE29 /* ViewController.h */,
 				69D095D1185CC3D300B6BE29 /* ViewController.m */,
 				69D095D3185CC3D400B6BE29 /* Images.xcassets */,
@@ -228,6 +241,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				69521282185F4D9400ACC79E /* specials.html in Resources */,
 				69D095D4185CC3D400B6BE29 /* Images.xcassets in Resources */,
 				69D095C6185CC3D300B6BE29 /* InfoPlist.strings in Resources */,
 				69D095CF185CC3D300B6BE29 /* Main.storyboard in Resources */,
@@ -251,7 +265,9 @@
 			files = (
 				69D095D2185CC3D300B6BE29 /* ViewController.m in Sources */,
 				69D095CC185CC3D300B6BE29 /* AppDelegate.m in Sources */,
+				69521283185F4D9400ACC79E /* SpecialsViewController.m in Sources */,
 				69D095C8185CC3D300B6BE29 /* main.m in Sources */,
+				69521286185F54E300ACC79E /* MyNavigationController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -460,6 +476,7 @@
 				69D095EC185CC3D500B6BE29 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		69D095ED185CC3D500B6BE29 /* Build configuration list for PBXNativeTarget "StreetViewTests" */ = {
 			isa = XCConfigurationList;
@@ -468,6 +485,7 @@
 				69D095EF185CC3D500B6BE29 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
