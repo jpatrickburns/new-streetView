@@ -34,20 +34,11 @@
     //tell location manager to monitor changes
     [_locationManager startMonitoringSignificantLocationChanges];
 
-    _region.center=CLLocationCoordinate2DMake(
-                                             //center of atlanta
-                                             33.748995,-84.387982);
-
-    _region.span.latitudeDelta=.5;
-    _region.span.longitudeDelta=.5;
+//    start with the center of Atlanta
+    CLLocationCoordinate2D center=CLLocationCoordinate2DMake(33.748995,-84.387982);
+    _region=MKCoordinateRegionMakeWithDistance(center, 50000, 50000);
     
     [_myMapView setRegion:_region animated:YES];
-
-    // make region to check that user is in region
-//    CLRegion *myRegion = [[CLRegion alloc] initCircularRegionWithCenter:region.center
-//                                                       radius:25000
-//                                                   identifier:@"homeRegion"];
-//    
     
 	// Do any additional setup after loading the view.
 }
@@ -58,15 +49,20 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void)startSignificantChangeUpdates
+-(void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation
 {
-    // Create the location manager if this object does not
-    // already have one.
-    if (nil == _locationManager)
-        _locationManager = [[CLLocationManager alloc] init];
+
+    _region=MKCoordinateRegionMakeWithDistance(mapView.userLocation.location.coordinate, 1000, 1000);
+
+    [_myMapView setRegion:_region animated:YES];
+
+}
+
+- (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations
+{
+     NSLog(@"In didUpdateLocations");
     
-    _locationManager.delegate = self;
-    [_locationManager startMonitoringSignificantLocationChanges];
+ 
 }
 
 @end
