@@ -10,6 +10,12 @@
 
 @interface MyMapViewController ()
 
+//actions
+- (IBAction)centerOnUser:(id)sender;
+- (IBAction)segChanged:(id)sender;
+- (IBAction)goHome:(id)sender;
+
+
 @end
 
 @implementation MyMapViewController
@@ -26,6 +32,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    //hide nav bar
+    [self.navigationController setNavigationBarHidden:YES];
     
     //make a location manager
     _locationManager.delegate=self;
@@ -64,5 +72,39 @@
     
  
 }
+
+- (IBAction)segChanged:(id)sender {
+    switch ([sender selectedSegmentIndex]) {
+        case 0:
+            [self.myMapView setMapType:MKMapTypeStandard];
+            break;
+        case 1:
+            [self.myMapView setMapType:MKMapTypeSatellite];
+            break;
+        case 2:
+            [self.myMapView setMapType:MKMapTypeHybrid];
+            break;
+            
+        default:
+            break;
+    }
+}
+
+- (IBAction)centerOnUser:(id)sender
+{
+    
+    MKCoordinateSpan span;
+    span.latitudeDelta = .025;
+    span.longitudeDelta = .025;
+    _region.span=span;
+    _region.center = _locationManager.location.coordinate;
+    [self.myMapView setRegion:_region animated:YES];
+    
+}
+
+- (IBAction)goHome:(id)sender {
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
 
 @end

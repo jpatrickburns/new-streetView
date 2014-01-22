@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="13A603" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="n96-Iq-dHg">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="13B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="n96-Iq-dHg">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
     </dependencies>
@@ -8,22 +8,13 @@
         <scene sceneID="ufC-wZ-h7g">
             <objects>
                 <viewController id="vXZ-lx-hvc" customClass="ViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="zND-eZ-XTo"/>
-                        <viewControllerLayoutGuide type="bottom" id="cFr-Oo-jnr"/>
-                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
                         <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="top" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="tailTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zvR-N1-feX">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="top" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="tailTruncation" id="zvR-N1-feX">
                                 <rect key="frame" x="46" y="20" width="100" height="120"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="4O2-03-y7P"/>
-                                    <constraint firstAttribute="width" constant="100" id="kzf-yV-6G6"/>
-                                    <constraint firstAttribute="height" constant="120" id="tJ8-A2-9Fj"/>
-                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <inset key="titleEdgeInsets" minX="0.0" minY="6" maxX="0.0" maxY="0.0"/>
                                 <state key="normal" title="Historical" backgroundImage="historical"/>
@@ -31,13 +22,9 @@
                                     <action selector="changeScene:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="odF-gN-m7A"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="top" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="tailTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lKC-Wj-gGJ">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="top" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="tailTruncation" id="lKC-Wj-gGJ">
                                 <rect key="frame" x="174" y="20" width="100" height="120"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="100" id="OHI-mU-8Ug"/>
-                                    <constraint firstAttribute="height" constant="120" id="h6e-v3-IvX"/>
-                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <inset key="titleEdgeInsets" minX="0.0" minY="6" maxX="0.0" maxY="0.0"/>
                                 <state key="normal" title="Attractions" backgroundImage="attractions"/>
@@ -45,13 +32,9 @@
                                     <action selector="changeScene:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="TNd-Iy-LXz"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="top" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="tailTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JK0-fF-QtI">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="top" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="tailTruncation" id="JK0-fF-QtI">
                                 <rect key="frame" x="46" y="148" width="100" height="120"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="120" id="2Nr-eq-YxJ"/>
-                                    <constraint firstAttribute="width" constant="100" id="RBl-Zz-xaX"/>
-                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <inset key="titleEdgeInsets" minX="0.0" minY="6" maxX="0.0" maxY="0.0"/>
                                 <state key="normal" title="Neighborhoods" backgroundImage="neighborhood"/>
@@ -59,13 +42,9 @@
                                     <action selector="changeScene:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="c0b-it-bPf"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="top" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="tailTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cCQ-T3-IQF">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="top" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="tailTruncation" id="cCQ-T3-IQF">
                                 <rect key="frame" x="174" y="148" width="100" height="120"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="100" id="Ugz-Td-ENR"/>
-                                    <constraint firstAttribute="height" constant="120" id="dCh-C1-qAJ"/>
-                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <inset key="titleEdgeInsets" minX="0.0" minY="6" maxX="0.0" maxY="0.0"/>
                                 <state key="normal" title="Only in the ATL" backgroundImage="atl"/>
@@ -73,13 +52,9 @@
                                     <action selector="changeScene:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="Ncl-87-9bn"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="top" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="tailTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ox1-EB-Z5S">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="top" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="tailTruncation" id="ox1-EB-Z5S">
                                 <rect key="frame" x="46" y="276" width="100" height="120"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="100" id="GD7-Mu-OD8"/>
-                                    <constraint firstAttribute="height" constant="120" id="fEf-Hl-Hbb"/>
-                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <inset key="titleEdgeInsets" minX="0.0" minY="6" maxX="0.0" maxY="0.0"/>
                                 <state key="normal" title="What's Near Me?" backgroundImage="where"/>
@@ -88,13 +63,9 @@
                                     <segue destination="pcE-Z3-UBx" kind="push" identifier="map" id="ICx-Kd-QuK"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="top" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="tailTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yr6-Ag-nWL">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="top" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="tailTruncation" id="yr6-Ag-nWL">
                                 <rect key="frame" x="174" y="276" width="100" height="120"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="100" id="D90-dk-gSG"/>
-                                    <constraint firstAttribute="height" constant="120" id="JRH-Ap-86U"/>
-                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <inset key="titleEdgeInsets" minX="0.0" minY="6" maxX="0.0" maxY="0.0"/>
                                 <state key="normal" title="Special Offers" backgroundImage="special"/>
@@ -106,23 +77,6 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <color key="tintColor" red="0.11718632280826569" green="0.3692258894443512" blue="0.63452231884002686" alpha="1" colorSpace="calibratedRGB"/>
-                        <constraints>
-                            <constraint firstItem="lKC-Wj-gGJ" firstAttribute="leading" secondItem="zvR-N1-feX" secondAttribute="trailing" constant="28" id="0Nj-rO-kcj"/>
-                            <constraint firstItem="lKC-Wj-gGJ" firstAttribute="top" secondItem="zND-eZ-XTo" secondAttribute="bottom" constant="20" id="7Wc-dv-K3Y"/>
-                            <constraint firstItem="cCQ-T3-IQF" firstAttribute="leading" secondItem="lKC-Wj-gGJ" secondAttribute="leading" id="HnX-02-T1s"/>
-                            <constraint firstItem="cFr-Oo-jnr" firstAttribute="top" secondItem="yr6-Ag-nWL" secondAttribute="bottom" constant="20" id="NtG-9l-Oqj"/>
-                            <constraint firstItem="yr6-Ag-nWL" firstAttribute="trailing" secondItem="cCQ-T3-IQF" secondAttribute="trailing" id="ODu-bP-Vwc"/>
-                            <constraint firstItem="cCQ-T3-IQF" firstAttribute="baseline" secondItem="JK0-fF-QtI" secondAttribute="baseline" id="P5S-eV-eQ3"/>
-                            <constraint firstItem="JK0-fF-QtI" firstAttribute="top" secondItem="zvR-N1-feX" secondAttribute="bottom" constant="8" symbolic="YES" id="e8U-x1-5tZ"/>
-                            <constraint firstItem="JK0-fF-QtI" firstAttribute="leading" secondItem="ox1-EB-Z5S" secondAttribute="leading" id="fIO-ia-5ep"/>
-                            <constraint firstItem="cCQ-T3-IQF" firstAttribute="leading" secondItem="yr6-Ag-nWL" secondAttribute="leading" id="g9t-H3-Rkj"/>
-                            <constraint firstItem="zvR-N1-feX" firstAttribute="leading" secondItem="JK0-fF-QtI" secondAttribute="leading" id="gHS-qC-hWP"/>
-                            <constraint firstItem="zvR-N1-feX" firstAttribute="top" secondItem="zND-eZ-XTo" secondAttribute="bottom" constant="20" id="hFU-Xj-5EX"/>
-                            <constraint firstItem="cCQ-T3-IQF" firstAttribute="trailing" secondItem="lKC-Wj-gGJ" secondAttribute="trailing" id="kn1-qk-Nlq"/>
-                            <constraint firstItem="cFr-Oo-jnr" firstAttribute="top" secondItem="ox1-EB-Z5S" secondAttribute="bottom" constant="20" id="vA7-XU-8ct"/>
-                            <constraint firstAttribute="trailing" secondItem="lKC-Wj-gGJ" secondAttribute="trailing" constant="46" id="wSQ-qe-HR7"/>
-                            <constraint firstItem="zvR-N1-feX" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="46" id="xgT-fi-hhh"/>
-                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="StreetView Atlanta" id="y5z-Ay-4X3"/>
                 </viewController>
@@ -130,54 +84,76 @@
             </objects>
             <point key="canvasLocation" x="707" y="312"/>
         </scene>
-        <!--My Map View Controller - What's Near Me?-->
+        <!--My Map View Controller-->
         <scene sceneID="WdE-ae-gCr">
             <objects>
                 <viewController id="pcE-Z3-UBx" customClass="MyMapViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Ko0-cl-kBj"/>
-                        <viewControllerLayoutGuide type="bottom" id="THq-Ox-kNc"/>
-                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="gP8-Tf-UYm">
-                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="C9M-jR-QH2">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="416"/>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" id="C9M-jR-QH2">
+                                <rect key="frame" x="0.0" y="-65" width="325" height="545"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <connections>
                                     <outlet property="delegate" destination="pcE-Z3-UBx" id="h6Z-Yq-AoB"/>
                                 </connections>
                             </mapView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" barStyle="black" id="n9d-X7-RXF">
+                                <rect key="frame" x="0.0" y="443" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <items>
+                                    <barButtonItem image="home" id="MGQ-AL-JXy">
+                                        <connections>
+                                            <action selector="goHome:" destination="pcE-Z3-UBx" id="3hd-HC-e78"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem image="userLoc" id="Zpk-r3-9kb">
+                                        <connections>
+                                            <action selector="centerOnUser:" destination="pcE-Z3-UBx" id="jnI-am-KZB"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="KLc-Sd-Icc">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <segments>
+                                    <segment title="Standard"/>
+                                    <segment title="Satellite "/>
+                                    <segment title="Hybrid"/>
+                                </segments>
+                                <connections>
+                                    <action selector="segChanged:" destination="pcE-Z3-UBx" eventType="valueChanged" id="Drr-3q-T78"/>
+                                </connections>
+                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="What's Near Me?" id="Z6I-At-fP7"/>
+                    <navigationItem key="navigationItem" id="Z6I-At-fP7"/>
+                    <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="myMapView" destination="C9M-jR-QH2" id="x51-5q-UQ2"/>
+                        <outlet property="segmentedControl" destination="C9M-jR-QH2" id="GdV-Hq-g6B"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JfJ-qu-aOl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1097" y="798"/>
+            <point key="canvasLocation" x="1270" y="841"/>
         </scene>
         <!--Specials View Controller - Special Offers-->
         <scene sceneID="fNX-Qd-tfr">
             <objects>
                 <viewController id="Nsz-DR-IJq" customClass="SpecialsViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="NNA-zK-n0t"/>
-                        <viewControllerLayoutGuide type="bottom" id="zDe-bn-EwV"/>
-                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="bjR-vN-n71">
                         <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="oRj-k4-8bV">
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" id="oRj-k4-8bV">
                                 <rect key="frame" x="150" y="243" width="20" height="20"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </activityIndicatorView>
-                            <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6gw-Zz-sZF">
+                            <webView contentMode="scaleToFill" id="6gw-Zz-sZF">
                                 <rect key="frame" x="0.0" y="-2" width="320" height="418"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -218,8 +194,10 @@
         <image name="atl" width="100" height="120"/>
         <image name="attractions" width="100" height="120"/>
         <image name="historical" width="100" height="120"/>
+        <image name="home" width="35" height="35"/>
         <image name="neighborhood" width="100" height="120"/>
         <image name="special" width="100" height="120"/>
+        <image name="userLoc" width="35" height="35"/>
         <image name="where" width="100" height="120"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
