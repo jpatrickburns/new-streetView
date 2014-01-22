@@ -38,8 +38,8 @@
             NSLog(@"Pushed neighborhoods");
         }else if ([btn.currentTitle isEqualToString:@"Only in the ATL"]){
             NSLog(@"Pushed Only in the ATL");
-        }else if ([btn.currentTitle isEqualToString:@"What's Near Me?"]){
-            NSLog(@"Pushed What's Near Me?");
+        }else if ([btn.currentTitle isEqualToString:@"What’s Near Me?"]){
+            NSLog(@"Pushed What’s Near Me?");
         }else if ([btn.currentTitle isEqualToString:@"Special Offers"]){
             NSLog(@"Pushed Special Offers");
         }else{

@@ -15,6 +15,8 @@
 - (IBAction)segChanged:(id)sender;
 - (IBAction)goHome:(id)sender;
 
+//outlets
+@property (weak, nonatomic) IBOutlet UISegmentedControl *segmentedControl;
 
 @end
 
@@ -34,13 +36,16 @@
     [super viewDidLoad];
     //hide nav bar
     [self.navigationController setNavigationBarHidden:YES];
+
+    //set location manager's delegate
     
-    //make a location manager
     _locationManager.delegate=self;
+    
     //show user location
-   self.myMapView.showsUserLocation=YES;
+    self.myMapView.showsUserLocation=YES;
+   
     //tell location manager to monitor changes
-    [_locationManager startMonitoringSignificantLocationChanges];
+    [_locationManager startUpdatingLocation];
 
 //    start with the center of Atlanta
     CLLocationCoordinate2D center=CLLocationCoordinate2DMake(33.748995,-84.387982);
@@ -51,6 +56,11 @@
 	// Do any additional setup after loading the view.
 }
 
+//hide status bar
+- (BOOL)prefersStatusBarHidden{
+    return YES;
+}
+
 - (void)didReceiveMemoryWarningloc
 {
     [super didReceiveMemoryWarning];
@@ -59,11 +69,9 @@
 
 -(void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation
 {
-
-    _region=MKCoordinateRegionMakeWithDistance(mapView.userLocation.location.coordinate, 1000, 1000);
-
-    [_myMapView setRegion:_region animated:YES];
-
+    NSLog(@"In didUpdateUserLocation");
+    _location = userLocation.coordinate;
+    [self centerOnUser:self];
 }
 
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations
@@ -93,11 +101,10 @@
 - (IBAction)centerOnUser:(id)sender
 {
     
-    MKCoordinateSpan span;
-    span.latitudeDelta = .025;
-    span.longitudeDelta = .025;
-    _region.span=span;
-    _region.center = _locationManager.location.coordinate;
+    _region = MKCoordinateRegionMakeWithDistance(_location, 1000, 1000);
+        
+    NSLog(@"Our new location is:%f,%f",_location.latitude,_location.longitude);
+
     [self.myMapView setRegion:_region animated:YES];
     
 }
