@@ -99,28 +99,35 @@
                                     <outlet property="delegate" destination="pcE-Z3-UBx" id="h6Z-Yq-AoB"/>
                                 </connections>
                             </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="gWn-te-3Lo">
+                                <rect key="frame" x="256" y="36" width="44" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <state key="normal" title="Button" image="help">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" barStyle="black" id="n9d-X7-RXF">
                                 <rect key="frame" x="0.0" y="436" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <items>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="BQj-Ur-mnR"/>
                                     <barButtonItem image="home" style="plain" id="MGQ-AL-JXy">
                                         <connections>
                                             <action selector="goHome:" destination="pcE-Z3-UBx" id="3hd-HC-e78"/>
                                         </connections>
                                     </barButtonItem>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="AkV-r5-iX1"/>
                                     <barButtonItem image="userLoc" style="plain" id="Zpk-r3-9kb">
                                         <connections>
                                             <action selector="centerOnUser:" destination="pcE-Z3-UBx" id="1PT-WW-feS"/>
                                         </connections>
                                     </barButtonItem>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="qe9-v9-yif"/>
                                     <barButtonItem image="tweet" id="WoH-D6-thK"/>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="VRT-b3-vGy"/>
                                     <barButtonItem image="fb" id="fHe-Yz-pMu"/>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="fFo-7V-sp7"/>
                                     <barButtonItem image="mail" id="Lh7-cF-inL"/>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="rhX-9L-ZG8"/>
                                 </items>
+                                <color key="tintColor" red="0.63366138940000005" green="0.82349890469999998" blue="0.97238117459999995" alpha="1" colorSpace="calibratedRGB"/>
                             </toolbar>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" id="KLc-Sd-Icc">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="29"/>
@@ -202,7 +209,8 @@
     <resources>
         <image name="atl" width="100" height="120"/>
         <image name="attractions" width="100" height="120"/>
-        <image name="fb" width="35" height="35"/>
+        <image name="fb" width="44" height="44"/>
+        <image name="help" width="34" height="34"/>
         <image name="historical" width="100" height="120"/>
         <image name="home" width="44" height="44"/>
         <image name="mail" width="44" height="44"/>
