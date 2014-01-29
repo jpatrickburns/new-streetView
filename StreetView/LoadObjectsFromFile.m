@@ -17,9 +17,11 @@
     NSString *plistPath = [[NSBundle mainBundle] pathForResource:name ofType:kind];
     //fill dictionary object with contents of file
     NSDictionary *contents = [[NSDictionary alloc]initWithContentsOfFile:plistPath];
-//    if (!contents) {
-//        NSLog(@"Error reading Plist: %@ format: %u", errorDesc,format);
-//    }
+    
+if (!contents) {
+       NSLog(@"Error reading Plist: %@", name);
+   }
+    
     return contents;
 }
 

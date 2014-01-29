@@ -43,7 +43,6 @@
 }
 
 
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -69,11 +68,21 @@
     [_myMapView setRegion:_region animated:YES];
     
     //need to add quirks.plist when complete!
-    NSArray *myFiles = @[@"historic",@"attractions",@"neighborhoods"];
+    NSArray *myFiles = @[@"historic",@"attractions",@"neighborhoods", @"locations"];
     [self loadUpAnnotationsWithFiles:myFiles];
     
 	// Do any additional setup after loading the view.
 }
+
+- (BOOL)shouldAutorotate
+{
+    return YES;
+}
+
+
+
+
+
 
 //Load up a buncha locations
 
@@ -89,8 +98,8 @@
             
             NSLog(@"loading %@",myKind);
             
-            _myLocations = [LoadObjectsFromFile loadFromFile:myKind ofType:@"plist"];
-            
+              _myLocations = [LoadObjectsFromFile loadFromFile:myKind ofType:@"plist"];
+    
             //loop through and make annotations
             
             for (NSString *loc in _myLocations) {
@@ -166,7 +175,7 @@
 - (MKAnnotationView *)mapView:(MKMapView *)theView
             viewForAnnotation:(id < MKAnnotation >)annotation
 {
-    // NSLog(@"Map view can see annotation %@.",annotation.title);
+    NSLog(@"Map view can see annotation %@.",annotation.title);
     
     //if the annotation is a user location
     if ([annotation isKindOfClass:[MKUserLocation class]]) {
@@ -189,7 +198,7 @@
             myPins.rightCalloutAccessoryView =
             [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
             
-            NSLog(@"My annotation kind is: %@",theAnnotation.kind);
+            //NSLog(@"My annotation kind is: %@",theAnnotation.kind);
             
             if ([theAnnotation.kind isEqualToString:@"historic"]) {
                 myPins.image = [UIImage imageNamed:@"pushPinRed"];
