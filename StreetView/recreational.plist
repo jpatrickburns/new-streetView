@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>o4wPark</key>
+	<dict>
+		<key>title</key>
+		<string>Old Fourth Ward Park</string>
+		<key>subtitle</key>
+		<string>New park in an old neighborhood</string>
+		<key>latitude</key>
+		<real>33.76776763147078</real>
+		<key>longitude</key>
+		<real>-84.36500072479248</real>
+		<key>info</key>
+		<string>Historic Fourth Ward Park starts on North Avenue in Atlanta&apos;s Old Frourth Ward behind City Hall East. It stretches South to Freedom Parkway and the Carter Center. The central amenity of the park is a large stormwater retention pond.
+
+Historic 4th Ward Park is one of the first completed urban park elements of the Atlanta Beltline project.
+
+The Historic Fourth Ward Park Conservancy is a nonprofit organization with broad-based community support. We are dedicated to enhancing the maintenance and security of the park while advocating for the full realization of the park plan. The Conservancy was launched on October 15, 2008.</string>
+		<key>pic</key>
+		<string>TestImage1.png</string>
+	</dict>
+	<key>turner</key>
+	<dict>
+		<key>title</key>
+		<string>Turner Field</string>
+		<key>subtitle</key>
+		<string>Home of the Atlanta Braves</string>
+		<key>latitude</key>
+		<real>33.73554668240412</real>
+		<key>longitude</key>
+		<real>-84.38916206359863</real>
+		<key>info</key>
+		<string>Turner Field is a stadium in Atlanta, Georgia, home to Major League Baseball&apos;s Atlanta Braves since 1997. Turner Field was originally built as Centennial Olympic Stadium, it was completed in 1996 to serve as the centerpiece of the 1996 Summer Olympics. After the games, the stadium was converted into a baseball park to serve as the new home of the Braves. The ballpark was built across the street from the former home of the Braves, Atlanta-Fulton County Stadium, which was demolished in the summer of 1997. From 2002 to 2004, the failed Fanplex entertainment center was located adjacent to the stadium&apos;s parking lot. The stadium contains 5,372 club seats, 64 luxury suites, and three party suites.
+		
+The most popular name choice among Atlanta residents for the new stadium at the time of its construction (according to a poll in the Atlanta Journal-Constitution) was Hank Aaron Stadium. After the ballpark was instead named after Ted Turner, the city of Atlanta renamed the section of Capitol Avenue on which the stadium sits Hank Aaron Drive, giving Turner Field the street number 755, after Aaron&apos;s home run total. The stadium is sometimes referred to as &quot;The Ted,&quot; after Turner&apos;s first name.</string>
+		<key>pic</key>
+		<string>TestImage1.png</string>
+	</dict>
+	<key>grantPark</key>
+	<dict>
+		<key>title</key>
+		<string>Grant Park</string>
+		<key>subtitle</key>
+		<string>Historic Intown Park</string>
+		<key>latitude</key>
+		<real>33.735547</real>
+		<key>longitude</key>
+		<real>-84.37208200000001</real>
+		<key>info</key>
+		<string>Grant Park was established in 1882 when Lemuel P. Grant, a successful engineer and businessman, gave the city of Atlanta 100 acres (40 ha) in the newly-developed &quot;suburb&quot; where he lived. In 1890, the city acquired another 44 acres (18 ha) for the park and appointed its first park commissioner, Sidney Root. In 1903, the Olmsted Brothers (sons of Frederick Law Olmsted) were hired to create a plan for the park. The original park included a lake named Lake Abana to handle storm-water runoff.
+A failed circus gave birth to the eventual Zoo Atlanta when local lumber merchant George Gress purchased animals from the circus and donated them to the city in 1889. The city decided Grant Park was the best location for the zoo and carved space out for the attraction. Later zoo expansions and parking requirements caused the removal of a portion of the lake. In 1892, the circular painting of the Battle of Atlanta was exhibited in the park. The cyclorama would eventually gain its own dedicated building in the park in 1921.
+After years of neglect and abuse, in 1996 the City of Atlanta Parks Bureau commissioned a new master plan for the park. The consultants working on the plan met with a citizen advisory group that would eventually become the Grant Park Conservancy. The Conservancy works to raise funds to enhance and protect the park for the enjoyment of all its visitors.</string>
+		<key>pic</key>
+		<string>TestImage2.png</string>
+	</dict>
+	<key>GADome</key>
+	<dict>
+		<key>title</key>
+		<string>The Georgia Dome</string>
+		<key>subtitle</key>
+		<string>Home of the Atlanta Falcons</string>
+		<key>latitude</key>
+		<real>33.757707</real>
+		<key>longitude</key>
+		<real>-84.40100700000001</real>
+		<key>info</key>
+		<string>The Georgia Dome, the largest cable-supported domed stadium in the world, opened in 1992. Located in downtown Atlanta, the Dome is the home venue for the Atlanta Falcons, host to Super Bowl XXVIII and XXXIV, host of the gymnastics and basketball events for the 1996 Olympic Games and host to both a Men&apos;s and Women&apos;s NCAA Final Four. Annually, the Dome hosts the Bank of America Atlanta Football classic, the SEC Football Championship and the Chick-fil-A Bowl. The Dome is equipped to handle large non-sporting events which include everything from major trade shows to concerts by such entertainers as the Rolling Stones and U2 to religious events by such ministers as Billy Graham and T.D. Jakes.</string>
+		<key>pic</key>
+		<string>TestImage3.png</string>
+	</dict>
+	<key>EastLake</key>
+	<dict>
+		<key>title</key>
+		<string>East Lake Golf Club</string>
+		<key>subtitle</key>
+		<string>Historic Intown Golf Club</string>
+		<key>latitude</key>
+		<real>33.7425414055604</real>
+		<key>longitude</key>
+		<real>-84.30221557617188</real>
+		<key>info</key>
+		<string>In 1898 the Atlanta Athletic Club (AAC) was formed. It was a very popular club and it gained 700 members in only four years. The director of the club&apos;s athletic program was John Heisman, the famous football coach for whom the Heisman Trophy is named. In 1904 the AAC bought property to build a country club which included a golf course. Course architect Tom Bendelow was asked to lay out the course.
+In 1906 the course&apos;s first holes were built. It was initially only seven holes, then nine and in the summer of 1907 the course was expanded to 17 holes. Later on in 1907 the 18th hole was built to make it a full 18 hole course. Also in 1907, the first significant tournament was hosted at East Lake, the Southern Amateur. It was won by Nelson Whitney. In 1908, Tom Bendelow opened his &quot;No. 2&quot; course at East Lake.
+The course&apos;s recognized establishment date is 1913. In 1913, famous golf course architect Donald Ross completely redesigned the course. He was called in by members to make the course a championship course.
+Later in 1966 the AAC sold the course to developers who moved it to its present home in what is now Johns Creek, Georgia. A few years later in 1968, East Lake Country Club was formed. A group of members purchased the clubhouse and course and started operating the East Lake Country Club.
+In 1994, famous architect Rees Jones restored Donald Ross&apos; original golf course layout and that is what East Lake looks like today.</string>
+		<key>pic</key>
+		<string>TestImage4.png</string>
+	</dict>
+	<key>druidHillsGolf</key>
+	<dict>
+		<key>title</key>
+		<string>Druid Hills Golf Club</string>
+		<key>subtitle</key>
+		<string>Intown Private Golf Course</string>
+		<key>latitude</key>
+		<real>33.78021744472999</real>
+		<key>longitude</key>
+		<real>-84.3281364440918</real>
+		<key>info</key>
+		<string>Designed by H.H. Barker in 1912, Druid Hills Golf Club is one of the premier championship golf courses in the state of Georgia. While the yardage may not seem all that intimidating maxing out at 6,860 yards, the course requires a careful strategy in order to score effectively. I was fortunate enough to play here during my trip to Georgia for The Master’s in 2010 and really enjoyed the experience. The golf course presents a variety of challenges, notably the well protected and undulating greens. Although the course does not put too much of a premium on length, the greens are difficult and the tee and approach shots require careful strategy. The approach shots are often off of side or downhill lies, which adds to the difficulty of hitting greens and creating birdie opportunities. Well disciplined golfers will have the best opportunities to score throughout the round. Careful placement off of the tee will allow for more favorable approaches and more looks at birdies, which I think is the most important strategy at Druid Hills.</string>
+		<key>pic</key>
+		<string>TestImage5.png</string>
+	</dict>
+	<key>stoneMountain</key>
+	<dict>
+		<key>title</key>
+		<string>Stone Mountain Park</string>
+		<key>subtitle</key>
+		<string>Historic State Park and Landmark</string>
+		<key>latitude</key>
+		<real>33.80981861413371</real>
+		<key>longitude</key>
+		<real>-84.13999557495117</real>
+		<key>info</key>
+		<string>Located on 3,200 acres of natural beauty, Stone Mountain Park features a wide variety of fun family activities and things to do in the Atlanta, Georgia area. Amazing adventures await as you discover interactive children&apos;s attractions. Plus you&apos;ll not want to miss dozens of fun annual events such as Spring FUN Break, Summer at the Rock, Yellow Daisy Festival, Indian Festival and Pow Wow, Stone Mountain Christmas and Snow Mountain. Stone Mountain activities are suitable for all ages.</string>
+		<key>pic</key>
+		<string>TestImage1.png</string>
+	</dict>
+	<key>park</key>
+	<dict>
+		<key>title</key>
+		<string>Piedmont Park</string>
+		<key>subtitle</key>
+		<string>Historic Intown city park</string>
+		<key>latitude</key>
+		<real>33.78524679882472</real>
+		<key>longitude</key>
+		<real>-84.37401294708252</real>
+		<key>info</key>
+		<string>Piedmont Park is a 189-acre (0.76 km2) urban park in Atlanta, Georgia, located about 1 mile (1.6 km) northeast of Downtown, between the Midtown and Virginia Highland neighborhoods. Originally the land was owned by Dr. Benjamin Walker, who used it as his out-of-town gentleman&apos;s farm and residence. He sold the land in 1887 to the Gentlemen&apos;s Driving Club (later renamed the Piedmont Driving Club), who wanted to establish an exclusive club and racing ground for horse enthusiasts. The Driving Club entered an agreement with the Piedmont Exposition Company, headed by prominent Atlantan Charles A. Collier, to use the land for fairs and expositions and later gave the park its name.
+		
+The park was originally designed by Joseph Forsyth Johnson to host the first of two major expositions held in the park in the late 19th century. The Piedmont Exposition opened in October 1887 to great fanfare. The event was a success and set the stage for the Cotton States and International Exposition which was held in the park seven years later in 1895. Both exhibitions showcased the prosperity of the region that had occurred during and after the Reconstruction period. In the early 20th century, a redesign plan called the Olmsted plan, was begun by the sons of New York Central Park architect, Frederick Law Olmsted. The effort led to the addition of scenic paths in the park and the joining of the park with the Ansley park system.</string>
+		<key>pic</key>
+		<string>TestImage2.png</string>
+	</dict>
+</dict>
+</plist>

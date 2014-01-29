@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>turner</key>
+	<dict>
+		<key>title</key>
+		<string>Turner Field</string>
+		<key>subtitle</key>
+		<string>Home of the Atlanta Braves</string>
+		<key>latitude</key>
+		<real>33.73554668240412</real>
+		<key>longitude</key>
+		<real>-84.38916206359863</real>
+		<key>info</key>
+		<string>Turner Field is a stadium in Atlanta, Georgia, home to Major League Baseball&apos;s Atlanta Braves since 1997. Turner Field was originally built as Centennial Olympic Stadium, it was completed in 1996 to serve as the centerpiece of the 1996 Summer Olympics. After the games, the stadium was converted into a baseball park to serve as the new home of the Braves. The ballpark was built across the street from the former home of the Braves, Atlanta-Fulton County Stadium, which was demolished in the summer of 1997. From 2002 to 2004, the failed Fanplex entertainment center was located adjacent to the stadium&apos;s parking lot. The stadium contains 5,372 club seats, 64 luxury suites, and three party suites.
+		
+The most popular name choice among Atlanta residents for the new stadium at the time of its construction (according to a poll in the Atlanta Journal-Constitution) was Hank Aaron Stadium. After the ballpark was instead named after Ted Turner, the city of Atlanta renamed the section of Capitol Avenue on which the stadium sits Hank Aaron Drive, giving Turner Field the street number 755, after Aaron&apos;s home run total. The stadium is sometimes referred to as &quot;The Ted,&quot; after Turner&apos;s first name.</string>
+		<key>pic</key>
+		<string>TestImage1.png</string>
+	</dict>
+	<key>garden</key>
+	<dict>
+		<key>title</key>
+		<string>Truly Living Well</string>
+		<key>subtitle</key>
+		<string>Wheat Street Gardens</string>
+		<key>latitude</key>
+		<real>33.75646670054323</real>
+		<key>longitude</key>
+		<real>-84.3752521276474</real>
+		<key>info</key>
+		<string>This is a community garden, run by the daughter of a famous Wheat Street Babtist minister.</string>
+		<key>pic</key>
+		<string>TestImage2.png</string>
+	</dict>
+	<key>mlk</key>
+	<dict>
+		<key>title</key>
+		<string>MLK Birthplace</string>
+		<key>subtitle</key>
+		<string>MLK childhood home</string>
+		<key>latitude</key>
+		<real>33.75510192534165</real>
+		<key>longitude</key>
+		<real>-84.37140583992004</real>
+		<key>info</key>
+		<string>The Reverend Martin Luther King, Jr. birthplace. It&apos;s on the register of national historic places, and is run by the federal park service.</string>
+		<key>pic</key>
+		<string>TestImage3.png</string>
+	</dict>
+	<key>carter</key>
+	<dict>
+		<key>title</key>
+		<string>Jimmy Carter Library</string>
+		<key>subtitle</key>
+		<string>Presidential Library and Museum</string>
+		<key>latitude</key>
+		<real>33.7668579037053</real>
+		<key>longitude</key>
+		<real>-84.35716867446899</real>
+		<key>info</key>
+		<string>Jimmy Carter (James Earl Carter Jr.), 39th president of the United States, was born Oct. 1, 1924, in the small farming town of Plains, Ga., and grew up in the nearby community of Archery. His father, James Earl Carter Sr., was a farmer and businessman and his mother, Lillian Gordy Carter, a registered nurse.</string>
+		<key>pic</key>
+		<string>TestImage4.png</string>
+	</dict>
+	<key>dead</key>
+	<dict>
+		<key>title</key>
+		<string>Oakland Cemetery</string>
+		<key>subtitle</key>
+		<string>Historic Atlanta Cemetery</string>
+		<key>latitude</key>
+		<real>33.74837585307756</real>
+		<key>longitude</key>
+		<real>-84.37246799468994</real>
+		<key>info</key>
+		<string>Originally called Atlanta Graveyard or City Burial Place, Oakland was renamed in 1872. By then it had expanded to 48 acres, mainly due to pressures of the Civil War. During the war, the City and the Confederate government added land to bury soldiers who died in local hospitals. As fighting drew closer and engulfed Atlanta, more burial space was needed. After the war, space was added to provide a proper final resting place for soldiers who had been hastily buried on area battlefields. By 1867 the cemetery reached its present size.</string>
+		<key>pic</key>
+		<string>TestImage5.png</string>
+	</dict>
+	<key>ms</key>
+	<dict>
+		<key>title</key>
+		<string>Microsoft</string>
+		<key>subtitle</key>
+		<string>Evil empire</string>
+		<key>latitude</key>
+		<real>47.640071</real>
+		<key>longitude</key>
+		<real>-122.129598</real>
+		<key>info</key>
+		<string>Founded in 1975, Microsoft (Nasdaq &quot;MSFT&quot;) is the worldwide leader in software, services, and solutions that help people and businesses realize their full potential.</string>
+		<key>pic</key>
+		<string>TestImage1.png</string>
+	</dict>
+	<key>park</key>
+	<dict>
+		<key>title</key>
+		<string>Piedmont Park</string>
+		<key>subtitle</key>
+		<string>Historic Intown city park</string>
+		<key>latitude</key>
+		<real>33.78524679882472</real>
+		<key>longitude</key>
+		<real>-84.37401294708252</real>
+		<key>info</key>
+		<string>Piedmont Park is a 189-acre (0.76 km2) urban park in Atlanta, Georgia, located about 1 mile (1.6 km) northeast of Downtown, between the Midtown and Virginia Highland neighborhoods. Originally the land was owned by Dr. Benjamin Walker, who used it as his out-of-town gentleman&apos;s farm and residence. He sold the land in 1887 to the Gentlemen&apos;s Driving Club (later renamed the Piedmont Driving Club), who wanted to establish an exclusive club and racing ground for horse enthusiasts. The Driving Club entered an agreement with the Piedmont Exposition Company, headed by prominent Atlantan Charles A. Collier, to use the land for fairs and expositions and later gave the park its name.
+		
+The park was originally designed by Joseph Forsyth Johnson to host the first of two major expositions held in the park in the late 19th century. The Piedmont Exposition opened in October 1887 to great fanfare. The event was a success and set the stage for the Cotton States and International Exposition which was held in the park seven years later in 1895. Both exhibitions showcased the prosperity of the region that had occurred during and after the Reconstruction period. In the early 20th century, a redesign plan called the Olmsted plan, was begun by the sons of New York Central Park architect, Frederick Law Olmsted. The effort led to the addition of scenic paths in the park and the joining of the park with the Ansley park system.</string>
+		<key>pic</key>
+		<string>TestImage2.png</string>
+	</dict>
+	<key>gaTech</key>
+	<dict>
+		<key>title</key>
+		<string>Georgia Tech</string>
+		<key>subtitle</key>
+		<string>University</string>
+		<key>latitude</key>
+		<real>33.77704273584613</real>
+		<key>longitude</key>
+		<real>-84.39980506896973</real>
+		<key>info</key>
+		<string>The Georgia Institute of Technology is one of the nation&apos;s top research universities, distinguished by its commitment to improving the human condition through advanced science and technology.
+
+Georgia Tech&apos;s campus occupies 400 acres in the heart of the city of Atlanta, where 20,000 undergraduate and graduate students receive a focused, technologically based education.
+
+Accredited by the Southern Association of Colleges and Schools (SACS)*, the Institute offers many nationally recognized, top-ranked programs. Undergraduate and graduate degrees are offered in the Colleges of Architecture, Computing, Engineering, Management, Sciences, and the Ivan Allen College of Liberal Arts. Georgia Tech is consistently ranked in U.S. News &amp; World Report&apos;s top ten public universities in the United States.</string>
+		<key>pic</key>
+		<string>TestImage1.png</string>
+	</dict>
+	<key>coke</key>
+	<dict>
+		<key>title</key>
+		<string>Coca Cola Company</string>
+		<key>subtitle</key>
+		<string>Corporate headquarters</string>
+		<key>latitude</key>
+		<real>33.77005082724627</real>
+		<key>longitude</key>
+		<real>-84.397873878479</real>
+		<key>info</key>
+		<string>On May 8, 1886, a pharmacist named Dr. John Pemberton carried a jug of Coca-Cola® syrup to Jacobs’ Pharmacy in downtown Atlanta, where it was mixed with carbonated water and sold for five cents a glass.
+		
+From humble beginnings 125 years ago, our Company has evolved from one product — Coca-Cola — to more than 500 brands in 2011. They’ve grown from selling a modest 9 drinks a day in 1886 to 1.7 billion a day. And they’ve expanded from one city in one country to availability in more than 200 countries around the world.</string>
+		<key>pic</key>
+		<string>TestImage3.png</string>
+	</dict>
+	<key>emory</key>
+	<dict>
+		<key>title</key>
+		<string>Emory University</string>
+		<key>subtitle</key>
+		<string>Intown University</string>
+		<key>latitude</key>
+		<real>33.79669550331641</real>
+		<key>longitude</key>
+		<real>-84.32131290435791</real>
+		<key>info</key>
+		<string>Emory University, recognized internationally for its outstanding liberal arts college, superb professional schools and one of the Southeast&apos;s leading health care systems, is located on a beautiful, leafy campus in Atlanta, Georgia&apos;s historic Druid Hills suburb.
+
+Emory maintains an uncommon balance for an institution of its standing: it generates more research funding than any other Georgia university, while maintaining its traditional emphasis on teaching.
+
+The university is enriched by the legacy and energy of Atlanta, and by collaboration among its schools, units and centers, as well as with affiliated institutions.</string>
+		<key>pic</key>
+		<string>TestImage4.png</string>
+	</dict>
+	<key>auc</key>
+	<dict>
+		<key>title</key>
+		<string>Atlanta University Center</string>
+		<key>subtitle</key>
+		<string>Historic Black Universities</string>
+		<key>latitude</key>
+		<real>33.74939282624086</real>
+		<key>longitude</key>
+		<real>-84.41302299499512</real>
+		<key>info</key>
+		<string>The Atlanta University Center was created in April 1929, when John Hope, then president of both Morehouse College and Atlanta University saw the potential gains from such a consortium. The former Atlanta University, Spelman College, and Morehouse College signed the affiliation agreement and became the original members of the AUC. Clark College and Morris Brown College joined in 1957, followed by the Interdenominational Theological Center (ITC) in 1959. Morehouse School of Medicine joined the AUC in 1983. Morris Brown ended its affiliation when the school lost its accredition in 2002.
+		
+The Atlanta University Center has undergone several administrative and governance changes since its inception. In 2004, the business operating as AUC, Inc. was dissolved. A new corporation, known as the AUC Consortium, Inc., was established in its place and Marilyn Jackson became the first female Executive Director. In 2011, the current Executive Director, Dr. Sherry Turner, was selected to expand the Consortium’s community revitalization efforts.</string>
+		<key>pic</key>
+		<string>TestImage5.png</string>
+	</dict>
+</dict>
+</plist>

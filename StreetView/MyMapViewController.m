@@ -7,6 +7,10 @@
 //
 
 #import "MyMapViewController.h"
+#import "LoadObjectsFromFile.h"
+#import "MapAnnotations.h"
+
+
 
 @interface MyMapViewController ()
 
@@ -14,22 +18,41 @@
 - (IBAction)centerOnUser:(id)sender;
 - (IBAction)segChanged:(id)sender;
 - (IBAction)goHome:(id)sender;
+- (void)loadUpAnnotationsWithFiles:(NSArray *)fileNames;
 
-//outlets
+//properties
 @property (weak, nonatomic) IBOutlet UISegmentedControl *segmentedControl;
+@property (strong, nonatomic) NSDictionary *myLocations;
+
 
 @end
 
+
+
 @implementation MyMapViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+
+
+- (id)init
 {
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    self = [super init];
     if (self) {
-        // Custom initialization
+        //
     }
     return self;
 }
+
+
+
+
+//- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+//{
+//    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+//    if (self) {
+//        // Custom initialization
+//    }
+//    return self;
+//}
 
 - (void)viewDidLoad
 {
@@ -37,24 +60,76 @@
     //hide nav bar
     [self.navigationController setNavigationBarHidden:YES];
 
-    //set location manager's delegate
+    //init location manager
+    // _locationManager= [[CLLocationManager alloc]init];
     
+    
+     //tell location manager to monitor changes
+    [_locationManager startUpdatingLocation];
+
+
+    //set location manager's delegate
     _locationManager.delegate=self;
     
     //show user location
     self.myMapView.showsUserLocation=YES;
    
-    //tell location manager to monitor changes
-    [_locationManager startUpdatingLocation];
-
-//    start with the center of Atlanta
+   //    start with the center of Atlanta
     CLLocationCoordinate2D center=CLLocationCoordinate2DMake(33.748995,-84.387982);
     _region=MKCoordinateRegionMakeWithDistance(center, 50000, 50000);
     
     [_myMapView setRegion:_region animated:YES];
     
+    //need to add quirks.plist when complete!
+    NSArray *myFiles = [NSArray arrayWithObjects:@"historic",@"attractions",@"neighborhoods", nil];
+    [self loadUpAnnotationsWithFiles:myFiles];
+
+    
 	// Do any additional setup after loading the view.
 }
+
+
+//Load up a buncha locations
+
+- (void)loadUpAnnotationsWithFiles:(NSArray *)fileNames{
+    
+    NSLog(@"In loadUpAnnotationsWithFiles");
+    
+//    if (_locationManager) {
+//        
+//        NSLog(@"_locationManager exists");
+    
+        for (NSString *myKind in fileNames) {
+            
+            NSLog(@"loading %@",myKind);
+            
+            _myLocations = [LoadObjectsFromFile loadFromFile:myKind ofType:@"plist"];
+            
+            //loop through and make annotations
+            
+            for (NSString *loc in _myLocations) {
+                NSDictionary *value =[_myLocations objectForKey:loc];
+                
+                //create instance of MapAnnotations
+                MapAnnotations *myAnnotation = [[MapAnnotations alloc]initWithLatitude:[[value objectForKey:@"latitude"] floatValue] longitude:[[value objectForKey:@"longitude"] floatValue]];
+                
+                myAnnotation.kind = myKind;
+                myAnnotation.title = [value objectForKey:@"title"];
+                myAnnotation.subtitle = [value objectForKey:@"subtitle"];
+                myAnnotation.info =[value objectForKey:@"info"];
+                myAnnotation.pic =[value objectForKey:@"pic"];
+                myAnnotation.latitude = [value objectForKey:@"latitude"];
+                myAnnotation.longitude = [value objectForKey:@"longitude"];
+                
+                [self.myMapView addAnnotation:myAnnotation ];
+            }
+        }
+        //[self updatePinsDistance];
+//    }
+}
+
+
+
 
 //hide status bar
 - (BOOL)prefersStatusBarHidden{

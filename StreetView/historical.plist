@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>garden</key>
+	<dict>
+		<key>title</key>
+		<string>Truly Living Well</string>
+		<key>subtitle</key>
+		<string>Wheat Street Gardens</string>
+		<key>latitude</key>
+		<real>33.75646670054323</real>
+		<key>longitude</key>
+		<real>-84.3752521276474</real>
+		<key>info</key>
+		<string>This is a community garden, run by the daughter of a famous Wheat Street Babtist minister.</string>
+		<key>pic</key>
+		<string>TestImage2.png</string>
+	</dict>
+	<key>mlk</key>
+	<dict>
+		<key>title</key>
+		<string>MLK Birthplace</string>
+		<key>subtitle</key>
+		<string>MLK childhood home</string>
+		<key>latitude</key>
+		<real>33.75510192534165</real>
+		<key>longitude</key>
+		<real>-84.37140583992004</real>
+		<key>info</key>
+		<string>The Reverend Martin Luther King, Jr. birthplace. It&apos;s on the register of national historic places, and is run by the federal park service.</string>
+		<key>pic</key>
+		<string>TestImage3.png</string>
+	</dict>
+	<key>fultonBag</key>
+	<dict>
+		<key>title</key>
+		<string>Fulton Bag and Cotton Mill</string>
+		<key>subtitle</key>
+		<string>Historic site</string>
+		<key>latitude</key>
+		<real>33.750704</real>
+		<key>longitude</key>
+		<real>-84.370344</real>
+		<key>info</key>
+		<string>Fulton Bag and Cotton Mills is a formerly-operating mill complex located in the Cabbagetown neighborhood of Atlanta, Georgia. Construction of the complex began in 1881 on the south side of the Georgia Railroad line, east of downtown Atlanta, on the site of the Atlanta Rolling Mill. The site now includes separate phases of multi-family dwellings including for-rent apartments (called The Fulton Cotton Mill Lofts) and for-sale condominiums (The Stacks). Early history
+
+The beginnings of the Fulton Bag and Cotton Mills can be traced to Atlanta in 1868, when Jacob Elsas, an immigrant of German Jewish descent who had recently arrived in Atlanta from Cincinnati, began work in the city in the rag, paper, and hide business. Elsas soon recognized the need of his and other area businesses for cloth and paper containers to house their goods. Within two or three years Elsas had switched to the new business of manufacturing cloth and paper bags and had joined forces with fellow German Jewish immigrant Isaac May. In January 1872, the new company became known as Elsas, May and Company. Located in the former Atlanta slave market house, the company expanded during the 1870s; by the end of the decade, the firm consisted of a bleachery, print shop, and bag mill, and it employed between 100 and 160 workers, including women and children.</string>
+		<key>pic</key>
+		<string>TestImage4.png</string>
+	</dict>
+	<key>dead</key>
+	<dict>
+		<key>title</key>
+		<string>Oakland Cemetery</string>
+		<key>subtitle</key>
+		<string>Historic Atlanta Cemetery</string>
+		<key>latitude</key>
+		<real>33.74837585307756</real>
+		<key>longitude</key>
+		<real>-84.37246799468994</real>
+		<key>info</key>
+		<string>Originally called Atlanta Graveyard or City Burial Place, Oakland was renamed in 1872. By then it had expanded to 48 acres, mainly due to pressures of the Civil War. During the war, the City and the Confederate government added land to bury soldiers who died in local hospitals. As fighting drew closer and engulfed Atlanta, more burial space was needed. After the war, space was added to provide a proper final resting place for soldiers who had been hastily buried on area battlefields. By 1867 the cemetery reached its present size.</string>
+		<key>pic</key>
+		<string>TestImage5.png</string>
+	</dict>
+	<key>ms</key>
+	<dict>
+		<key>title</key>
+		<string>Microsoft</string>
+		<key>subtitle</key>
+		<string>Evil empire</string>
+		<key>latitude</key>
+		<real>47.640071</real>
+		<key>longitude</key>
+		<real>-122.129598</real>
+		<key>info</key>
+		<string>Founded in 1975, Microsoft (Nasdaq &quot;MSFT&quot;) is the worldwide leader in software, services, and solutions that help people and businesses realize their full potential.</string>
+		<key>pic</key>
+		<string>TestImage1.png</string>
+	</dict>
+	<key>ebenezer</key>
+	<dict>
+		<key>title</key>
+		<string>Ebenezer Baptist Church</string>
+		<key>subtitle</key>
+		<string>Historic Church</string>
+		<key>latitude</key>
+		<real>33.75494136212486</real>
+		<key>longitude</key>
+		<real>-84.37452793121338</real>
+		<key>info</key>
+		<string>Ebenezer Baptist Church in Atlanta was founded in 1886 during the Reconstruction Era in the South. The Rev. John A. Parker, born into slavery, was the founder and first pastor. The original church was a box-like structure on Airline Street, NE. The Rev. Adam Daniel Williams succeeded Rev. Parker on March 14, 1894. One of his first achievements was to add approximately 65 members to the church during the first year. His next achievement was to build a church on McGruder Street. That church later became known as Mt. Pleasant Baptist Church.
+
+The membership moved from there to Bell and Gilmore streets. From there the membership worshipped in a storefront structure at 444 Edgewood Avenue from 1912 to 1914 while the basement of the structure of the building now known as the Heritage Sanctuary.</string>
+		<key>pic</key>
+		<string>TestImage2.png</string>
+	</dict>
+	<key>atlLife</key>
+	<dict>
+		<key>title</key>
+		<string>Atlanta Life Insurance</string>
+		<key>subtitle</key>
+		<string>Historic Black Business</string>
+		<key>latitude</key>
+		<real>33.75569065456382</real>
+		<key>longitude</key>
+		<real>-84.38275694847107</real>
+		<key>info</key>
+		<string>The Atlanta Life InsuranceAtlanta Life Insurance Company, with headquarters on Atlanta&apos;s historic Sweet Auburn Avenue, has been in existence since 1905. Founded by Alonzo Herndon, a prosperous black barber and entrepreneur who rose from enslavement to become by 1927 the wealthiest African American in Atlanta, Atlanta Life is the leading African American stock-owned insurance company in the nation. As one of the strongest black financial institutions to emerge in the early twentieth century, Atlanta Life is a premier example of the quest of African Americans to gain an economic foothold.
+            
+A Noble Endeavor
+            
+Atlanta Life began as a small insurance association with a capital investment of $5,000. For many years it operated as a mutual assessment enterprise. The policyholders, exceeding 23,000 by the end of 1909, provided the majority of the revenue through premium payments and periodic assessments. The company offered one contract, an industrial health and accident policy, which paid a small sum upon the death of a policyholder. In 1916 the firm strengthened its financial base by becoming a stockholder organization. Using his personal resources to support the enterprise, Herndon purchased approximately 90 percent of Atlanta Life&apos;s stock.</string>
+		<key>pic</key>
+		<string>TestImage1.png</string>
+	</dict>
+	<key>coke</key>
+	<dict>
+		<key>title</key>
+		<string>Coca Cola Company</string>
+		<key>subtitle</key>
+		<string>Corporate headquarters</string>
+		<key>latitude</key>
+		<real>33.77005082724627</real>
+		<key>longitude</key>
+		<real>-84.397873878479</real>
+		<key>info</key>
+		<string>On May 8, 1886, a pharmacist named Dr. John Pemberton carried a jug of Coca-Cola® syrup to Jacobs’ Pharmacy in downtown Atlanta, where it was mixed with carbonated water and sold for five cents a glass.
+		
+From humble beginnings 125 years ago, our Company has evolved from one product — Coca-Cola — to more than 500 brands in 2011. They’ve grown from selling a modest 9 drinks a day in 1886 to 1.7 billion a day. And they’ve expanded from one city in one country to availability in more than 200 countries around the world.</string>
+		<key>pic</key>
+		<string>TestImage3.png</string>
+	</dict>
+	<key>gradyStatue</key>
+	<dict>
+		<key>title</key>
+		<string>Henry Grady Statue</string>
+		<key>subtitle</key>
+		<string>Historic Downtown Landmark</string>
+		<key>latitude</key>
+		<real>33.75545873141348</real>
+		<key>longitude</key>
+		<real>-84.39107179641724</real>
+		<key>info</key>
+		<string>Since 1891, this statue of Henry W. Grady has stood at the intersection of Marietta Street and Forsyth Street in downtown Atlanta.  Grady was born in Athens, Ga. in 1850 and died 49 years later (1889) in Atlanta.
+
+Grady was an influential editor of the Atlanta Constitution newspaper in the 1880s.  An aggressive promoter of Atlanta&apos;s economic growth in the years following the Civil War, Grady coined the term the New South to describe his belief in the region&apos;s need for industrial development in the years following the Civil War.  Both Grady Hospital and Grady High School are named in his honor.</string>
+		<key>pic</key>
+		<string>TestImage4.png</string>
+	</dict>
+	<key>cyclorama</key>
+	<dict>
+		<key>title</key>
+		<string>Atlanta Cyclorama</string>
+		<key>subtitle</key>
+		<string>Unique Museum</string>
+		<key>latitude</key>
+		<real>33.73429756468271</real>
+		<key>longitude</key>
+		<real>-84.37113761901855</real>
+		<key>info</key>
+		<string>The Story of the Painting 
+            
+The Battle of Atlanta was painted in Milwaukee, Wisconsin, in the studios of the American Panorama Company. The company, established in 1883, was commissioned to produce two Civil War cycloramas – the Battle of Missionary Ridge (1883-84) and the Battle of Atlanta (1885-86) as well as a series on biblical themes.
+Company manager William Wehner went to Europe to find artists with the necessary skills. He selected a group of German artists with experience in European cyclorama painting and brought them to Milwaukee. Some of the artists had worked on cycloramas depicting German victories in the Franco-Prussian War (1870-71).
+Three Specialized Groups
+The artists worked in three groups under the supervision of F.W. Heine and August Lohr. Heine, a Prussian army veteran, was in charge of the master composition. Lohr designed landscape settings.
+            
+Other artists were:
+            
+• Landscape painters — Bernhard Schneider, Wilhelm Schroeter and Franz Biberstein; 
+• Figure painters — Thaddeus Zukotynski, Theodore Breidwiser, Franz Rohrbeck, Herman Michalowski and Johannes Schultz; 
+• Animal painters — Richard Lorenz and George Peter.
+            
+Field Study
+            
+In 1885, Heine, Lohr and several other artists came to Atlanta to study the site where the battle took place. Theodore Davis served as technical advisor to the group. He had been a Harper&apos;s Weekly staff artist during the war, and had witnessed and sketched the battles of several campaigns, including the one in Atlanta. The firsthand knowledge he conveyed to the German artists contributed significantly to the authenticity of the landscape and action in the Battle of Atlanta painting.</string>
+		<key>pic</key>
+		<string>TestImage5.png</string>
+	</dict>
+</dict>
+</plist>
