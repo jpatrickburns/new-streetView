@@ -97,25 +97,21 @@
             for (NSString *loc in _myLocations) {
                 NSDictionary *value =[_myLocations objectForKey:loc];
                 
-                //create instance of MapAnnotations
-                MapAnnotations *myAnnotation = [[MapAnnotations alloc]initWithLatitude:[[value objectForKey:@"latitude"] floatValue] longitude:[[value objectForKey:@"longitude"] floatValue]];
-                
-                myAnnotation.kind = myKind;
-                myAnnotation.title = [value objectForKey:@"title"];
-                myAnnotation.subtitle = [value objectForKey:@"subtitle"];
-                myAnnotation.info =[value objectForKey:@"info"];
-                myAnnotation.pic =[value objectForKey:@"pic"];
-                myAnnotation.latitude = [value objectForKey:@"latitude"];
-                myAnnotation.longitude = [value objectForKey:@"longitude"];
-                
+                //create instance of custom class MapAnnotations
+                MapAnnotations *myAnnotation = [[MapAnnotations alloc]
+                                                initWithLatitude:[[value objectForKey:@"latitude"] floatValue] longitude:[[value objectForKey:@"longitude"] floatValue]
+                                                title:[value objectForKey:@"title"]
+                                                subtitle:[value objectForKey:@"subtitle"]
+                                                kind:[value objectForKey:@"kind"]
+                                                info:[value objectForKey:@"info"]
+                                                pic:[value objectForKey:@"pic"]
+                                                ];
                 [self.myMapView addAnnotation:myAnnotation ];
             }
         }
         //[self updatePinsDistance];
 //    }
 }
-
-
 
 
 //hide status bar
@@ -139,7 +135,6 @@
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations
 {
      NSLog(@"In didUpdateLocations");
-    
  
 }
 
@@ -162,7 +157,6 @@
 
 - (IBAction)centerOnUser:(id)sender
 {
-    
     _region = MKCoordinateRegionMakeWithDistance(_location, 2000, 2000);
         
     NSLog(@"Our new location is:%f,%f",_location.latitude,_location.longitude);

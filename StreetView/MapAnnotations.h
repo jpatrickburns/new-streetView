@@ -10,15 +10,21 @@
 #import <MapKit/MapKit.h>
 @interface MapAnnotations : NSObject <MKAnnotation>
 
-@property (nonatomic, readonly) CLLocationCoordinate2D coordinate;
-@property (nonatomic, copy) NSString *title;
-@property (nonatomic, copy) NSString *subtitle;
-@property (nonatomic, copy) NSString *info;
-@property (nonatomic, copy) NSString *pic;
+@property (nonatomic,readonly) CLLocationCoordinate2D coordinate;
+@property (nonatomic,copy) NSString *title;
+@property (nonatomic,copy) NSString *subtitle;
+@property (nonatomic,copy) NSString *info;
+@property (nonatomic,copy) NSString *pic;
 @property (nonatomic,copy) NSString *kind;
 @property (nonatomic,copy) NSNumber *latitude;
 @property (nonatomic,copy) NSNumber *longitude;
 
-- (id)initWithLatitude:(float)lat longitude:(float)lon;
+- (id)initWithLatitude:(float)lat
+             longitude:(float)lon
+                 title:(NSString *)title
+              subtitle:(NSString *)subtitle
+                  kind:(NSString *)kind
+                  info:(NSString *)info
+                   pic:(NSString *)pic;
 
 @end
