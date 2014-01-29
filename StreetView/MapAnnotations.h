@@ -22,9 +22,6 @@
 - (id)initWithLatitude:(float)lat
              longitude:(float)lon
                  title:(NSString *)title
-              subtitle:(NSString *)subtitle
-                  kind:(NSString *)kind
-                  info:(NSString *)info
-                   pic:(NSString *)pic;
+              subtitle:(NSString *)subtitle;
 
 @end

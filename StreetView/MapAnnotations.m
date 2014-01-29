@@ -15,9 +15,6 @@
              longitude:(float)lon
                  title:(NSString *)title
               subtitle:(NSString *)subtitle
-                  kind:(NSString *)kind
-                  info:(NSString *)info
-                   pic:(NSString *)pic;
 
 {
     self = [super init];
@@ -25,7 +22,6 @@
         _coordinate = CLLocationCoordinate2DMake(lat, lon);
         _title = title;
         _subtitle = subtitle;
-        _kind = kind;
     }
     return self;
 }

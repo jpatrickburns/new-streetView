@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>agnesScott</key>
+	<dict>
+		<key>title</key>
+		<string>Agnes Scott College</string>
+		<key>subtitle</key>
+		<string>Private Women’s College</string>
+		<key>latitude</key>
+		<real>33.767418</real>
+		<key>longitude</key>
+		<real>-84.294366</real>
+		<key>info</key>
+		<string>Agnes Scott College was established in 1889 with a distinctive mission: to educate women for the betterment of their families and the elevation of their region. Today, that mission has evolved into a commitment to educate women from around the world to “think deeply, live honorably and engage the intellectual and social challenges of their time.”
+
+The college was named in honor of Agnes Irvine Scott, a Scots-Irish immigrant who upheld a strong sense of integrity and intellectual curiosity. Her son Col. George Washington Scott was the college’s primary benefactor, and the Rev. Frank Henry Gaines, minister of Decatur Presbyterian Church, was the founding president.
+
+Initially named the Decatur Female Seminary in 1889 and renamed the Agnes Scott Institute in 1890, the college was chartered as Agnes Scott College in 1906 and was the first institution of higher education in Georgia to receive regional accreditation.</string>
+		<key>pic</key>
+		<string>TestImage1.png</string>
+	</dict>
+	<key>GAState</key>
+	<dict>
+		<key>title</key>
+		<string>Georgia State University</string>
+		<key>subtitle</key>
+		<string>Intown State University</string>
+		<key>latitude</key>
+		<real>33.75305026161111</real>
+		<key>longitude</key>
+		<real>-84.3884539604187</real>
+		<key>info</key>
+		<string>Georgia State University is the Southeast&apos;s leading urban research institution. It is on the list of the top 100 public universities for doctoral degrees awarded. More than 250 degree programs with 100 fields of study are offered at the bachelor&apos;s, master&apos;s, specialist and doctoral levels. Students may enroll in day or evening classes and in part-time or full-time study.</string>
+		<key>pic</key>
+		<string>TestImage2.png</string>
+	</dict>
+	<key>clarkAtlanta</key>
+	<dict>
+		<key>title</key>
+		<string>Clark Atlanta University</string>
+		<key>subtitle</key>
+		<string>Historic Black University</string>
+		<key>latitude</key>
+		<real>33.75053467647186</real>
+		<key>longitude</key>
+		<real>-84.4094181060791</real>
+		<key>info</key>
+		<string>Clark Atlanta University is a comprehensive, private, urban, coeducational institution of higher education with a predominantly African-American heritage. It offers undergraduate, graduate, and professional degrees as well as certificate programs to students of diverse racial, ethnic, and socioeconomic backgrounds. It was formed by the consolidation of Atlanta University, which offered only graduate degrees, and Clark College, a four-year undergraduate institution oriented to the liberal arts. 
+
+The first President of Clark Atlanta University was Dr. Thomas W. Cole, Jr., who served concurrently as the President of both Atlanta University and Clark College prior to consolidation. In November 1987, after more than a year of discussion, the Boards of Trustees of Atlanta University and Clark College authorized an exploration of the potential advantages of closer working arrangements between the two institutions, including their consolidation into one university. In April 1988, the joint committee delivered its report entitled Charting A Bold New Future: Proposed Combination of Clark College and Atlanta University to the Boards for ratification. The report recommended that the two schools be consolidated into a single institution. On June 24, 1988, the Boards of both Clark College and Atlanta University made the historic decision to consolidate the two institutions, creating Clark Atlanta University. The new and historic University inherits the rich traditions of two independent institutions, connected over the years by a common heritage and commitment; by personal, corporate and consortia relationships; and by location.</string>
+		<key>pic</key>
+		<string>TestImage3.png</string>
+	</dict>
+	<key>carter</key>
+	<dict>
+		<key>title</key>
+		<string>Jimmy Carter Library</string>
+		<key>subtitle</key>
+		<string>Presidential Library and Museum</string>
+		<key>latitude</key>
+		<real>33.7668579037053</real>
+		<key>longitude</key>
+		<real>-84.35716867446899</real>
+		<key>info</key>
+		<string>Jimmy Carter (James Earl Carter Jr.), 39th president of the United States, was born Oct. 1, 1924, in the small farming town of Plains, Ga., and grew up in the nearby community of Archery. His father, James Earl Carter Sr., was a farmer and businessman and his mother, Lillian Gordy Carter, a registered nurse.</string>
+		<key>pic</key>
+		<string>TestImage4.png</string>
+	</dict>
+	<key>gaTech</key>
+	<dict>
+		<key>title</key>
+		<string>Georgia Tech</string>
+		<key>subtitle</key>
+		<string>University</string>
+		<key>latitude</key>
+		<real>33.77704273584613</real>
+		<key>longitude</key>
+		<real>-84.39980506896973</real>
+		<key>info</key>
+		<string>The Georgia Institute of Technology is one of the nation&apos;s top research universities, distinguished by its commitment to improving the human condition through advanced science and technology.
+
+Georgia Tech&apos;s campus occupies 400 acres in the heart of the city of Atlanta, where 20,000 undergraduate and graduate students receive a focused, technologically based education.
+
+Accredited by the Southern Association of Colleges and Schools (SACS)*, the Institute offers many nationally recognized, top-ranked programs. Undergraduate and graduate degrees are offered in the Colleges of Architecture, Computing, Engineering, Management, Sciences, and the Ivan Allen College of Liberal Arts. Georgia Tech is consistently ranked in U.S. News &amp; World Report&apos;s top ten public universities in the United States.</string>
+		<key>pic</key>
+		<string>TestImage1.png</string>
+	</dict>
+	<key>emory</key>
+	<dict>
+		<key>title</key>
+		<string>Emory University</string>
+		<key>subtitle</key>
+		<string>Intown University</string>
+		<key>latitude</key>
+		<real>33.79669550331641</real>
+		<key>longitude</key>
+		<real>-84.32131290435791</real>
+		<key>info</key>
+		<string>Emory University, recognized internationally for its outstanding liberal arts college, superb professional schools and one of the Southeast&apos;s leading health care systems, is located on a beautiful, leafy campus in Atlanta, Georgia&apos;s historic Druid Hills suburb.
+
+Emory maintains an uncommon balance for an institution of its standing: it generates more research funding than any other Georgia university, while maintaining its traditional emphasis on teaching.
+
+The university is enriched by the legacy and energy of Atlanta, and by collaboration among its schools, units and centers, as well as with affiliated institutions.</string>
+		<key>pic</key>
+		<string>TestImage4.png</string>
+	</dict>
+	<key>auc</key>
+	<dict>
+		<key>title</key>
+		<string>Atlanta University Center</string>
+		<key>subtitle</key>
+		<string>Historic Black Universities</string>
+		<key>latitude</key>
+		<real>33.74939282624086</real>
+		<key>longitude</key>
+		<real>-84.41302299499512</real>
+		<key>info</key>
+		<string>The Atlanta University Center was created in April 1929, when John Hope, then president of both Morehouse College and Atlanta University saw the potential gains from such a consortium. The former Atlanta University, Spelman College, and Morehouse College signed the affiliation agreement and became the original members of the AUC. Clark College and Morris Brown College joined in 1957, followed by the Interdenominational Theological Center (ITC) in 1959. Morehouse School of Medicine joined the AUC in 1983. Morris Brown ended its affiliation when the school lost its accredition in 2002.
+		
+The Atlanta University Center has undergone several administrative and governance changes since its inception. In 2004, the business operating as AUC, Inc. was dissolved. A new corporation, known as the AUC Consortium, Inc., was established in its place and Marilyn Jackson became the first female Executive Director. In 2011, the current Executive Director, Dr. Sherry Turner, was selected to expand the Consortium’s community revitalization efforts.</string>
+		<key>pic</key>
+		<string>TestImage5.png</string>
+	</dict>
+</dict>
+</plist>
