@@ -13,21 +13,13 @@
 + (id)loadFromFile:(NSString *)name ofType:(NSString *)kind
 {
     NSLog(@"In the LoadObjectsFromFile class, with %@ as my filename.",name);
-    
-    NSPropertyListFormat format;
-    NSString *errorDesc=nil;
-    
     //make path to plist in bundle
     NSString *plistPath = [[NSBundle mainBundle] pathForResource:name ofType:kind];
-    //fill data object with contents of file
-    NSData *myData = [[NSData alloc] initWithContentsOfFile:plistPath];
-    NSDictionary *contents = [NSPropertyListSerialization propertyListFromData:myData 
-                                                              mutabilityOption:NSPropertyListMutableContainersAndLeaves 
-                                                                        format:&format
-                                                              errorDescription:&errorDesc];
-    if (!contents) {
-        NSLog(@"Error reading Plist: %@ format: %u", errorDesc,format);
-    }
+    //fill dictionary object with contents of file
+    NSDictionary *contents = [[NSDictionary alloc]initWithContentsOfFile:plistPath];
+//    if (!contents) {
+//        NSLog(@"Error reading Plist: %@ format: %u", errorDesc,format);
+//    }
     return contents;
 }
 

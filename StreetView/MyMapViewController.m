@@ -44,16 +44,6 @@
 
 
 
-
-//- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-//{
-//    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-//    if (self) {
-//        // Custom initialization
-//    }
-//    return self;
-//}
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -63,16 +53,14 @@
     //init location manager
     // _locationManager= [[CLLocationManager alloc]init];
     
-    
-     //tell location manager to monitor changes
-    [_locationManager startUpdatingLocation];
-
-
-    //set location manager's delegate
+        //set location manager's delegate
     _locationManager.delegate=self;
     
     //show user location
     self.myMapView.showsUserLocation=YES;
+    
+    //tell location manager to monitor changes
+    [_locationManager startUpdatingLocation];
    
    //    start with the center of Atlanta
     CLLocationCoordinate2D center=CLLocationCoordinate2DMake(33.748995,-84.387982);
@@ -83,7 +71,6 @@
     //need to add quirks.plist when complete!
     NSArray *myFiles = [NSArray arrayWithObjects:@"historic",@"attractions",@"neighborhoods", nil];
     [self loadUpAnnotationsWithFiles:myFiles];
-
     
 	// Do any additional setup after loading the view.
 }
@@ -176,7 +163,7 @@
 - (IBAction)centerOnUser:(id)sender
 {
     
-    _region = MKCoordinateRegionMakeWithDistance(_location, 1000, 1000);
+    _region = MKCoordinateRegionMakeWithDistance(_location, 2000, 2000);
         
     NSLog(@"Our new location is:%f,%f",_location.latitude,_location.longitude);
 

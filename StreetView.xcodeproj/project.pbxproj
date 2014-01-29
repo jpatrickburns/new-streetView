@@ -15,7 +15,6 @@
 		6952128B185F5B7900ACC79E /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6952128A185F5B7900ACC79E /* MapKit.framework */; };
 		6952128D185F5F8500ACC79E /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6952128C185F5F8500ACC79E /* CoreLocation.framework */; };
 		6972F1921898493700A8E619 /* historic.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6972F18D1898493700A8E619 /* historic.plist */; };
-		6972F1931898493700A8E619 /* historical.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6972F18E1898493700A8E619 /* historical.plist */; };
 		6972F1941898493700A8E619 /* locations.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6972F18F1898493700A8E619 /* locations.plist */; };
 		6972F1951898493700A8E619 /* quirk.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6972F1901898493700A8E619 /* quirk.plist */; };
 		6972F1961898493700A8E619 /* recreational.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6972F1911898493700A8E619 /* recreational.plist */; };
@@ -59,7 +58,6 @@
 		6952128A185F5B7900ACC79E /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		6952128C185F5F8500ACC79E /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		6972F18D1898493700A8E619 /* historic.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = historic.plist; sourceTree = "<group>"; };
-		6972F18E1898493700A8E619 /* historical.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = historical.plist; sourceTree = "<group>"; };
 		6972F18F1898493700A8E619 /* locations.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = locations.plist; sourceTree = "<group>"; };
 		6972F1901898493700A8E619 /* quirk.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = quirk.plist; sourceTree = "<group>"; };
 		6972F1911898493700A8E619 /* recreational.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = recreational.plist; sourceTree = "<group>"; };
@@ -125,7 +123,6 @@
 			isa = PBXGroup;
 			children = (
 				6972F18D1898493700A8E619 /* historic.plist */,
-				6972F18E1898493700A8E619 /* historical.plist */,
 				6972F18F1898493700A8E619 /* locations.plist */,
 				6972F1901898493700A8E619 /* quirk.plist */,
 				6972F1911898493700A8E619 /* recreational.plist */,
@@ -171,7 +168,6 @@
 				69D095CA185CC3D300B6BE29 /* AppDelegate.h */,
 				69D095CB185CC3D300B6BE29 /* AppDelegate.m */,
 				69D095CD185CC3D300B6BE29 /* Main.storyboard */,
-				6972F1971898494300A8E619 /* plists */,
 				69521287185F5A5600ACC79E /* MyMapViewController.h */,
 				69521288185F5A5600ACC79E /* MyMapViewController.m */,
 				69521284185F54E300ACC79E /* MyNavigationController.h */,
@@ -183,6 +179,7 @@
 				69521281185F4D9400ACC79E /* SpecialsViewController.m */,
 				69D095D0185CC3D300B6BE29 /* ViewController.h */,
 				69D095D1185CC3D300B6BE29 /* ViewController.m */,
+				6972F1971898494300A8E619 /* plists */,
 				69395CC418994CF9007876FF /* map stuff */,
 				69D095D3185CC3D400B6BE29 /* Images.xcassets */,
 				69D095C2185CC3D200B6BE29 /* Supporting Files */,
@@ -304,7 +301,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				6972F1961898493700A8E619 /* recreational.plist in Resources */,
-				6972F1931898493700A8E619 /* historical.plist in Resources */,
 				6972F1951898493700A8E619 /* quirk.plist in Resources */,
 				69521282185F4D9400ACC79E /* specials.html in Resources */,
 				69D095D4185CC3D400B6BE29 /* Images.xcassets in Resources */,
