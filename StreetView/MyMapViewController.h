@@ -2,8 +2,8 @@
 //  MyMapViewController.h
 //  StreetView
 //
-//  Created by James Burns on 12/16/13.
-//  Copyright (c) 2013 James Burns. All rights reserved.
+//  Originally created by James Burns on 12/16/13.
+//  Copyright (c) 2014 James Burns. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>

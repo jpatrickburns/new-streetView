@@ -2,8 +2,8 @@
 //  MyMapViewController.m
 //  StreetView
 //
-//  Created by James Burns on 12/16/13.
-//  Copyright (c) 2013 James Burns. All rights reserved.
+//  Originally created by James Burns on 12/16/13.
+//  Copyright (c) 2014 James Burns. All rights reserved.
 //
 
 #import "MyMapViewController.h"
@@ -62,7 +62,7 @@
     self.myMapView.showsUserLocation=YES;
     
     //tell location manager to monitor changes
-    [_locationManager startUpdatingLocation];
+    [_locationManager startMonitoringSignificantLocationChanges];
    
    //    start with the center of Atlanta
     CLLocationCoordinate2D center=CLLocationCoordinate2DMake(33.748995,-84.387982);
@@ -116,7 +116,7 @@
                 myAnnotation.pic=[value objectForKey:@"pic"];
                 
                 [self.myMapView addAnnotation:myAnnotation];
-                NSLog(@"Annotation contains: %@",myAnnotation.kind);
+                //NSLog(@"Annotation contains: %@",myAnnotation.kind);
             }
         }
         //[self updatePinsDistance];
@@ -157,16 +157,24 @@
     NSLog(@"In didUpdateUserLocation");
     _location = userLocation.coordinate;
     NSLog(@"Our new location is:%f,%f",_location.latitude,_location.longitude);
+    
     if (_firstRun) {
-        [self centerOnUser:self];
+        
         _firstRun=NO;
-        [UIView animateWithDuration:1 animations:^(void)
-        {
-                    self.helpButton.alpha=1;
-        }];
-
+[UIView animateWithDuration:.5
+                      delay:0
+                    options:UIViewAnimationOptionBeginFromCurrentState
+                 animations:^(void)
+ {
+                  self.helpButton.alpha=1;
+ }
+                 completion:^(BOOL finished)
+ {
+     [self centerOnUser:self];
+ }];
+         }
     }
-   }
+   
 
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations
 {

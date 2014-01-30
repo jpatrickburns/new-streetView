@@ -12,7 +12,7 @@
 
 + (id)loadFromFile:(NSString *)name ofType:(NSString *)kind
 {
-    NSLog(@"In the LoadObjectsFromFile class, with %@ as my filename.",name);
+    //NSLog(@"In the LoadObjectsFromFile class, with %@ as my filename.",name);
     
     NSPropertyListFormat format;
     NSString *errorDesc=nil;
@@ -26,7 +26,7 @@
                                                                         format:&format
                                                               errorDescription:&errorDesc];
     if (!contents) {
-        NSLog(@"Error reading Plist: %@ format: %lu", errorDesc,format);
+        NSLog(@"Error reading Plist: %@ format: %u", errorDesc,format);
     }
     return contents;
 }
