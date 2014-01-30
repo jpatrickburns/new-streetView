@@ -52,6 +52,7 @@
 {
 	// finished loading, hide the activity indicator in the status bar
 	[_spinner stopAnimating];
+    [_spinner setAlpha:0];
 }
 
 - (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error

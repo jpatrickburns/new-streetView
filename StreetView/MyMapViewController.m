@@ -77,10 +77,6 @@
 	// Do any additional setup after loading the view.
 }
 
-- (BOOL)shouldAutorotate
-{
-    return YES;
-}
 
 //Load up a buncha locations
 
@@ -161,12 +157,13 @@
     if (_firstRun) {
         
         _firstRun=NO;
-[UIView animateWithDuration:.5
+        
+[UIView animateWithDuration:1
                       delay:0
                     options:UIViewAnimationOptionBeginFromCurrentState
                  animations:^(void)
  {
-                  self.helpButton.alpha=1;
+                  self.helpButton.alpha=.8;
  }
                  completion:^(BOOL finished)
  {
