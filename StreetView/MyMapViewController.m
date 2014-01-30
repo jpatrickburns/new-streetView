@@ -24,6 +24,7 @@
 @property (weak, nonatomic) IBOutlet UISegmentedControl *segmentedControl;
 @property (strong, nonatomic) NSDictionary *myLocations;
 @property (nonatomic) BOOL firstRun;
+@property (weak, nonatomic) IBOutlet UIButton *helpButton;
 
 @end
 
@@ -154,11 +155,16 @@
 -(void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation
 {
     NSLog(@"In didUpdateUserLocation");
-    _location = userLocation.coordinate;        
+    _location = userLocation.coordinate;
     NSLog(@"Our new location is:%f,%f",_location.latitude,_location.longitude);
     if (_firstRun) {
         [self centerOnUser:self];
         _firstRun=NO;
+        [UIView animateWithDuration:1 animations:^(void)
+        {
+                    self.helpButton.alpha=1;
+        }];
+
     }
    }
 
@@ -173,7 +179,7 @@
 - (MKAnnotationView *)mapView:(MKMapView *)theView
             viewForAnnotation:(id < MKAnnotation >)annotation
 {
-    NSLog(@"Map view can see annotation %@.",annotation.title);
+    //NSLog(@"Map view can see annotation %@.",annotation.title);
     
     //if the annotation is a user location
     if ([annotation isKindOfClass:[MKUserLocation class]]) {

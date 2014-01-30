@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		69395CC318994C35007876FF /* MapAnnotations.m in Sources */ = {isa = PBXBuildFile; fileRef = 69395CC218994C35007876FF /* MapAnnotations.m */; };
+		694B3B98189A9A8100465863 /* HelpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 694B3B97189A9A8100465863 /* HelpViewController.m */; };
 		69521282185F4D9400ACC79E /* specials.html in Resources */ = {isa = PBXBuildFile; fileRef = 6952127F185F4D9400ACC79E /* specials.html */; };
 		69521283185F4D9400ACC79E /* SpecialsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 69521281185F4D9400ACC79E /* SpecialsViewController.m */; };
 		69521286185F54E300ACC79E /* MyNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 69521285185F54E300ACC79E /* MyNavigationController.m */; };
@@ -48,6 +49,8 @@
 /* Begin PBXFileReference section */
 		69395CC118994C35007876FF /* MapAnnotations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapAnnotations.h; sourceTree = "<group>"; };
 		69395CC218994C35007876FF /* MapAnnotations.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapAnnotations.m; sourceTree = "<group>"; };
+		694B3B96189A9A8100465863 /* HelpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HelpViewController.h; sourceTree = "<group>"; };
+		694B3B97189A9A8100465863 /* HelpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HelpViewController.m; sourceTree = "<group>"; };
 		6952127F185F4D9400ACC79E /* specials.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = specials.html; sourceTree = "<group>"; };
 		69521280185F4D9400ACC79E /* SpecialsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpecialsViewController.h; sourceTree = "<group>"; };
 		69521281185F4D9400ACC79E /* SpecialsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpecialsViewController.m; sourceTree = "<group>"; };
@@ -165,9 +168,12 @@
 		69D095C1185CC3D200B6BE29 /* StreetView */ = {
 			isa = PBXGroup;
 			children = (
-				69D095CA185CC3D300B6BE29 /* AppDelegate.h */,
-				69D095CB185CC3D300B6BE29 /* AppDelegate.m */,
 				69D095CD185CC3D300B6BE29 /* Main.storyboard */,
+				69D095D3185CC3D400B6BE29 /* Images.xcassets */,
+				69D095CA185CC3D300B6BE29 /* AppDelegate.h */,
+				694B3B96189A9A8100465863 /* HelpViewController.h */,
+				694B3B97189A9A8100465863 /* HelpViewController.m */,
+				69D095CB185CC3D300B6BE29 /* AppDelegate.m */,
 				69521287185F5A5600ACC79E /* MyMapViewController.h */,
 				69521288185F5A5600ACC79E /* MyMapViewController.m */,
 				69521284185F54E300ACC79E /* MyNavigationController.h */,
@@ -181,7 +187,6 @@
 				69D095D1185CC3D300B6BE29 /* ViewController.m */,
 				6972F1971898494300A8E619 /* plists */,
 				69395CC418994CF9007876FF /* map stuff */,
-				69D095D3185CC3D400B6BE29 /* Images.xcassets */,
 				69D095C2185CC3D200B6BE29 /* Supporting Files */,
 			);
 			path = StreetView;
@@ -333,6 +338,7 @@
 				69D095C8185CC3D300B6BE29 /* main.m in Sources */,
 				69521286185F54E300ACC79E /* MyNavigationController.m in Sources */,
 				69521289185F5A5600ACC79E /* MyMapViewController.m in Sources */,
+				694B3B98189A9A8100465863 /* HelpViewController.m in Sources */,
 				69395CC318994C35007876FF /* MapAnnotations.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -99,13 +99,16 @@
                                     <outlet property="delegate" destination="pcE-Z3-UBx" id="h6Z-Yq-AoB"/>
                                 </connections>
                             </mapView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="gWn-te-3Lo">
+                            <button opaque="NO" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="gWn-te-3Lo">
                                 <rect key="frame" x="256" y="36" width="44" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <state key="normal" image="help">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <segue destination="jYq-DI-SVS" kind="modal" modalTransitionStyle="partialCurl" id="r5i-sw-1Io"/>
+                                </connections>
                             </button>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" barStyle="black" id="n9d-X7-RXF">
                                 <rect key="frame" x="0.0" y="436" width="320" height="44"/>
@@ -153,13 +156,35 @@
                     <nil key="simulatedStatusBarMetrics"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
+                        <outlet property="helpButton" destination="gWn-te-3Lo" id="dEp-xV-YdT"/>
                         <outlet property="myMapView" destination="C9M-jR-QH2" id="x51-5q-UQ2"/>
                         <outlet property="segmentedControl" destination="C9M-jR-QH2" id="GdV-Hq-g6B"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JfJ-qu-aOl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1273" y="805"/>
+            <point key="canvasLocation" x="1315" y="799"/>
+        </scene>
+        <!--Help View Controller-->
+        <scene sceneID="C0i-80-FSx">
+            <objects>
+                <viewController id="jYq-DI-SVS" customClass="HelpViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="eCr-Yo-LRD">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="bottom" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="helpScreen" id="Bnx-Tc-acg">
+                                <rect key="frame" x="0.0" y="240" width="320" height="240"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="fQI-6y-Qhk"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="r0u-3o-9qD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1746" y="810"/>
         </scene>
         <!--Specials View Controller - Special Offers-->
         <scene sceneID="fNX-Qd-tfr">
@@ -215,6 +240,7 @@
         <image name="attractions" width="100" height="120"/>
         <image name="fb" width="44" height="44"/>
         <image name="help" width="34" height="34"/>
+        <image name="helpScreen" width="320" height="240"/>
         <image name="historical" width="100" height="120"/>
         <image name="home" width="44" height="44"/>
         <image name="mail" width="44" height="44"/>

@@ -2,8 +2,8 @@
 //  SpecialsViewController.m
 //  streetView
 //
-//  Created by James Burns on 4/17/12.
-//  Copyright (c) 2012 James Burns [design]. All rights reserved.
+//  Originally created by James Burns on 4/17/12.
+//  Copyright (c) 2014 James Burns [design]. All rights reserved.
 //
 
 #import "SpecialsViewController.h"
