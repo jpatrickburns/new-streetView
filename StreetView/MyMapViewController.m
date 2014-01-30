@@ -23,7 +23,7 @@
 //properties
 @property (weak, nonatomic) IBOutlet UISegmentedControl *segmentedControl;
 @property (strong, nonatomic) NSDictionary *myLocations;
-
+@property (nonatomic) BOOL firstRun;
 
 @end
 
@@ -45,6 +45,8 @@
 
 - (void)viewDidLoad
 {
+    _firstRun=YES;
+    
     [super viewDidLoad];
     //hide nav bar
     [self.navigationController setNavigationBarHidden:YES];
@@ -68,7 +70,7 @@
     [_myMapView setRegion:_region animated:YES];
     
     //need to add quirks.plist when complete!
-    NSArray *myFiles = @[@"historic",@"attractions",@"neighborhoods", @"locations"];
+    NSArray *myFiles = @[@"historic",@"attractions",@"neighborhoods"];
     [self loadUpAnnotationsWithFiles:myFiles];
     
 	// Do any additional setup after loading the view.
@@ -78,11 +80,6 @@
 {
     return YES;
 }
-
-
-
-
-
 
 //Load up a buncha locations
 
@@ -143,9 +140,6 @@
 {
     MKPointAnnotation *selectedAnnotation = view.annotation;
         NSLog(@"Selected mapView annotation %@", selectedAnnotation.title);
-
-    //for sending info to detail
-    // myPinTitle = selectedAnnotation.title;
     
     //Center on selected annotation
     [self.myMapView setCenterCoordinate:selectedAnnotation.coordinate animated:YES];
@@ -160,9 +154,13 @@
 -(void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation
 {
     NSLog(@"In didUpdateUserLocation");
-    _location = userLocation.coordinate;
-    [self centerOnUser:self];
-}
+    _location = userLocation.coordinate;        
+    NSLog(@"Our new location is:%f,%f",_location.latitude,_location.longitude);
+    if (_firstRun) {
+        [self centerOnUser:self];
+        _firstRun=NO;
+    }
+   }
 
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations
 {
@@ -244,10 +242,10 @@
 - (IBAction)centerOnUser:(id)sender
 {
     _region = MKCoordinateRegionMakeWithDistance(_location, 2000, 2000);
-        
-    NSLog(@"Our new location is:%f,%f",_location.latitude,_location.longitude);
 
-    [self.myMapView setRegion:_region animated:YES];
+
+    [_myMapView setRegion:_region animated:YES];
+    [_myMapView deselectAnnotation:[_myMapView.selectedAnnotations objectAtIndex:0] animated:YES];
     
 }
 

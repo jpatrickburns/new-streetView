@@ -15,9 +15,7 @@
 		6952128B185F5B7900ACC79E /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6952128A185F5B7900ACC79E /* MapKit.framework */; };
 		6952128D185F5F8500ACC79E /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6952128C185F5F8500ACC79E /* CoreLocation.framework */; };
 		6972F1921898493700A8E619 /* historic.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6972F18D1898493700A8E619 /* historic.plist */; };
-		6972F1941898493700A8E619 /* locations.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6972F18F1898493700A8E619 /* locations.plist */; };
 		6972F1951898493700A8E619 /* quirk.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6972F1901898493700A8E619 /* quirk.plist */; };
-		6972F1961898493700A8E619 /* recreational.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6972F1911898493700A8E619 /* recreational.plist */; };
 		6972F19A18984B3C00A8E619 /* LoadObjectsFromFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 6972F19918984B3C00A8E619 /* LoadObjectsFromFile.m */; };
 		699DB55E1899AC6700799C2B /* attractions.plist in Resources */ = {isa = PBXBuildFile; fileRef = 699DB55C1899AC6700799C2B /* attractions.plist */; };
 		699DB55F1899AC6700799C2B /* neighborhoods.plist in Resources */ = {isa = PBXBuildFile; fileRef = 699DB55D1899AC6700799C2B /* neighborhoods.plist */; };
@@ -60,9 +58,7 @@
 		6952128A185F5B7900ACC79E /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		6952128C185F5F8500ACC79E /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		6972F18D1898493700A8E619 /* historic.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = historic.plist; sourceTree = "<group>"; };
-		6972F18F1898493700A8E619 /* locations.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = locations.plist; sourceTree = "<group>"; };
 		6972F1901898493700A8E619 /* quirk.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = quirk.plist; sourceTree = "<group>"; };
-		6972F1911898493700A8E619 /* recreational.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = recreational.plist; sourceTree = "<group>"; };
 		6972F19818984B3C00A8E619 /* LoadObjectsFromFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoadObjectsFromFile.h; sourceTree = "<group>"; };
 		6972F19918984B3C00A8E619 /* LoadObjectsFromFile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoadObjectsFromFile.m; sourceTree = "<group>"; };
 		699DB55C1899AC6700799C2B /* attractions.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = attractions.plist; sourceTree = "<group>"; };
@@ -129,9 +125,7 @@
 				699DB55C1899AC6700799C2B /* attractions.plist */,
 				699DB55D1899AC6700799C2B /* neighborhoods.plist */,
 				6972F18D1898493700A8E619 /* historic.plist */,
-				6972F18F1898493700A8E619 /* locations.plist */,
 				6972F1901898493700A8E619 /* quirk.plist */,
-				6972F1911898493700A8E619 /* recreational.plist */,
 			);
 			name = plists;
 			sourceTree = "<group>";
@@ -306,13 +300,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6972F1961898493700A8E619 /* recreational.plist in Resources */,
 				6972F1951898493700A8E619 /* quirk.plist in Resources */,
 				69521282185F4D9400ACC79E /* specials.html in Resources */,
 				69D095D4185CC3D400B6BE29 /* Images.xcassets in Resources */,
 				699DB55F1899AC6700799C2B /* neighborhoods.plist in Resources */,
 				6972F1921898493700A8E619 /* historic.plist in Resources */,
-				6972F1941898493700A8E619 /* locations.plist in Resources */,
 				699DB55E1899AC6700799C2B /* attractions.plist in Resources */,
 				69D095C6185CC3D300B6BE29 /* InfoPlist.strings in Resources */,
 				69D095CF185CC3D300B6BE29 /* Main.storyboard in Resources */,
