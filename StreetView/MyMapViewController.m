@@ -9,7 +9,7 @@
 #import "MyMapViewController.h"
 #import "LoadObjectsFromFile.h"
 #import "MapAnnotations.h"
-
+#import "DetailViewController.h"
 
 
 @interface MyMapViewController ()
@@ -24,15 +24,10 @@
 @property (weak, nonatomic) IBOutlet UISegmentedControl *segmentedControl;
 @property (strong, nonatomic) NSDictionary *myLocations;
 @property (nonatomic) BOOL firstRun;
-@property (weak, nonatomic) IBOutlet UIButton *helpButton;
 
 @end
 
-
-
 @implementation MyMapViewController
-
-
 
 - (id)init
 {
@@ -43,15 +38,12 @@
     return self;
 }
 
-
 - (void)viewDidLoad
 {
     _firstRun=YES;
     
     [super viewDidLoad];
-    //hide nav bar
-    [self.navigationController setNavigationBarHidden:YES];
-
+   
     //init location manager
     // _locationManager= [[CLLocationManager alloc]init];
     
@@ -77,16 +69,17 @@
 	// Do any additional setup after loading the view.
 }
 
+-(void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:YES];
+    _firstRun=YES;
+}
 
 //Load up a buncha locations
 
 - (void)loadUpAnnotationsWithFiles:(NSArray *)fileNames{
     
     NSLog(@"In loadUpAnnotationsWithFiles");
-    
-//    if (_locationManager) {
-//        
-//        NSLog(@"_locationManager exists");
     
         for (NSString *myKind in fileNames) {
             
@@ -97,26 +90,28 @@
             //loop through and make annotations
             
             for (NSString *loc in _myLocations) {
-                NSDictionary *value =[_myLocations objectForKey:loc];
+                NSDictionary *myDict =[_myLocations objectForKey:loc];
                 
                 //create instance of custom class MapAnnotations
                 MapAnnotations *myAnnotation = [[MapAnnotations alloc]
-                                                initWithLatitude:[[value objectForKey:@"latitude"] floatValue]
-                                                longitude:[[value objectForKey:@"longitude"] floatValue]
-                                                title:[value objectForKey:@"title"]
-                                                subtitle:[value objectForKey:@"subtitle"]];
+                                                initWithLatitude:[[myDict objectForKey:@"latitude"] floatValue]
+                                                longitude:[[myDict objectForKey:@"longitude"] floatValue]
+                                                title:[myDict objectForKey:@"title"]
+                                                subtitle:[myDict objectForKey:@"subtitle"]];
                 //add additional properties
                 
-                myAnnotation.kind= myKind;
-                myAnnotation.info=[value objectForKey:@"info"];
-                myAnnotation.pic=[value objectForKey:@"pic"];
-                
+                myAnnotation.kind = myKind;
+                myAnnotation.info = [myDict objectForKey:@"info"];
+                myAnnotation.pic = [myDict objectForKey:@"pic"];
+                myAnnotation.lat = myAnnotation.coordinate.latitude;
+                myAnnotation.lon = myAnnotation.coordinate.longitude;
+
+                //NSLog(@"Annotation pic contains: %@",myAnnotation.pic);
                 [self.myMapView addAnnotation:myAnnotation];
                 //NSLog(@"Annotation contains: %@",myAnnotation.kind);
             }
         }
         //[self updatePinsDistance];
-//    }
 }
 
 
@@ -131,6 +126,8 @@
     // Dispose of any resources that can be recreated.
 }
 
+
+#pragma mark mapview delegate methods
 // mapview delegate methods
 
 -(void)mapView:(MKMapView *)mapView didSelectAnnotationView:(MKAnnotationView *)view
@@ -148,6 +145,8 @@
 
 }
 
+#pragma mark - user location stuff
+
 -(void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation
 {
     NSLog(@"In didUpdateUserLocation");
@@ -159,11 +158,11 @@
         _firstRun=NO;
         
 [UIView animateWithDuration:1
-                      delay:0
+                      delay:1
                     options:UIViewAnimationOptionBeginFromCurrentState
                  animations:^(void)
  {
-                  self.helpButton.alpha=.8;
+     //nothing here
  }
                  completion:^(BOOL finished)
  {
@@ -178,6 +177,8 @@
      NSLog(@"In didUpdateLocations");
  
 }
+
+#pragma mark - annotation stuff
 
 // This gets called every time an annotation appears in the map view
 
@@ -232,6 +233,75 @@
     return nil;
 }
 
+// custom animation of pins
+
+- (void)mapView:(MKMapView *)mapView didAddAnnotationViews:(NSArray *)views{
+    
+    MKAnnotationView *aV;
+    
+    for (aV in views) {
+        
+        // Don't pin drop if annotation is user location
+        if ([aV.annotation isKindOfClass:[MKUserLocation class]]) {
+            continue;
+        }
+        
+        // Check if current annotation is inside visible map rect, else go to next one
+        MKMapPoint point =  MKMapPointForCoordinate(aV.annotation.coordinate);
+        if (!MKMapRectContainsPoint(self.myMapView.visibleMapRect, point)) {
+            continue;
+        }
+        
+        CGRect endFrame = aV.frame;
+        
+        // Move annotation out of view
+        aV.frame = CGRectMake(aV.frame.origin.x, aV.frame.origin.y - self.view.frame.size.height, aV.frame.size.width, aV.frame.size.height);
+        
+        // Animate drop
+        [UIView animateWithDuration:1 delay:0.04*[views indexOfObject:aV] options:UIViewAnimationOptionCurveLinear animations:^{
+            
+            aV.frame = endFrame;
+            
+            // Animate squash
+        }completion:^(BOOL finished){
+            if (finished) {
+                [UIView animateWithDuration:0.05 animations:^{
+                    aV.transform = CGAffineTransformMakeScale(1.0, 0.8);
+                    
+                }completion:^(BOOL finished){
+                    if (finished) {
+                        [UIView animateWithDuration:0.1 animations:^{
+                            aV.transform = CGAffineTransformIdentity;
+                        }];
+                    }
+                }];
+            }
+        }];
+    }
+}
+
+-(void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control
+{
+    NSLog(@"%@",(MapAnnotations *)view.annotation);
+    
+    //trigger segue and send object with data
+    [self performSegueWithIdentifier:@"showDetailFromMap" sender:view.annotation];
+    
+}
+
+// for segue to detail view
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([[segue identifier] isEqualToString:@"showDetailFromMap"])
+    {
+        DetailViewController *dest =[segue destinationViewController];
+        
+        //pass values
+        dest.locInfo = sender;
+    }
+}
+
+#pragma mark - Other methods
 
 - (IBAction)segChanged:(id)sender {
     switch ([sender selectedSegmentIndex]) {
@@ -263,6 +333,8 @@
 - (IBAction)goHome:(id)sender {
     [self.navigationController popViewControllerAnimated:YES];
 }
+
+
 
 
 @end

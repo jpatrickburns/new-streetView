@@ -31,8 +31,6 @@
 {
 
     [_spinner startAnimating];
-    UIColor *purple = [UIColor colorWithRed:108.0f/255.0f green:81.0f/255.0f blue:152.0f/255.0f alpha:1];
-    [[[self navigationController] navigationBar] setTintColor:purple];
         
     NSString *specialURL = @"http://jamesburnsdesign.com/tests/streetLevel/specials.html";
     NSURL *url = [NSURL URLWithString:specialURL];

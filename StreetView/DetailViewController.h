@@ -1,0 +1,25 @@
+//
+//  DetailViewController.h
+//  StreetView
+//
+//  Created by James Burns on 1/30/14.
+//  Copyright (c) 2014 James Burns. All rights reserved.
+//
+
+#import <UIKit/UIKit.h>
+#import <MapKit/MapKit.h>
+
+@interface DetailViewController : UIViewController
+
+
+
+//properties
+
+@property (strong, nonatomic) NSDictionary *locInfo;
+@property (weak, nonatomic) IBOutlet UINavigationItem *myNavItem;
+@property (weak, nonatomic) IBOutlet UIImageView *myPic;
+@property (weak, nonatomic) IBOutlet MKMapView *tinyMap;
+
+@property (weak, nonatomic) IBOutlet UITextView *info;
+
+@end

@@ -9,17 +9,36 @@
 /* Begin PBXBuildFile section */
 		69395CC318994C35007876FF /* MapAnnotations.m in Sources */ = {isa = PBXBuildFile; fileRef = 69395CC218994C35007876FF /* MapAnnotations.m */; };
 		694B3B98189A9A8100465863 /* HelpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 694B3B97189A9A8100465863 /* HelpViewController.m */; };
-		69521282185F4D9400ACC79E /* specials.html in Resources */ = {isa = PBXBuildFile; fileRef = 6952127F185F4D9400ACC79E /* specials.html */; };
 		69521283185F4D9400ACC79E /* SpecialsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 69521281185F4D9400ACC79E /* SpecialsViewController.m */; };
 		69521286185F54E300ACC79E /* MyNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 69521285185F54E300ACC79E /* MyNavigationController.m */; };
 		69521289185F5A5600ACC79E /* MyMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 69521288185F5A5600ACC79E /* MyMapViewController.m */; };
 		6952128B185F5B7900ACC79E /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6952128A185F5B7900ACC79E /* MapKit.framework */; };
 		6952128D185F5F8500ACC79E /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6952128C185F5F8500ACC79E /* CoreLocation.framework */; };
+		69651B03189C3B5100E1E564 /* Atlanta Life.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 69651AF5189C3B5100E1E564 /* Atlanta Life.jpg */; };
+		69651B04189C3B5100E1E564 /* Auburn Street Market.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 69651AF6189C3B5100E1E564 /* Auburn Street Market.jpg */; };
+		69651B05189C3B5100E1E564 /* Big Bethel.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 69651AF7189C3B5100E1E564 /* Big Bethel.jpg */; };
+		69651B06189C3B5100E1E564 /* Carter Museum.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 69651AF8189C3B5100E1E564 /* Carter Museum.jpg */; };
+		69651B07189C3B5100E1E564 /* Ebenezer.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 69651AF9189C3B5100E1E564 /* Ebenezer.jpg */; };
+		69651B08189C3B5100E1E564 /* Fulton Cotton Mill.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 69651AFA189C3B5100E1E564 /* Fulton Cotton Mill.jpg */; };
+		69651B09189C3B5100E1E564 /* Historic 4th Ward Park.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 69651AFB189C3B5100E1E564 /* Historic 4th Ward Park.jpg */; };
+		69651B0A189C3B5100E1E564 /* Inman Park.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 69651AFC189C3B5100E1E564 /* Inman Park.jpg */; };
+		69651B0B189C3B5100E1E564 /* Little 5 points.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 69651AFD189C3B5100E1E564 /* Little 5 points.jpg */; };
+		69651B0C189C3B5100E1E564 /* Majestic.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 69651AFE189C3B5100E1E564 /* Majestic.jpg */; };
+		69651B0D189C3B5100E1E564 /* New Ebenezer.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 69651AFF189C3B5100E1E564 /* New Ebenezer.jpg */; };
+		69651B0E189C3B5100E1E564 /* Oakland.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 69651B00189C3B5100E1E564 /* Oakland.jpg */; };
+		69651B0F189C3B5100E1E564 /* Plaza theater.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 69651B01189C3B5100E1E564 /* Plaza theater.jpg */; };
+		69651B10189C3B5100E1E564 /* Virginia Highland.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 69651B02189C3B5100E1E564 /* Virginia Highland.jpg */; };
+		69651B16189C3B7200E1E564 /* TestImage1.png in Resources */ = {isa = PBXBuildFile; fileRef = 69651B11189C3B7200E1E564 /* TestImage1.png */; };
+		69651B17189C3B7200E1E564 /* TestImage2.png in Resources */ = {isa = PBXBuildFile; fileRef = 69651B12189C3B7200E1E564 /* TestImage2.png */; };
+		69651B18189C3B7200E1E564 /* TestImage3.png in Resources */ = {isa = PBXBuildFile; fileRef = 69651B13189C3B7200E1E564 /* TestImage3.png */; };
+		69651B19189C3B7200E1E564 /* TestImage4.png in Resources */ = {isa = PBXBuildFile; fileRef = 69651B14189C3B7200E1E564 /* TestImage4.png */; };
+		69651B1A189C3B7200E1E564 /* TestImage5.png in Resources */ = {isa = PBXBuildFile; fileRef = 69651B15189C3B7200E1E564 /* TestImage5.png */; };
 		6972F1921898493700A8E619 /* historic.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6972F18D1898493700A8E619 /* historic.plist */; };
 		6972F1951898493700A8E619 /* quirk.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6972F1901898493700A8E619 /* quirk.plist */; };
 		6972F19A18984B3C00A8E619 /* LoadObjectsFromFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 6972F19918984B3C00A8E619 /* LoadObjectsFromFile.m */; };
 		699DB55E1899AC6700799C2B /* attractions.plist in Resources */ = {isa = PBXBuildFile; fileRef = 699DB55C1899AC6700799C2B /* attractions.plist */; };
 		699DB55F1899AC6700799C2B /* neighborhoods.plist in Resources */ = {isa = PBXBuildFile; fileRef = 699DB55D1899AC6700799C2B /* neighborhoods.plist */; };
+		69CC9D8D189AFA6F00A14B2C /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 69CC9D8C189AFA6F00A14B2C /* DetailViewController.m */; };
 		69D095BC185CC3D200B6BE29 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69D095BB185CC3D200B6BE29 /* Foundation.framework */; };
 		69D095BE185CC3D200B6BE29 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69D095BD185CC3D200B6BE29 /* CoreGraphics.framework */; };
 		69D095C0185CC3D200B6BE29 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69D095BF185CC3D200B6BE29 /* UIKit.framework */; };
@@ -51,7 +70,6 @@
 		69395CC218994C35007876FF /* MapAnnotations.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapAnnotations.m; sourceTree = "<group>"; };
 		694B3B96189A9A8100465863 /* HelpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HelpViewController.h; sourceTree = "<group>"; };
 		694B3B97189A9A8100465863 /* HelpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HelpViewController.m; sourceTree = "<group>"; };
-		6952127F185F4D9400ACC79E /* specials.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = specials.html; sourceTree = "<group>"; };
 		69521280185F4D9400ACC79E /* SpecialsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpecialsViewController.h; sourceTree = "<group>"; };
 		69521281185F4D9400ACC79E /* SpecialsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpecialsViewController.m; sourceTree = "<group>"; };
 		69521284185F54E300ACC79E /* MyNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyNavigationController.h; sourceTree = "<group>"; };
@@ -60,12 +78,33 @@
 		69521288185F5A5600ACC79E /* MyMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyMapViewController.m; sourceTree = "<group>"; };
 		6952128A185F5B7900ACC79E /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		6952128C185F5F8500ACC79E /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		69651AF5189C3B5100E1E564 /* Atlanta Life.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "Atlanta Life.jpg"; path = "../../streetView (original)/streetView/pics/Atlanta Life.jpg"; sourceTree = "<group>"; };
+		69651AF6189C3B5100E1E564 /* Auburn Street Market.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "Auburn Street Market.jpg"; path = "../../streetView (original)/streetView/pics/Auburn Street Market.jpg"; sourceTree = "<group>"; };
+		69651AF7189C3B5100E1E564 /* Big Bethel.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "Big Bethel.jpg"; path = "../../streetView (original)/streetView/pics/Big Bethel.jpg"; sourceTree = "<group>"; };
+		69651AF8189C3B5100E1E564 /* Carter Museum.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "Carter Museum.jpg"; path = "../../streetView (original)/streetView/pics/Carter Museum.jpg"; sourceTree = "<group>"; };
+		69651AF9189C3B5100E1E564 /* Ebenezer.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = Ebenezer.jpg; path = "../../streetView (original)/streetView/pics/Ebenezer.jpg"; sourceTree = "<group>"; };
+		69651AFA189C3B5100E1E564 /* Fulton Cotton Mill.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "Fulton Cotton Mill.jpg"; path = "../../streetView (original)/streetView/pics/Fulton Cotton Mill.jpg"; sourceTree = "<group>"; };
+		69651AFB189C3B5100E1E564 /* Historic 4th Ward Park.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "Historic 4th Ward Park.jpg"; path = "../../streetView (original)/streetView/pics/Historic 4th Ward Park.jpg"; sourceTree = "<group>"; };
+		69651AFC189C3B5100E1E564 /* Inman Park.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "Inman Park.jpg"; path = "../../streetView (original)/streetView/pics/Inman Park.jpg"; sourceTree = "<group>"; };
+		69651AFD189C3B5100E1E564 /* Little 5 points.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "Little 5 points.jpg"; path = "../../streetView (original)/streetView/pics/Little 5 points.jpg"; sourceTree = "<group>"; };
+		69651AFE189C3B5100E1E564 /* Majestic.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = Majestic.jpg; path = "../../streetView (original)/streetView/pics/Majestic.jpg"; sourceTree = "<group>"; };
+		69651AFF189C3B5100E1E564 /* New Ebenezer.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "New Ebenezer.jpg"; path = "../../streetView (original)/streetView/pics/New Ebenezer.jpg"; sourceTree = "<group>"; };
+		69651B00189C3B5100E1E564 /* Oakland.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = Oakland.jpg; path = "../../streetView (original)/streetView/pics/Oakland.jpg"; sourceTree = "<group>"; };
+		69651B01189C3B5100E1E564 /* Plaza theater.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "Plaza theater.jpg"; path = "../../streetView (original)/streetView/pics/Plaza theater.jpg"; sourceTree = "<group>"; };
+		69651B02189C3B5100E1E564 /* Virginia Highland.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "Virginia Highland.jpg"; path = "../../streetView (original)/streetView/pics/Virginia Highland.jpg"; sourceTree = "<group>"; };
+		69651B11189C3B7200E1E564 /* TestImage1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TestImage1.png; sourceTree = "<group>"; };
+		69651B12189C3B7200E1E564 /* TestImage2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TestImage2.png; sourceTree = "<group>"; };
+		69651B13189C3B7200E1E564 /* TestImage3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TestImage3.png; sourceTree = "<group>"; };
+		69651B14189C3B7200E1E564 /* TestImage4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TestImage4.png; sourceTree = "<group>"; };
+		69651B15189C3B7200E1E564 /* TestImage5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TestImage5.png; sourceTree = "<group>"; };
 		6972F18D1898493700A8E619 /* historic.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = historic.plist; sourceTree = "<group>"; };
 		6972F1901898493700A8E619 /* quirk.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = quirk.plist; sourceTree = "<group>"; };
 		6972F19818984B3C00A8E619 /* LoadObjectsFromFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoadObjectsFromFile.h; sourceTree = "<group>"; };
 		6972F19918984B3C00A8E619 /* LoadObjectsFromFile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoadObjectsFromFile.m; sourceTree = "<group>"; };
 		699DB55C1899AC6700799C2B /* attractions.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = attractions.plist; sourceTree = "<group>"; };
 		699DB55D1899AC6700799C2B /* neighborhoods.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = neighborhoods.plist; sourceTree = "<group>"; };
+		69CC9D8B189AFA6F00A14B2C /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
+		69CC9D8C189AFA6F00A14B2C /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		69D095B8185CC3D200B6BE29 /* StreetView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StreetView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		69D095BB185CC3D200B6BE29 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		69D095BD185CC3D200B6BE29 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -122,6 +161,32 @@
 			name = "map stuff";
 			sourceTree = "<group>";
 		};
+		69651AF4189C3B2300E1E564 /* pics */ = {
+			isa = PBXGroup;
+			children = (
+				69651B11189C3B7200E1E564 /* TestImage1.png */,
+				69651B12189C3B7200E1E564 /* TestImage2.png */,
+				69651B13189C3B7200E1E564 /* TestImage3.png */,
+				69651B14189C3B7200E1E564 /* TestImage4.png */,
+				69651B15189C3B7200E1E564 /* TestImage5.png */,
+				69651AF5189C3B5100E1E564 /* Atlanta Life.jpg */,
+				69651AF6189C3B5100E1E564 /* Auburn Street Market.jpg */,
+				69651AF7189C3B5100E1E564 /* Big Bethel.jpg */,
+				69651AF8189C3B5100E1E564 /* Carter Museum.jpg */,
+				69651AF9189C3B5100E1E564 /* Ebenezer.jpg */,
+				69651AFA189C3B5100E1E564 /* Fulton Cotton Mill.jpg */,
+				69651AFB189C3B5100E1E564 /* Historic 4th Ward Park.jpg */,
+				69651AFC189C3B5100E1E564 /* Inman Park.jpg */,
+				69651AFD189C3B5100E1E564 /* Little 5 points.jpg */,
+				69651AFE189C3B5100E1E564 /* Majestic.jpg */,
+				69651AFF189C3B5100E1E564 /* New Ebenezer.jpg */,
+				69651B00189C3B5100E1E564 /* Oakland.jpg */,
+				69651B01189C3B5100E1E564 /* Plaza theater.jpg */,
+				69651B02189C3B5100E1E564 /* Virginia Highland.jpg */,
+			);
+			name = pics;
+			sourceTree = "<group>";
+		};
 		6972F1971898494300A8E619 /* plists */ = {
 			isa = PBXGroup;
 			children = (
@@ -171,6 +236,7 @@
 				69D095CD185CC3D300B6BE29 /* Main.storyboard */,
 				69D095D3185CC3D400B6BE29 /* Images.xcassets */,
 				69D095CA185CC3D300B6BE29 /* AppDelegate.h */,
+				69651AF4189C3B2300E1E564 /* pics */,
 				694B3B96189A9A8100465863 /* HelpViewController.h */,
 				694B3B97189A9A8100465863 /* HelpViewController.m */,
 				69D095CB185CC3D300B6BE29 /* AppDelegate.m */,
@@ -180,7 +246,8 @@
 				69521285185F54E300ACC79E /* MyNavigationController.m */,
 				6972F19818984B3C00A8E619 /* LoadObjectsFromFile.h */,
 				6972F19918984B3C00A8E619 /* LoadObjectsFromFile.m */,
-				6952127F185F4D9400ACC79E /* specials.html */,
+				69CC9D8B189AFA6F00A14B2C /* DetailViewController.h */,
+				69CC9D8C189AFA6F00A14B2C /* DetailViewController.m */,
 				69521280185F4D9400ACC79E /* SpecialsViewController.h */,
 				69521281185F4D9400ACC79E /* SpecialsViewController.m */,
 				69D095D0185CC3D300B6BE29 /* ViewController.h */,
@@ -306,13 +373,31 @@
 			buildActionMask = 2147483647;
 			files = (
 				6972F1951898493700A8E619 /* quirk.plist in Resources */,
-				69521282185F4D9400ACC79E /* specials.html in Resources */,
+				69651B0A189C3B5100E1E564 /* Inman Park.jpg in Resources */,
+				69651B0B189C3B5100E1E564 /* Little 5 points.jpg in Resources */,
+				69651B1A189C3B7200E1E564 /* TestImage5.png in Resources */,
 				69D095D4185CC3D400B6BE29 /* Images.xcassets in Resources */,
+				69651B17189C3B7200E1E564 /* TestImage2.png in Resources */,
+				69651B19189C3B7200E1E564 /* TestImage4.png in Resources */,
+				69651B09189C3B5100E1E564 /* Historic 4th Ward Park.jpg in Resources */,
+				69651B04189C3B5100E1E564 /* Auburn Street Market.jpg in Resources */,
+				69651B18189C3B7200E1E564 /* TestImage3.png in Resources */,
+				69651B08189C3B5100E1E564 /* Fulton Cotton Mill.jpg in Resources */,
 				699DB55F1899AC6700799C2B /* neighborhoods.plist in Resources */,
+				69651B0E189C3B5100E1E564 /* Oakland.jpg in Resources */,
+				69651B0F189C3B5100E1E564 /* Plaza theater.jpg in Resources */,
+				69651B06189C3B5100E1E564 /* Carter Museum.jpg in Resources */,
 				6972F1921898493700A8E619 /* historic.plist in Resources */,
+				69651B05189C3B5100E1E564 /* Big Bethel.jpg in Resources */,
+				69651B07189C3B5100E1E564 /* Ebenezer.jpg in Resources */,
+				69651B03189C3B5100E1E564 /* Atlanta Life.jpg in Resources */,
 				699DB55E1899AC6700799C2B /* attractions.plist in Resources */,
+				69651B10189C3B5100E1E564 /* Virginia Highland.jpg in Resources */,
 				69D095C6185CC3D300B6BE29 /* InfoPlist.strings in Resources */,
+				69651B0C189C3B5100E1E564 /* Majestic.jpg in Resources */,
 				69D095CF185CC3D300B6BE29 /* Main.storyboard in Resources */,
+				69651B0D189C3B5100E1E564 /* New Ebenezer.jpg in Resources */,
+				69651B16189C3B7200E1E564 /* TestImage1.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -336,6 +421,7 @@
 				69D095CC185CC3D300B6BE29 /* AppDelegate.m in Sources */,
 				69521283185F4D9400ACC79E /* SpecialsViewController.m in Sources */,
 				69D095C8185CC3D300B6BE29 /* main.m in Sources */,
+				69CC9D8D189AFA6F00A14B2C /* DetailViewController.m in Sources */,
 				69521286185F54E300ACC79E /* MyNavigationController.m in Sources */,
 				69521289185F5A5600ACC79E /* MyMapViewController.m in Sources */,
 				694B3B98189A9A8100465863 /* HelpViewController.m in Sources */,
