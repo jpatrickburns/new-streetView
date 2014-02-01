@@ -37,14 +37,17 @@
     [_myNavItem setTitle:_locInfo.title];
     _info.text = _locInfo.info;
     _myPic.image=[UIImage imageNamed:_locInfo.pic];
-    
+    _myPic.layer.cornerRadius=10;
+    _myPic.layer.borderWidth=1;
     //NSLog(@"The image name is:%@",[_locInfo valueForKey:@"pic"]);
     
     float lon = _locInfo.coordinate.longitude;
     float lat = _locInfo.coordinate.latitude;
-
+    _tinyMap.layer.cornerRadius=50;
+    _tinyMap.layer.borderWidth=1;
     CLLocationCoordinate2D myCoordinates= CLLocationCoordinate2DMake(lat, lon);
      _tinyMap.region=MKCoordinateRegionMakeWithDistance(myCoordinates, 1000, 1000);
+    
     
 }
 

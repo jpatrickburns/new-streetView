@@ -13,7 +13,7 @@
                         <viewControllerLayoutGuide type="bottom" id="dJr-oz-JAm"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="241" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="top" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="tailTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zvR-N1-feX">
@@ -41,7 +41,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="top" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="tailTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JK0-fF-QtI">
-                                <rect key="frame" x="46" y="205" width="100" height="120"/>
+                                <rect key="frame" x="46" y="249" width="100" height="120"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <inset key="titleEdgeInsets" minX="0.0" minY="6" maxX="0.0" maxY="0.0"/>
@@ -53,7 +53,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="top" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="tailTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cCQ-T3-IQF">
-                                <rect key="frame" x="174" y="205" width="100" height="120"/>
+                                <rect key="frame" x="174" y="249" width="100" height="120"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="sn3-eE-3SJ"/>
@@ -68,7 +68,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="top" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="tailTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ox1-EB-Z5S">
-                                <rect key="frame" x="46" y="335" width="100" height="120"/>
+                                <rect key="frame" x="46" y="423" width="100" height="120"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <inset key="titleEdgeInsets" minX="0.0" minY="6" maxX="0.0" maxY="0.0"/>
@@ -81,7 +81,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="top" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="tailTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yr6-Ag-nWL">
-                                <rect key="frame" x="174" y="335" width="100" height="120"/>
+                                <rect key="frame" x="174" y="423" width="100" height="120"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <inset key="titleEdgeInsets" minX="0.0" minY="6" maxX="0.0" maxY="0.0"/>
@@ -123,18 +123,18 @@
                         <viewControllerLayoutGuide type="bottom" id="cAX-rk-by7"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="gP8-Tf-UYm">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="C9M-jR-QH2">
-                                <rect key="frame" x="0.0" y="-65" width="321" height="545"/>
+                                <rect key="frame" x="0.0" y="-65" width="321" height="633"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <connections>
                                     <outlet property="delegate" destination="pcE-Z3-UBx" id="h6Z-Yq-AoB"/>
                                 </connections>
                             </mapView>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" barStyle="black" translatesAutoresizingMaskIntoConstraints="NO" id="n9d-X7-RXF">
-                                <rect key="frame" x="0.0" y="436" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="524" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <items>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="BQj-Ur-mnR"/>
@@ -210,19 +210,20 @@
                         <viewControllerLayoutGuide type="bottom" id="BMN-Az-Tt1"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="eCr-Yo-LRD">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="bottom" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="map-help-screen" translatesAutoresizingMaskIntoConstraints="NO" id="Bnx-Tc-acg">
-                                <rect key="frame" x="0.0" y="240" width="320" height="240"/>
+                            <imageView userInteractionEnabled="NO" contentMode="bottom" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mapHelpScreen" translatesAutoresizingMaskIntoConstraints="NO" id="Bnx-Tc-acg">
+                                <rect key="frame" x="0.0" y="328" width="320" height="240"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="320" id="7hv-6U-bcS"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="320" id="eX8-Qs-6Zj"/>
                                     <constraint firstAttribute="height" constant="240" id="goJ-pv-zDu"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="Iyb-ZB-LOU">
-                                <rect key="frame" x="20" y="269" width="280" height="65"/>
+                                <rect key="frame" x="20" y="357" width="280" height="65"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="280" id="83T-YR-ffQ"/>
@@ -236,11 +237,12 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="BMN-Az-Tt1" firstAttribute="top" secondItem="Bnx-Tc-acg" secondAttribute="bottom" id="0Pd-mj-sy4"/>
                             <constraint firstItem="Iyb-ZB-LOU" firstAttribute="leading" secondItem="eCr-Yo-LRD" secondAttribute="leading" constant="20" symbolic="YES" id="1Bw-2W-ZjJ"/>
                             <constraint firstAttribute="trailing" secondItem="Iyb-ZB-LOU" secondAttribute="trailing" constant="20" symbolic="YES" id="OjF-SK-tHa"/>
                             <constraint firstItem="BMN-Az-Tt1" firstAttribute="top" secondItem="Bnx-Tc-acg" secondAttribute="bottom" id="TYJ-4P-7ru"/>
-                            <constraint firstAttribute="centerX" secondItem="Bnx-Tc-acg" secondAttribute="centerX" id="U0X-HL-xkO"/>
                             <constraint firstItem="BMN-Az-Tt1" firstAttribute="top" secondItem="Bnx-Tc-acg" secondAttribute="bottom" id="ep9-5p-Brd"/>
+                            <constraint firstItem="Bnx-Tc-acg" firstAttribute="leading" secondItem="eCr-Yo-LRD" secondAttribute="leading" id="j54-wR-Gk0"/>
                             <constraint firstItem="BMN-Az-Tt1" firstAttribute="top" secondItem="Iyb-ZB-LOU" secondAttribute="bottom" constant="146" id="skJ-gD-ysn"/>
                         </constraints>
                     </view>
@@ -248,7 +250,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="r0u-3o-9qD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1746" y="810"/>
+            <point key="canvasLocation" x="1808" y="887"/>
         </scene>
         <!--Specials View Controller - Special Offers-->
         <scene sceneID="fNX-Qd-tfr">
@@ -259,16 +261,16 @@
                         <viewControllerLayoutGuide type="bottom" id="KBv-pO-5qb"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="bjR-vN-n71">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6gw-Zz-sZF">
-                                <rect key="frame" x="0.0" y="-2" width="320" height="482"/>
+                                <rect key="frame" x="0.0" y="-2" width="320" height="570"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </webView>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="oRj-k4-8bV">
-                                <rect key="frame" x="150" y="307" width="20" height="20"/>
+                                <rect key="frame" x="150" y="395" width="20" height="20"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </activityIndicatorView>
                         </subviews>
@@ -301,53 +303,59 @@
                         <viewControllerLayoutGuide type="bottom" id="T4i-aj-uio"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="tpN-5x-e89">
-                        <rect key="frame" x="0.0" y="74" width="320" height="406"/>
+                        <rect key="frame" x="0.0" y="74" width="320" height="494"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" mapType="standard" zoomEnabled="NO" scrollEnabled="NO" rotateEnabled="NO" pitchEnabled="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zRP-b3-zPH">
-                                <rect key="frame" x="0.0" y="0.0" width="120" height="130"/>
+                                <rect key="frame" x="11" y="25" width="102" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="130" id="1Ho-bM-hjG"/>
-                                    <constraint firstAttribute="width" constant="120" id="gyy-Yb-wio"/>
+                                    <constraint firstAttribute="height" constant="100" id="1Ho-bM-hjG"/>
+                                    <constraint firstAttribute="width" constant="102" id="gyy-Yb-wio"/>
                                 </constraints>
                             </mapView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="top" bounces="NO" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" delaysContentTouches="NO" canCancelContentTouches="NO" bouncesZoom="NO" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VQf-Wh-f6r">
-                                <rect key="frame" x="20" y="138" width="280" height="248"/>
+                                <rect key="frame" x="20" y="186" width="280" height="288"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="I30-Ac-mX3">
-                                <rect key="frame" x="120" y="0.0" width="200" height="130"/>
+                                <rect key="frame" x="128" y="10" width="180" height="130"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="200" id="m0B-x1-NBU"/>
+                                    <constraint firstAttribute="width" constant="180" id="m0B-x1-NBU"/>
                                     <constraint firstAttribute="height" constant="130" id="zfa-Lm-qLP"/>
                                 </constraints>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mapPoint" translatesAutoresizingMaskIntoConstraints="NO" id="Xoj-W5-aoc">
-                                <rect key="frame" x="40" y="43" width="44" height="44"/>
+                                <rect key="frame" x="51" y="64" width="22" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="44" id="NRn-tB-pJt"/>
-                                    <constraint firstAttribute="height" constant="44" id="vci-JW-1wc"/>
+                                    <constraint firstAttribute="height" constant="22" id="Pz5-hl-eb5"/>
+                                    <constraint firstAttribute="width" constant="22" id="WfK-bM-CXr"/>
                                 </constraints>
                             </imageView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Directions" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TzO-ep-nyw">
+                                <rect key="frame" x="24" y="133" width="77" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="italicSystem" pointSize="12"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="I30-Ac-mX3" firstAttribute="leading" secondItem="Xoj-W5-aoc" secondAttribute="trailing" constant="36" id="22c-UF-3MF"/>
                             <constraint firstAttribute="trailing" secondItem="VQf-Wh-f6r" secondAttribute="trailing" constant="20" symbolic="YES" id="6sV-3S-P8u"/>
                             <constraint firstItem="VQf-Wh-f6r" firstAttribute="leading" secondItem="tpN-5x-e89" secondAttribute="leading" constant="20" symbolic="YES" id="B7V-x3-BTt"/>
                             <constraint firstAttribute="bottom" secondItem="VQf-Wh-f6r" secondAttribute="bottom" constant="20" symbolic="YES" id="CZs-xc-RcP"/>
-                            <constraint firstItem="zRP-b3-zPH" firstAttribute="centerY" secondItem="Xoj-W5-aoc" secondAttribute="centerY" id="Lca-p4-A9I"/>
-                            <constraint firstItem="zRP-b3-zPH" firstAttribute="top" secondItem="I30-Ac-mX3" secondAttribute="top" id="MAf-w3-xZC"/>
-                            <constraint firstItem="VQf-Wh-f6r" firstAttribute="top" secondItem="zRP-b3-zPH" secondAttribute="bottom" constant="8" symbolic="YES" id="WPl-Uw-bAi"/>
-                            <constraint firstItem="I30-Ac-mX3" firstAttribute="leading" secondItem="zRP-b3-zPH" secondAttribute="trailing" id="dg8-Av-qKs"/>
-                            <constraint firstItem="zRP-b3-zPH" firstAttribute="top" secondItem="tpN-5x-e89" secondAttribute="top" id="f1f-X4-8Aq"/>
-                            <constraint firstItem="zRP-b3-zPH" firstAttribute="leading" secondItem="tpN-5x-e89" secondAttribute="leading" id="nev-q8-Tag"/>
+                            <constraint firstItem="Xoj-W5-aoc" firstAttribute="leading" secondItem="zRP-b3-zPH" secondAttribute="trailing" constant="-62" id="E6j-3P-j2b"/>
+                            <constraint firstItem="zRP-b3-zPH" firstAttribute="top" secondItem="I30-Ac-mX3" secondAttribute="top" constant="15" id="MAf-w3-xZC"/>
+                            <constraint firstItem="Xoj-W5-aoc" firstAttribute="top" secondItem="zRP-b3-zPH" secondAttribute="bottom" constant="-61" id="T2L-Dp-O2m"/>
+                            <constraint firstItem="VQf-Wh-f6r" firstAttribute="top" secondItem="zRP-b3-zPH" secondAttribute="bottom" constant="61" id="WPl-Uw-bAi"/>
+                            <constraint firstItem="I30-Ac-mX3" firstAttribute="leading" secondItem="zRP-b3-zPH" secondAttribute="trailing" constant="15" id="dg8-Av-qKs"/>
+                            <constraint firstItem="zRP-b3-zPH" firstAttribute="top" secondItem="tpN-5x-e89" secondAttribute="top" constant="25" id="f1f-X4-8Aq"/>
+                            <constraint firstItem="zRP-b3-zPH" firstAttribute="leading" secondItem="tpN-5x-e89" secondAttribute="leading" constant="11" id="nev-q8-Tag"/>
                         </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
@@ -395,7 +403,7 @@
         <image name="help" width="44" height="44"/>
         <image name="historical" width="100" height="120"/>
         <image name="mail" width="44" height="44"/>
-        <image name="map-help-screen" width="320" height="240"/>
+        <image name="mapHelpScreen" width="320" height="240"/>
         <image name="mapPoint" width="44" height="44"/>
         <image name="neighborhood" width="100" height="120"/>
         <image name="special" width="100" height="120"/>
@@ -406,6 +414,6 @@
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
-        <simulatedScreenMetrics key="destination"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
 </document>
