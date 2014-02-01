@@ -103,8 +103,7 @@
                 myAnnotation.kind = myKind;
                 myAnnotation.info = [myDict objectForKey:@"info"];
                 myAnnotation.pic = [myDict objectForKey:@"pic"];
-                myAnnotation.lat = myAnnotation.coordinate.latitude;
-                myAnnotation.lon = myAnnotation.coordinate.longitude;
+
 
                 //NSLog(@"Annotation pic contains: %@",myAnnotation.pic);
                 [self.myMapView addAnnotation:myAnnotation];

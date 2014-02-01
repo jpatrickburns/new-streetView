@@ -305,11 +305,11 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" mapType="standard" zoomEnabled="NO" scrollEnabled="NO" rotateEnabled="NO" pitchEnabled="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zRP-b3-zPH">
-                                <rect key="frame" x="0.0" y="0.0" width="125" height="130"/>
+                                <rect key="frame" x="0.0" y="0.0" width="120" height="130"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="130" id="1Ho-bM-hjG"/>
-                                    <constraint firstAttribute="width" constant="125" id="gyy-Yb-wio"/>
+                                    <constraint firstAttribute="width" constant="120" id="gyy-Yb-wio"/>
                                 </constraints>
                             </mapView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="top" bounces="NO" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" delaysContentTouches="NO" canCancelContentTouches="NO" bouncesZoom="NO" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VQf-Wh-f6r">
@@ -319,12 +319,12 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="I30-Ac-mX3">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="I30-Ac-mX3">
                                 <rect key="frame" x="120" y="0.0" width="200" height="130"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="200" id="5Cs-f9-S1Q"/>
-                                    <constraint firstAttribute="height" constant="130" id="Z84-ib-TNt"/>
+                                    <constraint firstAttribute="width" constant="200" id="m0B-x1-NBU"/>
+                                    <constraint firstAttribute="height" constant="130" id="zfa-Lm-qLP"/>
                                 </constraints>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mapPoint" translatesAutoresizingMaskIntoConstraints="NO" id="Xoj-W5-aoc">
@@ -338,16 +338,16 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Xoj-W5-aoc" firstAttribute="centerX" secondItem="zRP-b3-zPH" secondAttribute="centerX" id="2C1-8g-3Pe"/>
+                            <constraint firstItem="I30-Ac-mX3" firstAttribute="leading" secondItem="Xoj-W5-aoc" secondAttribute="trailing" constant="36" id="22c-UF-3MF"/>
                             <constraint firstAttribute="trailing" secondItem="VQf-Wh-f6r" secondAttribute="trailing" constant="20" symbolic="YES" id="6sV-3S-P8u"/>
-                            <constraint firstItem="zRP-b3-zPH" firstAttribute="leading" secondItem="tpN-5x-e89" secondAttribute="leading" id="97H-EQ-txp"/>
-                            <constraint firstItem="Xoj-W5-aoc" firstAttribute="centerY" secondItem="zRP-b3-zPH" secondAttribute="centerY" id="Avu-et-0Tv"/>
                             <constraint firstItem="VQf-Wh-f6r" firstAttribute="leading" secondItem="tpN-5x-e89" secondAttribute="leading" constant="20" symbolic="YES" id="B7V-x3-BTt"/>
                             <constraint firstAttribute="bottom" secondItem="VQf-Wh-f6r" secondAttribute="bottom" constant="20" symbolic="YES" id="CZs-xc-RcP"/>
-                            <constraint firstItem="VQf-Wh-f6r" firstAttribute="top" secondItem="zRP-b3-zPH" secondAttribute="bottom" constant="8" id="FGC-Pr-hOH"/>
-                            <constraint firstItem="I30-Ac-mX3" firstAttribute="leading" secondItem="tpN-5x-e89" secondAttribute="leading" constant="120" id="kG5-Tt-JhA"/>
-                            <constraint firstItem="zRP-b3-zPH" firstAttribute="top" secondItem="tpN-5x-e89" secondAttribute="top" id="kzJ-Mh-2IG"/>
-                            <constraint firstItem="4g6-kr-MGR" firstAttribute="top" secondItem="I30-Ac-mX3" secondAttribute="bottom" constant="-130" id="wZL-D9-xfo"/>
+                            <constraint firstItem="zRP-b3-zPH" firstAttribute="centerY" secondItem="Xoj-W5-aoc" secondAttribute="centerY" id="Lca-p4-A9I"/>
+                            <constraint firstItem="zRP-b3-zPH" firstAttribute="top" secondItem="I30-Ac-mX3" secondAttribute="top" id="MAf-w3-xZC"/>
+                            <constraint firstItem="VQf-Wh-f6r" firstAttribute="top" secondItem="zRP-b3-zPH" secondAttribute="bottom" constant="8" symbolic="YES" id="WPl-Uw-bAi"/>
+                            <constraint firstItem="I30-Ac-mX3" firstAttribute="leading" secondItem="zRP-b3-zPH" secondAttribute="trailing" id="dg8-Av-qKs"/>
+                            <constraint firstItem="zRP-b3-zPH" firstAttribute="top" secondItem="tpN-5x-e89" secondAttribute="top" id="f1f-X4-8Aq"/>
+                            <constraint firstItem="zRP-b3-zPH" firstAttribute="leading" secondItem="tpN-5x-e89" secondAttribute="leading" id="nev-q8-Tag"/>
                         </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>

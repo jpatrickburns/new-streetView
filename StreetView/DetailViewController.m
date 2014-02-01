@@ -16,11 +16,12 @@
 
 @implementation DetailViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+
+- (id)init
 {
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    self = [super init];
     if (self) {
-        // Custom initialization
+        //
     }
     return self;
 }
@@ -30,13 +31,17 @@
     [super viewDidLoad];
     
     [self.navigationController setNavigationBarHidden:NO animated:YES];
-	// Load up text from passed dictionary.
-    [_myNavItem setTitle:[_locInfo valueForKey:@"title"]];
-    _info.text = [_locInfo valueForKey:@"info"];
-    _myPic.image=[UIImage imageNamed:[_locInfo valueForKey:@"pic"]];
-    NSLog(@"The image name is:%@",[_locInfo valueForKey:@"pic"]);
-    float lon = [[_locInfo valueForKey:@"lon"] floatValue];
-    float lat = [[_locInfo valueForKey:@"lat"] floatValue];
+    
+	// Load up text from passed MapAnnotation.
+    
+    [_myNavItem setTitle:_locInfo.title];
+    _info.text = _locInfo.info;
+    _myPic.image=[UIImage imageNamed:_locInfo.pic];
+    
+    //NSLog(@"The image name is:%@",[_locInfo valueForKey:@"pic"]);
+    
+    float lon = _locInfo.coordinate.longitude;
+    float lat = _locInfo.coordinate.latitude;
 
     CLLocationCoordinate2D myCoordinates= CLLocationCoordinate2DMake(lat, lon);
      _tinyMap.region=MKCoordinateRegionMakeWithDistance(myCoordinates, 1000, 1000);

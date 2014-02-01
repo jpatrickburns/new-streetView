@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <MapKit/MapKit.h>
+#import "MapAnnotations.h"
 
 @interface DetailViewController : UIViewController
 
@@ -15,7 +16,7 @@
 
 //properties
 
-@property (strong, nonatomic) NSDictionary *locInfo;
+@property (strong, nonatomic) MapAnnotations *locInfo;
 @property (weak, nonatomic) IBOutlet UINavigationItem *myNavItem;
 @property (weak, nonatomic) IBOutlet UIImageView *myPic;
 @property (weak, nonatomic) IBOutlet MKMapView *tinyMap;

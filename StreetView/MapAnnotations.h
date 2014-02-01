@@ -16,8 +16,10 @@
 @property (nonatomic,copy) NSString *info;
 @property (nonatomic,copy) NSString *pic;
 @property (nonatomic,copy) NSString *kind;
-@property (nonatomic) float lat;
-@property (nonatomic) float lon;
+
+// Don't need these if we have coordinate
+//@property (nonatomic) float lat;
+//@property (nonatomic) float lon;
 
 
 
