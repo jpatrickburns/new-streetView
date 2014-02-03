@@ -44,27 +44,45 @@
     _firstRun=YES;
     
     [super viewDidLoad];
-   
-    //init location manager
-    // _locationManager= [[CLLocationManager alloc]init];
     
+    NSLog(@"Authorization status is %u",[CLLocationManager authorizationStatus]);
+   
+    if ([CLLocationManager locationServicesEnabled] && [CLLocationManager authorizationStatus]==3) {
+        
         //set location manager's delegate
-    _locationManager.delegate=self;
-    
-    //show user location
-    self.myMapView.showsUserLocation=YES;
-    
-    //tell location manager to monitor changes
-    [_locationManager startMonitoringSignificantLocationChanges];
-   
-   //    start with the center of Atlanta
-    CLLocationCoordinate2D center=CLLocationCoordinate2DMake(33.748995,-84.387982);
-    _region=MKCoordinateRegionMakeWithDistance(center, 50000, 50000);
-    
-    [_myMapView setRegion:_region animated:YES];
-    
+        _locationManager.delegate=self;
+        
+        //show user location
+        self.myMapView.showsUserLocation=YES;
+        
+        //tell location manager to monitor changes
+        [_locationManager startMonitoringSignificantLocationChanges];
+        
+        //    start with the center of Atlanta
+        CLLocationCoordinate2D center=CLLocationCoordinate2DMake(33.748995,-84.387982);
+        _region=MKCoordinateRegionMakeWithDistance(center, 50000, 50000);
+        
+        [_myMapView setRegion:_region animated:YES];
+
+    }else{
+
+    UIAlertView *alert=[[UIAlertView alloc]initWithTitle:@"Sorry..."
+                                                 message:@"Location Services aren’t enabled for this app. Please change in settings."
+                                                delegate:self cancelButtonTitle:@"O.K."
+                                       otherButtonTitles:nil, nil];
+    [alert show];
+    }
     
 	// Do any additional setup after loading the view.
+}
+
+-(void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex
+{
+    
+    NSLog(@"Dismissed alert.");
+    
+[self.navigationController popViewControllerAnimated:YES];
+
 }
 
 -(void)viewWillAppear:(BOOL)animated

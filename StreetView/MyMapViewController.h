@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <MapKit/MapKit.h>
 
-@interface MyMapViewController : UIViewController <MKMapViewDelegate, CLLocationManagerDelegate>
+@interface MyMapViewController : UIViewController <MKMapViewDelegate, CLLocationManagerDelegate, UIAlertViewDelegate>
 
 @property (strong, nonatomic) IBOutlet MKMapView *myMapView;
 @property (strong, nonatomic) CLLocationManager *locationManager;
