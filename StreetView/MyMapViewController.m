@@ -88,7 +88,7 @@
 -(void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:YES];
-    _firstRun=YES;
+    // _firstRun=YES;
 }
 
 //Load up a buncha locations
@@ -118,9 +118,6 @@
                 myAnnotation.kind = myKind;
                 myAnnotation.info = [myDict objectForKey:@"info"];
                 myAnnotation.pic = [myDict objectForKey:@"pic"];
-                myAnnotation.distance=[self updatePinDistance:myAnnotation.coordinate];
-                myAnnotation.subtitle=[NSString stringWithFormat:@"%.2f miles away",myAnnotation.distance];
-                //NSLog(@"Annotation pic contains: %@",myAnnotation.pic);
                 [self.myMapView addAnnotation:myAnnotation];
                 //NSLog(@"Annotation contains: %@",myAnnotation.kind);
             }
@@ -134,7 +131,7 @@
     return YES;
 }
 
-- (void)didReceiveMemoryWarningloc
+- (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -146,11 +143,12 @@
 
 -(void)mapView:(MKMapView *)mapView didSelectAnnotationView:(MKAnnotationView *)view
 {
-    MKPointAnnotation *selectedAnnotation = view.annotation;
+    MapAnnotations *selectedAnnotation = view.annotation;
         NSLog(@"Selected mapView annotation %@", selectedAnnotation.title);
     
     // figure out distance to user
-    [self updatePinDistance:selectedAnnotation.coordinate];
+    selectedAnnotation.distance = [self updatePinDistance:selectedAnnotation.coordinate];
+    selectedAnnotation.subtitle = [NSString stringWithFormat:@"%.2f miles away",selectedAnnotation.distance];
     
     
     //Center on selected annotation
