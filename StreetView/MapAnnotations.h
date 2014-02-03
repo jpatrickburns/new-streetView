@@ -16,6 +16,7 @@
 @property (nonatomic,copy) NSString *info;
 @property (nonatomic,copy) NSString *pic;
 @property (nonatomic,copy) NSString *kind;
+@property (nonatomic) float distance;
 
 // Don't need these if we have coordinate
 //@property (nonatomic) float lat;
@@ -25,7 +26,5 @@
 
 - (id)initWithLatitude:(float)lat
              longitude:(float)lon
-                 title:(NSString *)title
-              subtitle:(NSString *)subtitle;
-
+                 title:(NSString *)title;
 @end

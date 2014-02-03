@@ -19,6 +19,7 @@
 - (IBAction)segChanged:(id)sender;
 - (IBAction)goHome:(id)sender;
 - (void)loadUpAnnotationsWithFiles:(NSArray *)fileNames;
+- (float)updatePinDistance:(CLLocationCoordinate2D)pinLoc;
 
 //properties
 @property (weak, nonatomic) IBOutlet UISegmentedControl *segmentedControl;
@@ -62,9 +63,6 @@
     
     [_myMapView setRegion:_region animated:YES];
     
-    //need to add quirks.plist when complete!
-    NSArray *myFiles = @[@"historic",@"attractions",@"neighborhoods"];
-    [self loadUpAnnotationsWithFiles:myFiles];
     
 	// Do any additional setup after loading the view.
 }
@@ -96,21 +94,20 @@
                 MapAnnotations *myAnnotation = [[MapAnnotations alloc]
                                                 initWithLatitude:[[myDict objectForKey:@"latitude"] floatValue]
                                                 longitude:[[myDict objectForKey:@"longitude"] floatValue]
-                                                title:[myDict objectForKey:@"title"]
-                                                subtitle:[myDict objectForKey:@"subtitle"]];
+                                                title:[myDict objectForKey:@"title"]];
                 //add additional properties
                 
                 myAnnotation.kind = myKind;
                 myAnnotation.info = [myDict objectForKey:@"info"];
                 myAnnotation.pic = [myDict objectForKey:@"pic"];
-
-
+                myAnnotation.distance=[self updatePinDistance:myAnnotation.coordinate];
+                myAnnotation.subtitle=[NSString stringWithFormat:@"%f miles away",myAnnotation.distance];
                 //NSLog(@"Annotation pic contains: %@",myAnnotation.pic);
                 [self.myMapView addAnnotation:myAnnotation];
                 //NSLog(@"Annotation contains: %@",myAnnotation.kind);
             }
         }
-        //[self updatePinsDistance];
+
 }
 
 
@@ -153,9 +150,11 @@
     NSLog(@"Our new location is:%f,%f",_location.latitude,_location.longitude);
     
     if (_firstRun) {
-        
+        //need to add quirks.plist when complete!
+        NSArray *myFiles = @[@"historic",@"attractions",@"neighborhoods"];
+        [self loadUpAnnotationsWithFiles:myFiles];
         _firstRun=NO;
-        
+        [self centerOnUser:self];
 [UIView animateWithDuration:1
                       delay:1
                     options:UIViewAnimationOptionBeginFromCurrentState
@@ -165,7 +164,7 @@
  }
                  completion:^(BOOL finished)
  {
-     [self centerOnUser:self];
+     
  }];
          }
     }
@@ -212,19 +211,15 @@
             if ([theAnnotation.kind isEqualToString:@"historic"]) {
                 myPins.image = [UIImage imageNamed:@"pushPinRed"];
             }
-            
             if ([theAnnotation.kind isEqualToString:@"attractions"]) {
                 myPins.image = [UIImage imageNamed:@"pushPinGold"];
             }
-            
             if ([theAnnotation.kind isEqualToString:@"neighborhoods"]) {
                 myPins.image = [UIImage imageNamed:@"pushPinGreen"];
             }
-            
             if ([theAnnotation.kind isEqualToString:@"quirk"]) {
                 myPins.image = [UIImage imageNamed:@"pushPinCyan"];
             }
-            
         }else
             myPins.annotation = annotation;
         return myPins;
@@ -333,6 +328,14 @@
     [self.navigationController popViewControllerAnimated:YES];
 }
 
+- (float)updatePinDistance:(CLLocationCoordinate2D)pinLoc
+{
+    CLLocation *here = [[CLLocation alloc]initWithLatitude:pinLoc.latitude longitude:pinLoc.longitude];
+    CLLocation *userPos = [[CLLocation alloc]initWithLatitude:_location.latitude longitude:_location.longitude];
+    const float MILE_RATIO = 1609.34;
+    float distance = [here distanceFromLocation:userPos]/MILE_RATIO;
+    return distance;
+}
 
 
 

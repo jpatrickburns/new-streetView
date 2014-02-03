@@ -48,7 +48,6 @@
     CLLocationCoordinate2D myCoordinates= CLLocationCoordinate2DMake(lat, lon);
      _tinyMap.region=MKCoordinateRegionMakeWithDistance(myCoordinates, 1000, 1000);
     
-    
 }
 
 -(BOOL)prefersStatusBarHidden

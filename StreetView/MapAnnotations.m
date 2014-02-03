@@ -14,14 +14,12 @@
 - (id)initWithLatitude:(float)lat
              longitude:(float)lon
                  title:(NSString *)title
-              subtitle:(NSString *)subtitle
 
 {
     self = [super init];
     if (self) {
         _coordinate = CLLocationCoordinate2DMake(lat, lon);
         _title = title;
-        _subtitle = subtitle;
     }
     return self;
 }
