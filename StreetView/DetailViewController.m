@@ -47,6 +47,7 @@
     _tinyMap.layer.borderWidth=1;
     CLLocationCoordinate2D myCoordinates= CLLocationCoordinate2DMake(lat, lon);
      _tinyMap.region=MKCoordinateRegionMakeWithDistance(myCoordinates, 1000, 1000);
+    _myDistance.text=[NSString stringWithFormat:@"%.2f miles from your current location.", _locInfo.distance];
     
 }
 
@@ -62,4 +63,12 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)getDirections:(id)sender
+{
+    MKPlacemark* place = [[MKPlacemark alloc] initWithCoordinate: _locInfo.coordinate addressDictionary: nil];
+    MKMapItem* destination = [[MKMapItem alloc] initWithPlacemark: place];
+    destination.name = _locInfo.title;
+    [MKMapItem openMapsWithItems: @[destination] launchOptions: @{MKLaunchOptionsDirectionsModeKey:MKLaunchOptionsDirectionsModeDriving}];
+
+}
 @end

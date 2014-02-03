@@ -343,6 +343,23 @@
                                 <fontDescription key="fontDescription" type="italicSystem" pointSize="12"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6yo-6B-qOV">
+                                <rect key="frame" x="24" y="166" width="276" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aGh-ma-8xf">
+                                <rect key="frame" x="11" y="15" width="102" height="105"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="getDirections:" destination="bbd-y8-txb" eventType="touchUpInside" id="bPz-uk-gp5"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -363,7 +380,9 @@
                     <nil key="simulatedStatusBarMetrics"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics"/>
                     <connections>
+                        <outlet property="directions" destination="aGh-ma-8xf" id="xte-Ic-cON"/>
                         <outlet property="info" destination="VQf-Wh-f6r" id="jjE-mH-hHP"/>
+                        <outlet property="myDistance" destination="6yo-6B-qOV" id="X7x-2e-fWw"/>
                         <outlet property="myNavItem" destination="EsJ-ic-6rp" id="Hq0-Bd-ykQ"/>
                         <outlet property="myPic" destination="I30-Ac-mX3" id="JmZ-uh-SgS"/>
                         <outlet property="tinyMap" destination="zRP-b3-zPH" id="KNF-gL-45H"/>

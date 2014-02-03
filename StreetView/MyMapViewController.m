@@ -101,7 +101,7 @@
                 myAnnotation.info = [myDict objectForKey:@"info"];
                 myAnnotation.pic = [myDict objectForKey:@"pic"];
                 myAnnotation.distance=[self updatePinDistance:myAnnotation.coordinate];
-                myAnnotation.subtitle=[NSString stringWithFormat:@"%f miles away",myAnnotation.distance];
+                myAnnotation.subtitle=[NSString stringWithFormat:@"%.2f miles away",myAnnotation.distance];
                 //NSLog(@"Annotation pic contains: %@",myAnnotation.pic);
                 [self.myMapView addAnnotation:myAnnotation];
                 //NSLog(@"Annotation contains: %@",myAnnotation.kind);
@@ -131,6 +131,10 @@
     MKPointAnnotation *selectedAnnotation = view.annotation;
         NSLog(@"Selected mapView annotation %@", selectedAnnotation.title);
     
+    // figure out distance to user
+    [self updatePinDistance:selectedAnnotation.coordinate];
+    
+    
     //Center on selected annotation
     [self.myMapView setCenterCoordinate:selectedAnnotation.coordinate animated:YES];
 
@@ -155,20 +159,9 @@
         [self loadUpAnnotationsWithFiles:myFiles];
         _firstRun=NO;
         [self centerOnUser:self];
-[UIView animateWithDuration:1
-                      delay:1
-                    options:UIViewAnimationOptionBeginFromCurrentState
-                 animations:^(void)
- {
-     //nothing here
- }
-                 completion:^(BOOL finished)
- {
-     
- }];
-         }
     }
-   
+}
+
 
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations
 {

@@ -20,7 +20,13 @@
 @property (weak, nonatomic) IBOutlet UINavigationItem *myNavItem;
 @property (weak, nonatomic) IBOutlet UIImageView *myPic;
 @property (weak, nonatomic) IBOutlet MKMapView *tinyMap;
-
+@property (weak, nonatomic) IBOutlet UILabel *myDistance;
+@property (weak, nonatomic) IBOutlet UIButton *directions;
 @property (weak, nonatomic) IBOutlet UITextView *info;
+
+//actions
+- (IBAction)getDirections:(id)sender;
+
+
 
 @end
