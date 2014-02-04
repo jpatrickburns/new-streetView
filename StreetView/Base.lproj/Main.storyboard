@@ -77,7 +77,6 @@
                                 </state>
                                 <connections>
                                     <action selector="changeScene:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="7LT-j0-O2c"/>
-                                    <segue destination="pcE-Z3-UBx" kind="push" identifier="map" id="ICx-Kd-QuK"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="top" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="tailTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yr6-Ag-nWL">
@@ -90,7 +89,6 @@
                                 </state>
                                 <connections>
                                     <action selector="changeScene:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="z7Y-p5-Sby"/>
-                                    <segue destination="Nsz-DR-IJq" kind="push" identifier="special" id="Qb0-VM-MRj"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -110,7 +108,9 @@
                     </view>
                     <navigationItem key="navigationItem" title="StreetView Atlanta" id="y5z-Ay-4X3"/>
                     <connections>
-                        <segue destination="7CO-Q3-aYX" kind="push" identifier="toTable" id="i5K-3R-eir"/>
+                        <segue destination="7CO-Q3-aYX" kind="push" identifier="table" id="i5K-3R-eir"/>
+                        <segue destination="Nsz-DR-IJq" kind="push" identifier="special" id="9Kt-ut-fMI"/>
+                        <segue destination="pcE-Z3-UBx" kind="push" identifier="map" id="hpP-fK-XdG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>

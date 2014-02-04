@@ -36,12 +36,19 @@
     
     //Load up from the passed kind of file
     NSLog(@"Received %@ from segue.",_myKind);
-    _myLocations = [LoadObjectsFromFile loadFromFile:_myKind ofType:@"plist"];
+    
+    //special case
+    if ([_myKind isEqualToString:@"Only in the ATL"]) {
+        _myLocations = [LoadObjectsFromFile loadFromFile:@"quirks" ofType:@"plist"];
+    }else{
+        _myLocations = [LoadObjectsFromFile loadFromFile:[_myKind lowercaseString] ofType:@"plist"];
+    }
 
-   
+    self.navigationItem.title = _myKind;
+    
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
- 
+    
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
