@@ -33,6 +33,7 @@
 		69651B18189C3B7200E1E564 /* TestImage3.png in Resources */ = {isa = PBXBuildFile; fileRef = 69651B13189C3B7200E1E564 /* TestImage3.png */; };
 		69651B19189C3B7200E1E564 /* TestImage4.png in Resources */ = {isa = PBXBuildFile; fileRef = 69651B14189C3B7200E1E564 /* TestImage4.png */; };
 		69651B1A189C3B7200E1E564 /* TestImage5.png in Resources */ = {isa = PBXBuildFile; fileRef = 69651B15189C3B7200E1E564 /* TestImage5.png */; };
+		696DA4F318A13E7900CE9AB1 /* MyTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 696DA4F218A13E7900CE9AB1 /* MyTableViewController.m */; };
 		6972F1921898493700A8E619 /* historic.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6972F18D1898493700A8E619 /* historic.plist */; };
 		6972F1951898493700A8E619 /* quirk.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6972F1901898493700A8E619 /* quirk.plist */; };
 		6972F19A18984B3C00A8E619 /* LoadObjectsFromFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 6972F19918984B3C00A8E619 /* LoadObjectsFromFile.m */; };
@@ -97,6 +98,8 @@
 		69651B13189C3B7200E1E564 /* TestImage3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TestImage3.png; sourceTree = "<group>"; };
 		69651B14189C3B7200E1E564 /* TestImage4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TestImage4.png; sourceTree = "<group>"; };
 		69651B15189C3B7200E1E564 /* TestImage5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TestImage5.png; sourceTree = "<group>"; };
+		696DA4F118A13E7900CE9AB1 /* MyTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyTableViewController.h; sourceTree = "<group>"; };
+		696DA4F218A13E7900CE9AB1 /* MyTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyTableViewController.m; sourceTree = "<group>"; };
 		6972F18D1898493700A8E619 /* historic.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = historic.plist; sourceTree = "<group>"; };
 		6972F1901898493700A8E619 /* quirk.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = quirk.plist; sourceTree = "<group>"; };
 		6972F19818984B3C00A8E619 /* LoadObjectsFromFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoadObjectsFromFile.h; sourceTree = "<group>"; };
@@ -240,6 +243,8 @@
 				69651AF4189C3B2300E1E564 /* pics */,
 				694B3B96189A9A8100465863 /* HelpViewController.h */,
 				694B3B97189A9A8100465863 /* HelpViewController.m */,
+				696DA4F118A13E7900CE9AB1 /* MyTableViewController.h */,
+				696DA4F218A13E7900CE9AB1 /* MyTableViewController.m */,
 				69521287185F5A5600ACC79E /* MyMapViewController.h */,
 				69521288185F5A5600ACC79E /* MyMapViewController.m */,
 				69521284185F54E300ACC79E /* MyNavigationController.h */,
@@ -417,6 +422,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				69D095D2185CC3D300B6BE29 /* ViewController.m in Sources */,
+				696DA4F318A13E7900CE9AB1 /* MyTableViewController.m in Sources */,
 				6972F19A18984B3C00A8E619 /* LoadObjectsFromFile.m in Sources */,
 				69D095CC185CC3D300B6BE29 /* AppDelegate.m in Sources */,
 				69521283185F4D9400ACC79E /* SpecialsViewController.m in Sources */,

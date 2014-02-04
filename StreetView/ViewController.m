@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "MyTableViewController.h"
 
 @interface ViewController ()
 
@@ -57,6 +58,29 @@
         }else{
             NSLog(@"Something went wrong.");
         }
+        NSString *myKind = [[NSString stringWithString:btn.currentTitle] lowercaseString];
+        [self performSegueWithIdentifier:@"toTable" sender:myKind];
+        //pass values
+        NSLog(@"Sending %@ to segue.",myKind);
+
+
     }
-         }
+}
+
+// for segue to table view
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([[segue identifier] isEqualToString:@"toTable"])
+    {
+        MyTableViewController *dest =[segue destinationViewController];
+//        if ([sender isMemberOfClass:[UIButton class]]) {
+//            UIButton *btn = (UIButton *)sender;
+//            NSString *myKind = [[NSString stringWithString:btn.currentTitle] lowercaseString];
+//            //pass values
+//            NSLog(@"Sending %@ to segue.",myKind);
+        
+            dest.myKind = sender;
+        }
+}
+
 @end
