@@ -11,6 +11,5 @@
 @interface MyTableViewController : UITableViewController <UITableViewDataSource, UITableViewDelegate>
 
 @property (strong, nonatomic) IBOutlet UITableView *myTableView;
-
 @property (strong, nonatomic) NSString *myKind;
 @end

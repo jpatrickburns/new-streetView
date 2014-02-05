@@ -8,10 +8,14 @@
 
 #import "MyTableViewController.h"
 #import "LoadObjectsFromFile.h"
+#import "DetailViewController.h"
+#import "MapAnnotations.h"
 
 @interface MyTableViewController ()
 
 @property (strong, nonatomic) NSDictionary *myLocations;
+@property (strong, nonatomic) NSArray *locationsIndex;
+
 
 @end
 
@@ -35,15 +39,18 @@
     _myTableView.dataSource = self;
     
     //Load up from the passed kind of file
-    NSLog(@"Received %@ from segue.",_myKind);
+    // NSLog(@"Received %@ from segue.",_myKind);
     
     //special case
+    
     if ([_myKind isEqualToString:@"Only in the ATL"]) {
-        _myLocations = [LoadObjectsFromFile loadFromFile:@"quirks" ofType:@"plist"];
+        _myLocations = [LoadObjectsFromFile loadFromFile:@"quirk" ofType:@"plist"];
     }else{
         _myLocations = [LoadObjectsFromFile loadFromFile:[_myKind lowercaseString] ofType:@"plist"];
     }
-
+    
+    NSLog(@"%@ contains: %@",_myKind,_myLocations);
+    //change the title to the current section
     self.navigationItem.title = _myKind;
     
     // Uncomment the following line to preserve selection between presentations.
@@ -69,7 +76,6 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-
     // Return the number of rows in the section.
     return [_myLocations count];
 }
@@ -80,11 +86,11 @@
     
     NSArray *temp= [_myLocations allKeys];
     
-    // Note: this sorts by key
-    NSArray *locationsIndex= [temp sortedArrayUsingSelector:
+    // this makes an array of sorted keys
+    _locationsIndex = [temp sortedArrayUsingSelector:
                      @selector(localizedCaseInsensitiveCompare:)];
     
-    NSLog(@"my locationsIndex is: %@",locationsIndex);
+    //NSLog(@"my locationsIndex is: %@",locationsIndex);
 
     static NSString *MyIdentifier = @"myCell";
     
@@ -93,20 +99,52 @@
     
     // If no cell is available, create a new one using the given identifier.
     if (cell == nil) {
-        // Use the default cell style.
+        // Use the subtitle cell style.
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:MyIdentifier];
     }
     
     // Set up the cell.
     
-    id value = [_myLocations objectForKey:[locationsIndex objectAtIndex:indexPath.row]];
+    id value = _myLocations[[_locationsIndex objectAtIndex:indexPath.row]];
     
-    cell.textLabel.text= [value valueForKeyPath:@"title"];
-    cell.detailTextLabel.text = [value valueForKeyPath:@"subtitle"];
-    
+    cell.textLabel.text= value[@"title"];
+    cell.detailTextLabel.text = value[@"subtitle"];
     
     return cell;
 }
+
+
+
+#pragma mark - Table View Delegate methods
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    
+}
+
+
+#pragma mark - Navigation
+
+// In a story board-based application, you will often want to do a little preparation before navigation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    // Get the new view controller
+    DetailViewController *dest = [segue destinationViewController];
+    //get an index for the selected cell
+    NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
+    NSDictionary *myDict = [_myLocations objectForKey:[_locationsIndex objectAtIndex:indexPath.row]];
+    MapAnnotations *myInfo = [[MapAnnotations alloc] initWithLatitude:[myDict[@"latitude"] floatValue] longitude:[myDict[@"longitude"] floatValue] title:myDict[@"title"]];
+    //add additional properties
+    myInfo.subtitle=myDict[@"subtitle"];
+    myInfo.kind = _myKind;
+    myInfo.info = myDict[@"info"];
+    myInfo.pic = myDict[@"pic"];
+    NSLog(@"myInfo contains:%@",myInfo);
+    
+    dest.locInfo = myInfo;
+    // Pass the selected object to the new view controller.
+}
+
 
 /*
 // Override to support conditional editing of the table view.
@@ -147,16 +185,6 @@
 }
 */
 
-/*
-#pragma mark - Navigation
 
-// In a story board-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-
- */
 
 @end

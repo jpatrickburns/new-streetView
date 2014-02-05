@@ -149,6 +149,9 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="bbd-y8-txb" kind="push" identifier="detail" id="hID-38-EmP"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <sections/>
@@ -438,15 +441,15 @@
                     <connections>
                         <outlet property="directions" destination="aGh-ma-8xf" id="xte-Ic-cON"/>
                         <outlet property="info" destination="VQf-Wh-f6r" id="jjE-mH-hHP"/>
-                        <outlet property="myDistance" destination="6yo-6B-qOV" id="X7x-2e-fWw"/>
                         <outlet property="myNavItem" destination="EsJ-ic-6rp" id="Hq0-Bd-ykQ"/>
                         <outlet property="myPic" destination="I30-Ac-mX3" id="JmZ-uh-SgS"/>
+                        <outlet property="mySubtitle" destination="6yo-6B-qOV" id="p4A-eJ-et0"/>
                         <outlet property="tinyMap" destination="zRP-b3-zPH" id="KNF-gL-45H"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wZq-hq-5oD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1868" y="-918"/>
+            <point key="canvasLocation" x="1884" y="462"/>
         </scene>
         <!--My Navigation Controller-->
         <scene sceneID="zdz-LE-Fs9">
@@ -491,4 +494,7 @@
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="hID-38-EmP"/>
+    </inferredMetricsTieBreakers>
 </document>

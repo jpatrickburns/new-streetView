@@ -147,8 +147,8 @@
         NSLog(@"Selected mapView annotation %@", selectedAnnotation.title);
     
     // figure out distance to user
-    selectedAnnotation.distance = [self updatePinDistance:selectedAnnotation.coordinate];
-    selectedAnnotation.subtitle = [NSString stringWithFormat:@"%.2f miles away",selectedAnnotation.distance];
+    // selectedAnnotation.distance = [self updatePinDistance:selectedAnnotation.coordinate];
+    selectedAnnotation.subtitle = [NSString stringWithFormat:@"%.2f miles away",[self updatePinDistance:selectedAnnotation.coordinate]];
     
     
     //Center on selected annotation
