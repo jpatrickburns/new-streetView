@@ -7,9 +7,13 @@
 //
 
 #import "DetailViewController.h"
-
+#import "ViewController.h"
 
 @interface DetailViewController ()
+
+- (IBAction)share:(id)sender;
+- (IBAction)goHome:(id)sender;
+
 
 @end
 
@@ -36,7 +40,7 @@
     
     NSLog(@"locInfo contains:%@",_locInfo);
     
-    [_myNavItem setTitle:_locInfo.title];
+    _myNavItem.title=_locInfo.title;
     _info.text = _locInfo.info;
     
     // set up image
@@ -61,11 +65,26 @@
     return YES;
 }
 
+- (IBAction)share:(id)sender
+{
+    
+    NSArray *activityItems = @[_locInfo.title, _locInfo.subtitle, [NSString stringWithFormat:@"%f",_locInfo.coordinate.longitude]];
+    UIActivityViewController *sharingView = [[UIActivityViewController alloc] initWithActivityItems:activityItems applicationActivities:nil];
+    
+    sharingView.excludedActivityTypes = @[UIActivityTypeCopyToPasteboard, UIActivityTypePostToFlickr];
+    
+    [self presentViewController:sharingView animated:YES completion:nil];
+}
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (IBAction)goHome:(id)sender {
+   
+    [self.navigationController popToRootViewControllerAnimated:YES];
 }
 
 - (IBAction)getDirections:(id)sender
@@ -79,8 +98,6 @@
     }else{
         UIAlertView *alert=[[UIAlertView alloc]initWithTitle:@"Sorry..." message:@"Location Services aren’t enabled. Please change in settings." delegate:nil cancelButtonTitle:@"O.K." otherButtonTitles:nil, nil];
         [alert show];
-        
     }
-    
 }
 @end

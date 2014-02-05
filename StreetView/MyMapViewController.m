@@ -26,6 +26,7 @@
 @property (weak, nonatomic) IBOutlet UISegmentedControl *segmentedControl;
 @property (strong, nonatomic) NSDictionary *myLocations;
 @property (nonatomic) BOOL firstRun;
+
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *shareBtn;
 @property (strong, nonatomic) MapAnnotations *currentAnnotation;
 
@@ -48,6 +49,13 @@
     
     [super viewDidLoad];
     
+    //show user location
+    self.myMapView.showsUserLocation=YES;
+
+    //change the title to the current section
+    self.navigationItem.title = @"What’s Near Me?";
+
+    
     NSLog(@"Authorization status is %u",[CLLocationManager authorizationStatus]);
    
     if ([CLLocationManager locationServicesEnabled] && [CLLocationManager authorizationStatus]==3) {
@@ -55,8 +63,6 @@
         //set location manager's delegate
         _locationManager.delegate=self;
         
-        //show user location
-        self.myMapView.showsUserLocation=YES;
         
         //tell location manager to monitor changes
         [_locationManager startMonitoringSignificantLocationChanges];
@@ -321,6 +327,7 @@
     
 NSArray *activityItems = @[_currentAnnotation.title, _currentAnnotation.subtitle, [NSString stringWithFormat:@"%f",_currentAnnotation.coordinate.longitude]];
     UIActivityViewController *sharingView = [[UIActivityViewController alloc] initWithActivityItems:activityItems applicationActivities:nil];
+
     sharingView.excludedActivityTypes = @[UIActivityTypeCopyToPasteboard, UIActivityTypePostToFlickr];
     
 [self presentViewController:sharingView animated:YES completion:nil];
@@ -349,8 +356,6 @@ NSArray *activityItems = @[_currentAnnotation.title, _currentAnnotation.subtitle
 - (IBAction)centerOnUser:(id)sender
 {
     _region = MKCoordinateRegionMakeWithDistance(_location, 2000, 2000);
-
-
     [_myMapView setRegion:_region animated:YES];
     [_myMapView deselectAnnotation:[_myMapView.selectedAnnotations objectAtIndex:0] animated:YES];
     

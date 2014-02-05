@@ -34,7 +34,7 @@
 		69651B19189C3B7200E1E564 /* TestImage4.png in Resources */ = {isa = PBXBuildFile; fileRef = 69651B14189C3B7200E1E564 /* TestImage4.png */; };
 		69651B1A189C3B7200E1E564 /* TestImage5.png in Resources */ = {isa = PBXBuildFile; fileRef = 69651B15189C3B7200E1E564 /* TestImage5.png */; };
 		696DA4F318A13E7900CE9AB1 /* MyTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 696DA4F218A13E7900CE9AB1 /* MyTableViewController.m */; };
-		6972F1921898493700A8E619 /* historic.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6972F18D1898493700A8E619 /* historic.plist */; };
+		6972F1921898493700A8E619 /* historical.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6972F18D1898493700A8E619 /* historical.plist */; };
 		6972F1951898493700A8E619 /* quirk.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6972F1901898493700A8E619 /* quirk.plist */; };
 		6972F19A18984B3C00A8E619 /* LoadObjectsFromFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 6972F19918984B3C00A8E619 /* LoadObjectsFromFile.m */; };
 		699DB55E1899AC6700799C2B /* attractions.plist in Resources */ = {isa = PBXBuildFile; fileRef = 699DB55C1899AC6700799C2B /* attractions.plist */; };
@@ -100,7 +100,7 @@
 		69651B15189C3B7200E1E564 /* TestImage5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TestImage5.png; sourceTree = "<group>"; };
 		696DA4F118A13E7900CE9AB1 /* MyTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyTableViewController.h; sourceTree = "<group>"; };
 		696DA4F218A13E7900CE9AB1 /* MyTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyTableViewController.m; sourceTree = "<group>"; };
-		6972F18D1898493700A8E619 /* historic.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = historic.plist; sourceTree = "<group>"; };
+		6972F18D1898493700A8E619 /* historical.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = historical.plist; sourceTree = "<group>"; };
 		6972F1901898493700A8E619 /* quirk.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = quirk.plist; sourceTree = "<group>"; };
 		6972F19818984B3C00A8E619 /* LoadObjectsFromFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoadObjectsFromFile.h; sourceTree = "<group>"; };
 		6972F19918984B3C00A8E619 /* LoadObjectsFromFile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoadObjectsFromFile.m; sourceTree = "<group>"; };
@@ -195,7 +195,7 @@
 			children = (
 				699DB55C1899AC6700799C2B /* attractions.plist */,
 				699DB55D1899AC6700799C2B /* neighborhoods.plist */,
-				6972F18D1898493700A8E619 /* historic.plist */,
+				6972F18D1898493700A8E619 /* historical.plist */,
 				6972F1901898493700A8E619 /* quirk.plist */,
 			);
 			name = plists;
@@ -392,7 +392,7 @@
 				69651B0E189C3B5100E1E564 /* Oakland.jpg in Resources */,
 				69651B0F189C3B5100E1E564 /* Plaza theater.jpg in Resources */,
 				69651B06189C3B5100E1E564 /* Carter Museum.jpg in Resources */,
-				6972F1921898493700A8E619 /* historic.plist in Resources */,
+				6972F1921898493700A8E619 /* historical.plist in Resources */,
 				69651B05189C3B5100E1E564 /* Big Bethel.jpg in Resources */,
 				69651B07189C3B5100E1E564 /* Ebenezer.jpg in Resources */,
 				69651B03189C3B5100E1E564 /* Atlanta Life.jpg in Resources */,
