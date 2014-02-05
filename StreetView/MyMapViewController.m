@@ -20,11 +20,14 @@
 - (IBAction)goHome:(id)sender;
 - (void)loadUpAnnotationsWithFiles:(NSArray *)fileNames;
 - (float)updatePinDistance:(CLLocationCoordinate2D)pinLoc;
+- (IBAction)share:(id)sender;
 
 //properties
 @property (weak, nonatomic) IBOutlet UISegmentedControl *segmentedControl;
 @property (strong, nonatomic) NSDictionary *myLocations;
 @property (nonatomic) BOOL firstRun;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *shareBtn;
+@property (strong, nonatomic) MapAnnotations *currentAnnotation;
 
 @end
 
@@ -150,6 +153,10 @@
     // selectedAnnotation.distance = [self updatePinDistance:selectedAnnotation.coordinate];
     selectedAnnotation.subtitle = [NSString stringWithFormat:@"%.2f miles away",[self updatePinDistance:selectedAnnotation.coordinate]];
     
+    //put annotation info in global object
+    _currentAnnotation = selectedAnnotation;
+    // activate share button
+    _shareBtn.enabled = YES;
     
     //Center on selected annotation
     [self.myMapView setCenterCoordinate:selectedAnnotation.coordinate animated:YES];
@@ -158,7 +165,8 @@
 
 -(void)mapView:(MKMapView *)mapView didDeselectAnnotationView:(MKAnnotationView *)view
 {
-
+    // Deactivate share button
+    _shareBtn.enabled = NO;
 }
 
 #pragma mark - user location stuff
@@ -288,7 +296,7 @@
     NSLog(@"%@",(MapAnnotations *)view.annotation);
     
     //trigger segue and send object with data
-    [self performSegueWithIdentifier:@"showDetailFromMap" sender:view.annotation];
+        [self performSegueWithIdentifier:@"showDetailFromMap" sender:view.annotation];
     
 }
 
@@ -301,8 +309,23 @@
         
         //pass values
         dest.locInfo = sender;
+        
     }
 }
+
+#pragma mark - sharing panel
+
+- (IBAction)share:(id)sender
+{
+    
+    
+NSArray *activityItems = @[_currentAnnotation.title, _currentAnnotation.subtitle, [NSString stringWithFormat:@"%f",_currentAnnotation.coordinate.longitude]];
+    UIActivityViewController *sharingView = [[UIActivityViewController alloc] initWithActivityItems:activityItems applicationActivities:nil];
+    sharingView.excludedActivityTypes = @[UIActivityTypeCopyToPasteboard, UIActivityTypePostToFlickr];
+    
+[self presentViewController:sharingView animated:YES completion:nil];
+}
+
 
 #pragma mark - Other methods
 

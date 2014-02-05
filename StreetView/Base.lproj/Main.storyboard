@@ -126,11 +126,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="detailDisclosureButton" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="myCell" textLabel="OE2-bN-bYc" detailTextLabel="rCZ-1K-twf" style="IBUITableViewCellStyleSubtitle" id="BEg-xz-lQl">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="myCell" textLabel="OE2-bN-bYc" detailTextLabel="rCZ-1K-twf" style="IBUITableViewCellStyleSubtitle" id="BEg-xz-lQl">
                                 <rect key="frame" x="0.0" y="86" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="BEg-xz-lQl" id="C5D-s4-9zh">
-                                    <rect key="frame" x="0.0" y="0.0" width="253" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="OE2-bN-bYc">
@@ -206,11 +206,11 @@
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="aY3-he-TgP"/>
-                                    <barButtonItem image="tweet" id="WoH-D6-thK"/>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="6nR-xm-N4p"/>
-                                    <barButtonItem image="fb" id="fHe-Yz-pMu"/>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="9Kg-cP-abe"/>
-                                    <barButtonItem image="mail" id="Lh7-cF-inL"/>
+                                    <barButtonItem enabled="NO" style="plain" systemItem="action" id="WoH-D6-thK">
+                                        <connections>
+                                            <action selector="share:" destination="pcE-Z3-UBx" id="c59-WU-0G7"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="rhX-9L-ZG8"/>
                                 </items>
                                 <color key="tintColor" red="0.63366138940000005" green="0.82349890469999998" blue="0.97238117459999995" alpha="1" colorSpace="calibratedRGB"/>
@@ -249,6 +249,7 @@
                     <connections>
                         <outlet property="myMapView" destination="C9M-jR-QH2" id="x51-5q-UQ2"/>
                         <outlet property="segmentedControl" destination="C9M-jR-QH2" id="GdV-Hq-g6B"/>
+                        <outlet property="shareBtn" destination="WoH-D6-thK" id="nWN-H1-D7N"/>
                         <segue destination="bbd-y8-txb" kind="push" identifier="showDetailFromMap" id="Q2g-7k-kEJ"/>
                     </connections>
                 </viewController>
@@ -477,15 +478,12 @@
     <resources>
         <image name="atl" width="100" height="120"/>
         <image name="attractions" width="100" height="120"/>
-        <image name="fb" width="44" height="44"/>
         <image name="help" width="44" height="44"/>
         <image name="historical" width="100" height="120"/>
-        <image name="mail" width="44" height="44"/>
         <image name="mapHelpScreen" width="320" height="240"/>
         <image name="mapPoint" width="44" height="44"/>
         <image name="neighborhood" width="100" height="120"/>
         <image name="special" width="100" height="120"/>
-        <image name="tweet" width="44" height="44"/>
         <image name="userLoc" width="44" height="44"/>
         <image name="where" width="100" height="120"/>
     </resources>
@@ -495,6 +493,6 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="hID-38-EmP"/>
+        <segue reference="Q2g-7k-kEJ"/>
     </inferredMetricsTieBreakers>
 </document>
