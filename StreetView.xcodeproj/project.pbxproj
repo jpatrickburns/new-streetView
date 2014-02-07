@@ -54,6 +54,7 @@
 		69D095DD185CC3D400B6BE29 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69D095BF185CC3D200B6BE29 /* UIKit.framework */; };
 		69D095E5185CC3D500B6BE29 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 69D095E3185CC3D500B6BE29 /* InfoPlist.strings */; };
 		69D095E7185CC3D500B6BE29 /* StreetViewTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 69D095E6185CC3D500B6BE29 /* StreetViewTests.m */; };
+		69D6F26418A58BF7005314AB /* ColorSets.m in Sources */ = {isa = PBXBuildFile; fileRef = 69D6F26318A58BF7005314AB /* ColorSets.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -127,6 +128,8 @@
 		69D095E2185CC3D500B6BE29 /* StreetViewTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "StreetViewTests-Info.plist"; sourceTree = "<group>"; };
 		69D095E4185CC3D500B6BE29 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		69D095E6185CC3D500B6BE29 /* StreetViewTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StreetViewTests.m; sourceTree = "<group>"; };
+		69D6F26218A58BF7005314AB /* ColorSets.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorSets.h; sourceTree = "<group>"; };
+		69D6F26318A58BF7005314AB /* ColorSets.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColorSets.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -257,6 +260,8 @@
 				69521281185F4D9400ACC79E /* SpecialsViewController.m */,
 				69D095D0185CC3D300B6BE29 /* ViewController.h */,
 				69D095D1185CC3D300B6BE29 /* ViewController.m */,
+				69D6F26218A58BF7005314AB /* ColorSets.h */,
+				69D6F26318A58BF7005314AB /* ColorSets.m */,
 				6972F1971898494300A8E619 /* plists */,
 				69395CC418994CF9007876FF /* map stuff */,
 				69D095C2185CC3D200B6BE29 /* Supporting Files */,
@@ -429,6 +434,7 @@
 				69D095C8185CC3D300B6BE29 /* main.m in Sources */,
 				69CC9D8D189AFA6F00A14B2C /* DetailViewController.m in Sources */,
 				69521286185F54E300ACC79E /* MyNavigationController.m in Sources */,
+				69D6F26418A58BF7005314AB /* ColorSets.m in Sources */,
 				69521289185F5A5600ACC79E /* MyMapViewController.m in Sources */,
 				694B3B98189A9A8100465863 /* HelpViewController.m in Sources */,
 				69395CC318994C35007876FF /* MapAnnotations.m in Sources */,

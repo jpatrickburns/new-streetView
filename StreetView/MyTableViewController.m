@@ -10,21 +10,17 @@
 #import "LoadObjectsFromFile.h"
 #import "DetailViewController.h"
 #import "MapAnnotations.h"
+#import "ColorSets.h"
 
 @interface MyTableViewController ()
 
 @property (strong, nonatomic) NSDictionary *myLocations;
 @property (strong, nonatomic) NSArray *locationsIndex;
 
-- (UIColor *)tintColor:(UIColor *)color byFactor:(float)factor;
 
 @end
 
-UIColor *myRed;
-UIColor *myGreen;
-UIColor *myGold;
-UIColor *myteal;
-UIColor *currentColor;
+ColorSets *myColorSet;
 
 @implementation MyTableViewController
 
@@ -56,18 +52,14 @@ UIColor *currentColor;
     
     // set up colors
     
-    myRed = [UIColor colorWithRed:152/255.0 green:2/255.0 blue:33/255.0 alpha:1];
-    myGreen = [UIColor colorWithRed:12/255.0 green:89/255.0 blue:27/255.0 alpha:1];
-    myGold = [UIColor colorWithRed:129/255.0 green:97/255.0 blue:27/255.0 alpha:1];
-    myteal = [UIColor colorWithRed:12/255.0 green:82/255.0 blue:133/255.0 alpha:1];
-    
+    myColorSet = [[ColorSets alloc]init];
     
     //special case
     
     if ([_myKind isEqualToString:@"Only in the ATL"]) {
         _myLocations = [LoadObjectsFromFile loadFromFile:@"quirk" ofType:@"plist"];
-        [self.navigationController.navigationBar setBarTintColor:myteal];
-        currentColor = myteal;
+        [self.navigationController.navigationBar setBarTintColor:myColorSet.myteal];
+        myColorSet.currentColor = myColorSet.myteal;
     }else{
         _myLocations = [LoadObjectsFromFile loadFromFile:[_myKind lowercaseString] ofType:@"plist"];
     }
@@ -75,22 +67,22 @@ UIColor *currentColor;
     //set up colors to color the tint
     
     if ([_myKind isEqualToString:@"Historical"]){
-        [self.navigationController.navigationBar setBarTintColor:myRed];
-        currentColor = myRed;
+        [self.navigationController.navigationBar setBarTintColor:myColorSet.myRed];
+        myColorSet.currentColor = myColorSet.myRed;
     }
     else if ([_myKind isEqualToString:@"Attractions"]){
-        [self.navigationController.navigationBar setBarTintColor:myGold];
-        currentColor = myGold;
+        [self.navigationController.navigationBar setBarTintColor:myColorSet.myGold];
+        myColorSet.currentColor = myColorSet.myGold;
     }
     else if ([_myKind isEqualToString:@"Neighborhoods"]){
-        [self.navigationController.navigationBar setBarTintColor:myGreen];
-        currentColor = myGreen;
+        [self.navigationController.navigationBar setBarTintColor:myColorSet.myGreen];
+        myColorSet.currentColor = myColorSet.myGreen;
     }
     
-    _myTableView.backgroundColor=[self tintColor:currentColor byFactor:.8];
+    _myTableView.backgroundColor=[myColorSet tintColor:myColorSet.currentColor withSaturationFactor:.8 withValueFactor:.8];
     
     //make a tint
-    currentColor = [self tintColor:currentColor byFactor:1.25];
+    myColorSet.currentColor = [myColorSet tintColor:myColorSet.currentColor withSaturationFactor:.8 withValueFactor:1.5];
     
     
     //change the title to the current section
@@ -110,19 +102,6 @@ UIColor *currentColor;
     // Dispose of any resources that can be recreated.
 }
 
-- (UIColor *)tintColor:(UIColor *)color byFactor:(float)factor
-{
-	// This assumes we're sending it RGBA UIColor
-    
-    CGFloat colorHSV[4];
-    [color getHue:&colorHSV[0] saturation:&colorHSV[1] brightness:&colorHSV[2] alpha:&colorHSV[3]];
-    //increase value
-    colorHSV[2] = colorHSV[2]*factor;
-    //decrease saturation
-    colorHSV[1]= colorHSV[1] /(2*factor);
-    UIColor *colorRGB = [UIColor colorWithHue:colorHSV[0] saturation:colorHSV[1] brightness:colorHSV[2] alpha:colorHSV[3]];
-	return colorRGB;
-}
 
 #pragma mark - Table view data source
 
@@ -181,8 +160,8 @@ UIColor *currentColor;
 -(void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
 {
     
-    cell.backgroundColor = currentColor;
-    cell.contentView.backgroundColor = currentColor;
+    cell.backgroundColor = myColorSet.currentColor;
+    cell.contentView.backgroundColor = myColorSet.currentColor;
     cell.accessoryView.tintColor=[UIColor whiteColor];
 }
 
