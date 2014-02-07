@@ -15,11 +15,15 @@
 
 @implementation ViewController
 
+
+-(void)viewDidAppear:(BOOL)animated{
+    [self.navigationController.navigationBar setBarTintColor:[UIColor whiteColor]];
+
+}
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
-
 }
 
 - (void)didReceiveMemoryWarning

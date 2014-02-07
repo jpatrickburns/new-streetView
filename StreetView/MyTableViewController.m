@@ -19,6 +19,12 @@
 
 @end
 
+UIColor *myRed;
+UIColor *myGreen;
+UIColor *myGold;
+UIColor *myteal;
+UIColor *currentColor;
+
 @implementation MyTableViewController
 
 - (id)initWithStyle:(UITableViewStyle)style
@@ -29,6 +35,12 @@
     }
     return self;
 }
+
+//hide status bar
+- (BOOL)prefersStatusBarHidden{
+    return YES;
+}
+
 
 - (void)viewDidLoad
 {
@@ -41,16 +53,42 @@
     //Load up from the passed kind of file
     // NSLog(@"Received %@ from segue.",_myKind);
     
+    // set up colors
+    myRed = [UIColor colorWithRed:152/255.0 green:2/255.0 blue:33/255.0 alpha:1];
+    myGreen = [UIColor colorWithRed:12/255.0 green:89/255.0 blue:27/255.0 alpha:1];
+    myGold = [UIColor colorWithRed:129/255.0 green:97/255.0 blue:27/255.0 alpha:1];
+    myteal = [UIColor colorWithRed:16/255.0 green:107/255.0 blue:174/255.0 alpha:1];
+
+    
     //special case
     
     if ([_myKind isEqualToString:@"Only in the ATL"]) {
         _myLocations = [LoadObjectsFromFile loadFromFile:@"quirk" ofType:@"plist"];
+        [self.navigationController.navigationBar setBarTintColor:myteal];
+        currentColor = myteal;
     }else{
         _myLocations = [LoadObjectsFromFile loadFromFile:[_myKind lowercaseString] ofType:@"plist"];
     }
     
-    NSLog(@"%@ contains: %@",_myKind,_myLocations);
+    //set up colors to color the tint
+    
+    if ([_myKind isEqualToString:@"Historical"]){
+[self.navigationController.navigationBar setBarTintColor:myRed];
+    currentColor = myRed;
+    }
+    else if ([_myKind isEqualToString:@"Attractions"]){
+        [self.navigationController.navigationBar setBarTintColor:myGold];
+        currentColor = myGold;
+    }
+    else if ([_myKind isEqualToString:@"Neighborhoods"]){
+        [self.navigationController.navigationBar setBarTintColor:myGreen];
+        currentColor = myGreen;
+    }
+    //make a tint
+    currentColor = [currentColor colorWithAlphaComponent:.25];
+    
     //change the title to the current section
+    self.navigationController.navigationBar.translucent = YES;
     self.navigationItem.title = _myKind;
     
     // Uncomment the following line to preserve selection between presentations.
@@ -120,6 +158,14 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     
+}
+
+-(void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    
+    cell.backgroundColor = currentColor;
+    cell.contentView.backgroundColor = currentColor;
+    cell.accessoryView.tintColor=[UIColor whiteColor];
 }
 
 
