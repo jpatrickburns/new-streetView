@@ -16,6 +16,7 @@
 @property (strong, nonatomic) NSDictionary *myLocations;
 @property (strong, nonatomic) NSArray *locationsIndex;
 
+- (UIColor *)tintColor:(UIColor *)color byFactor:(float)factor;
 
 @end
 
@@ -54,11 +55,12 @@ UIColor *currentColor;
     // NSLog(@"Received %@ from segue.",_myKind);
     
     // set up colors
+    
     myRed = [UIColor colorWithRed:152/255.0 green:2/255.0 blue:33/255.0 alpha:1];
     myGreen = [UIColor colorWithRed:12/255.0 green:89/255.0 blue:27/255.0 alpha:1];
     myGold = [UIColor colorWithRed:129/255.0 green:97/255.0 blue:27/255.0 alpha:1];
-    myteal = [UIColor colorWithRed:16/255.0 green:107/255.0 blue:174/255.0 alpha:1];
-
+    myteal = [UIColor colorWithRed:12/255.0 green:82/255.0 blue:133/255.0 alpha:1];
+    
     
     //special case
     
@@ -73,8 +75,8 @@ UIColor *currentColor;
     //set up colors to color the tint
     
     if ([_myKind isEqualToString:@"Historical"]){
-[self.navigationController.navigationBar setBarTintColor:myRed];
-    currentColor = myRed;
+        [self.navigationController.navigationBar setBarTintColor:myRed];
+        currentColor = myRed;
     }
     else if ([_myKind isEqualToString:@"Attractions"]){
         [self.navigationController.navigationBar setBarTintColor:myGold];
@@ -84,8 +86,12 @@ UIColor *currentColor;
         [self.navigationController.navigationBar setBarTintColor:myGreen];
         currentColor = myGreen;
     }
+    
+    _myTableView.backgroundColor=[self tintColor:currentColor byFactor:.8];
+    
     //make a tint
-    currentColor = [currentColor colorWithAlphaComponent:.25];
+    currentColor = [self tintColor:currentColor byFactor:1.25];
+    
     
     //change the title to the current section
     self.navigationController.navigationBar.translucent = YES;
@@ -102,6 +108,20 @@ UIColor *currentColor;
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (UIColor *)tintColor:(UIColor *)color byFactor:(float)factor
+{
+	// This assumes we're sending it RGBA UIColor
+    
+    CGFloat colorHSV[4];
+    [color getHue:&colorHSV[0] saturation:&colorHSV[1] brightness:&colorHSV[2] alpha:&colorHSV[3]];
+    //increase value
+    colorHSV[2] = colorHSV[2]*factor;
+    //decrease saturation
+    colorHSV[1]= colorHSV[1] /(2*factor);
+    UIColor *colorRGB = [UIColor colorWithHue:colorHSV[0] saturation:colorHSV[1] brightness:colorHSV[2] alpha:colorHSV[3]];
+	return colorRGB;
 }
 
 #pragma mark - Table view data source
@@ -151,8 +171,6 @@ UIColor *currentColor;
     return cell;
 }
 
-
-
 #pragma mark - Table View Delegate methods
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
@@ -190,6 +208,7 @@ UIColor *currentColor;
     dest.locInfo = myInfo;
     // Pass the selected object to the new view controller.
 }
+
 
 
 /*
