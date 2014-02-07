@@ -26,7 +26,7 @@
 
 -(NSString *)description
 {
-    return [NSString stringWithFormat:@"Annotation containing:\r lat:%f\r lon:%f\r title:%@\r subtitle:%@",self.coordinate.latitude, self.coordinate.longitude,self.title,self.subtitle];
+    return [NSString stringWithFormat:@"Annotation containing:\r lat:%f\r lon:%f\r title:%@\r subtitle:%@ and Kind:%@",self.coordinate.latitude, self.coordinate.longitude,self.title,self.subtitle, self.kind];
 }
 
 @end

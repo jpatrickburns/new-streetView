@@ -55,7 +55,6 @@
     //change the title to the current section
     self.navigationItem.title = @"What’s Near Me?";
 
-    
     NSLog(@"Authorization status is %u",[CLLocationManager authorizationStatus]);
    
     if ([CLLocationManager locationServicesEnabled] && [CLLocationManager authorizationStatus]==3) {
@@ -98,6 +97,8 @@
 {
     [super viewWillAppear:YES];
     // _firstRun=YES;
+    self.navigationController.navigationBar.translucent = YES;
+
 }
 
 //Load up a buncha locations
@@ -315,7 +316,6 @@
         
         //pass values
         dest.locInfo = sender;
-        
     }
 }
 

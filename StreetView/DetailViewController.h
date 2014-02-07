@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <MapKit/MapKit.h>
 #import "MapAnnotations.h"
+#import "ColorSets.h"
 
 @interface DetailViewController : UIViewController
 

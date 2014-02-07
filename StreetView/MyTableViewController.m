@@ -64,7 +64,7 @@ ColorSets *myColorSet;
         _myLocations = [LoadObjectsFromFile loadFromFile:[_myKind lowercaseString] ofType:@"plist"];
     }
     
-    //set up colors to color the tint
+    //set up colors to color the navBar
     
     if ([_myKind isEqualToString:@"Historical"]){
         [self.navigationController.navigationBar setBarTintColor:myColorSet.myRed];
@@ -159,7 +159,6 @@ ColorSets *myColorSet;
 
 -(void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    
     cell.backgroundColor = myColorSet.currentColor;
     cell.contentView.backgroundColor = myColorSet.currentColor;
     cell.accessoryView.tintColor=[UIColor whiteColor];
@@ -184,10 +183,9 @@ ColorSets *myColorSet;
     myInfo.pic = myDict[@"pic"];
     NSLog(@"myInfo contains:%@",myInfo);
     
+        // Pass the selected object to the new view controller.
     dest.locInfo = myInfo;
-    // Pass the selected object to the new view controller.
 }
-
 
 
 /*

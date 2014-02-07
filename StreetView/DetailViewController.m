@@ -14,7 +14,6 @@
 - (IBAction)share:(id)sender;
 - (IBAction)goHome:(id)sender;
 
-
 @end
 
 
@@ -42,12 +41,14 @@
     
     _myNavItem.title=_locInfo.title;
     _info.text = _locInfo.info;
+    self.navigationController.navigationBar.translucent = YES;
+    self.navigationController.navigationBar.barTintColor = [UIColor whiteColor];
     
-    // set up image
+        // set up image
     _myPic.image = [UIImage imageNamed:_locInfo.pic];
     _myPic.layer.cornerRadius = 10;
     _myPic.layer.borderWidth = 1;
-
+    
     //set up map
     float lon = _locInfo.coordinate.longitude;
     float lat = _locInfo.coordinate.latitude;
@@ -55,7 +56,7 @@
     _tinyMap.layer.borderWidth = 1;
     
     CLLocationCoordinate2D myCoordinates= CLLocationCoordinate2DMake(lat, lon);
-     _tinyMap.region = MKCoordinateRegionMakeWithDistance(myCoordinates, 1000, 1000);
+    _tinyMap.region = MKCoordinateRegionMakeWithDistance(myCoordinates, 1000, 1000);
     _mySubtitle.text = _locInfo.subtitle;
     
 }
