@@ -54,7 +54,7 @@
 
     //change the title to the current section
     self.navigationItem.title = @"What’s Near Me?";
-
+    
     NSLog(@"Authorization status is %u",[CLLocationManager authorizationStatus]);
    
     if ([CLLocationManager locationServicesEnabled] && [CLLocationManager authorizationStatus]==3) {
@@ -98,6 +98,8 @@
     [super viewWillAppear:YES];
     // _firstRun=YES;
     self.navigationController.navigationBar.translucent = YES;
+    UIColor *myPurple = [UIColor colorWithRed:178/255.0 green:127/255.0 blue:228/255.0 alpha:1];
+    [self.navigationController.navigationBar setBarTintColor:myPurple];
 
 }
 
