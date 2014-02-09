@@ -187,14 +187,32 @@
     NSLog(@"Our new location is:%f,%f",_location.latitude,_location.longitude);
     
     if (_firstRun) {
-        //need to add quirks.plist when complete!
-        NSArray *myFiles = @[@"historic",@"attractions",@"neighborhoods"];
-        [self loadUpAnnotationsWithFiles:myFiles];
-        _firstRun=NO;
-        [self centerOnUser:self];
+        
+        //test to see if in region
+        
+        //convert region to mapRect
+        
+        if (MKMapRectContainsPoint(_myMapView.visibleMapRect, MKMapPointForCoordinate(_location))) {
+            
+            // Coordinate fits into the region
+            
+            //need to add quirks.plist when complete!
+            NSArray *myFiles = @[@"historic",@"attractions",@"neighborhoods"];
+            [self loadUpAnnotationsWithFiles:myFiles];
+
+            [self centerOnUser:self];
+            
+        }else{
+            //send alert and return home
+            UIAlertView *alert=[[UIAlertView alloc]initWithTitle:@"Sorry..."
+                                                         message:@"You aren’t in the region described in this application."
+                                                        delegate:self cancelButtonTitle:@"O.K."
+                                               otherButtonTitles:nil, nil];
+            [alert show];
+        }
+                    _firstRun=NO;
     }
 }
-
 
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations
 {
