@@ -38,18 +38,8 @@ ColorSets *myColorSet;
 //    return YES;
 //}
 
-
-- (void)viewDidLoad
+-(void)viewWillAppear:(BOOL)animated
 {
-    [super viewDidLoad];
-    
-    //set delegate and data source
-    _myTableView.delegate = self;
-    _myTableView.dataSource = self;
-    
-    //Load up from the passed kind of file
-    // NSLog(@"Received %@ from segue.",_myKind);
-    
     // set up colors
     
     myColorSet = [[ColorSets alloc]init];
@@ -84,15 +74,32 @@ ColorSets *myColorSet;
     //make a tint
     myColorSet.currentColor = [myColorSet tintColor:myColorSet.currentColor withSaturationFactor:.8 withValueFactor:1.5];
     
+    // Change the title tint
+    self.navigationController.navigationBar.tintColor = [UIColor lightTextColor];
+    [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor whiteColor] }];
+
+
+    [super viewWillAppear:YES];
+}
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    
+    //set delegate and data source
+    _myTableView.delegate = self;
+    _myTableView.dataSource = self;
+    
+    //Load up from the passed kind of file
+    // NSLog(@"Received %@ from segue.",_myKind);
+    
+    
     
     //change the title to the current section
     self.navigationController.navigationBar.translucent = YES;
     self.navigationItem.title = _myKind;
     
-    // Change the title tint
-   self.navigationController.navigationBar.tintColor = [UIColor lightTextColor];
-    [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor whiteColor] }];
-
+    
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     

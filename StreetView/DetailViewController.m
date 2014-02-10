@@ -41,8 +41,8 @@
     
     _myNavItem.title=_locInfo.title;
     _info.text = _locInfo.info;
-    self.navigationController.navigationBar.translucent = YES;
-    self.navigationController.navigationBar.barTintColor = [UIColor whiteColor];
+//    self.navigationController.navigationBar.translucent = YES;
+//    self.navigationController.navigationBar.barTintColor = [UIColor whiteColor];
     
         // set up image
     _myPic.image = [UIImage imageNamed:_locInfo.pic];
