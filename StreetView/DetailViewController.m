@@ -101,4 +101,15 @@
         [alert show];
     }
 }
+-(void)viewDidDisappear:(BOOL)animated
+{
+    [self setLocInfo:nil];
+    [self setMyNavItem:nil];
+    [self setMyPic:nil];
+    [self setMySubtitle:nil];
+    [self setDirections:nil];
+    [self setInfo:nil];
+    
+    [super viewDidDisappear:YES];
+}
 @end

@@ -29,6 +29,8 @@
         NSLog(@"Error reading Plist: %@ format: %u", errorDesc,format);
     }
     return contents;
+
+    
 }
 
 @end
