@@ -34,9 +34,9 @@ ColorSets *myColorSet;
 }
 
 //hide status bar
-- (BOOL)prefersStatusBarHidden{
-    return YES;
-}
+//- (BOOL)prefersStatusBarHidden{
+//    return YES;
+//}
 
 
 - (void)viewDidLoad
@@ -89,6 +89,10 @@ ColorSets *myColorSet;
     self.navigationController.navigationBar.translucent = YES;
     self.navigationItem.title = _myKind;
     
+    // Change the title tint
+   self.navigationController.navigationBar.tintColor = [UIColor lightTextColor];
+    [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor whiteColor] }];
+
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
@@ -185,6 +189,15 @@ ColorSets *myColorSet;
     
         // Pass the selected object to the new view controller.
     dest.locInfo = myInfo;
+}
+
+-(void)viewWillDisappear:(BOOL)animated
+{
+    [self.navigationController.navigationBar setBarTintColor:[UIColor whiteColor]];
+    self.navigationController.navigationBar.tintColor = [UIColor darkTextColor];
+    [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor blackColor] }];
+
+    [super viewWillDisappear:YES];
 }
 
 

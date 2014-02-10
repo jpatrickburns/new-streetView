@@ -17,7 +17,7 @@
 
 
 -(void)viewDidAppear:(BOOL)animated{
-    [self.navigationController.navigationBar setBarTintColor:[UIColor whiteColor]];
+    //[self.navigationController.navigationBar setBarTintColor:[UIColor whiteColor]];
 
 }
 - (void)viewDidLoad

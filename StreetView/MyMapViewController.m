@@ -139,9 +139,9 @@
 
 
 //hide status bar
-- (BOOL)prefersStatusBarHidden{
-    return YES;
-}
+//- (BOOL)prefersStatusBarHidden{
+//    return YES;
+//}
 
 - (void)didReceiveMemoryWarning
 {
@@ -394,6 +394,19 @@ NSArray *activityItems = @[_currentAnnotation.title, _currentAnnotation.subtitle
     return distance;
 }
 
+-(void)viewWillDisappear:(BOOL)animated
+{
+    [self.navigationController.navigationBar setBarTintColor:[UIColor whiteColor]];
 
+    [super viewWillDisappear:YES];
+}
+
+-(void)viewDidDisappear:(BOOL)animated
+{
+    [self setMyMapView:nil];
+    [self setLocationManager:nil];
+    [self setLocationManager:nil];
+    [super viewDidDisappear:YES];
+}
 
 @end

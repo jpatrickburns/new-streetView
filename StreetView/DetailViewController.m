@@ -60,11 +60,11 @@
     _mySubtitle.text = _locInfo.subtitle;
     
 }
-
--(BOOL)prefersStatusBarHidden
-{
-    return YES;
-}
+//
+//-(BOOL)prefersStatusBarHidden
+//{
+//    return YES;
+//}
 
 - (IBAction)share:(id)sender
 {
