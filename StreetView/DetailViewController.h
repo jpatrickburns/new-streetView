@@ -11,7 +11,7 @@
 #import "MapAnnotations.h"
 #import "ColorSets.h"
 
-@interface DetailViewController : UIViewController
+@interface DetailViewController : UIViewController<UIAlertViewDelegate>
 
 
 

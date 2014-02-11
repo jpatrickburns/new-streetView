@@ -37,6 +37,7 @@
 		6972F1921898493700A8E619 /* historical.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6972F18D1898493700A8E619 /* historical.plist */; };
 		6972F1951898493700A8E619 /* quirk.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6972F1901898493700A8E619 /* quirk.plist */; };
 		6972F19A18984B3C00A8E619 /* LoadObjectsFromFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 6972F19918984B3C00A8E619 /* LoadObjectsFromFile.m */; };
+		6980155318AA7C4D009BF75A /* FavoritesTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6980155218AA7C4D009BF75A /* FavoritesTableView.m */; };
 		699DB55E1899AC6700799C2B /* attractions.plist in Resources */ = {isa = PBXBuildFile; fileRef = 699DB55C1899AC6700799C2B /* attractions.plist */; };
 		699DB55F1899AC6700799C2B /* neighborhoods.plist in Resources */ = {isa = PBXBuildFile; fileRef = 699DB55D1899AC6700799C2B /* neighborhoods.plist */; };
 		69CC9D8D189AFA6F00A14B2C /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 69CC9D8C189AFA6F00A14B2C /* DetailViewController.m */; };
@@ -105,6 +106,8 @@
 		6972F1901898493700A8E619 /* quirk.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = quirk.plist; sourceTree = "<group>"; };
 		6972F19818984B3C00A8E619 /* LoadObjectsFromFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoadObjectsFromFile.h; sourceTree = "<group>"; };
 		6972F19918984B3C00A8E619 /* LoadObjectsFromFile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoadObjectsFromFile.m; sourceTree = "<group>"; };
+		6980155118AA7C4D009BF75A /* FavoritesTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FavoritesTableView.h; sourceTree = "<group>"; };
+		6980155218AA7C4D009BF75A /* FavoritesTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FavoritesTableView.m; sourceTree = "<group>"; };
 		699DB55C1899AC6700799C2B /* attractions.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = attractions.plist; sourceTree = "<group>"; };
 		699DB55D1899AC6700799C2B /* neighborhoods.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = neighborhoods.plist; sourceTree = "<group>"; };
 		69CC9D8B189AFA6F00A14B2C /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
@@ -234,6 +237,8 @@
 				69D095D3185CC3D400B6BE29 /* Images.xcassets */,
 				69D095CA185CC3D300B6BE29 /* AppDelegate.h */,
 				69D095CB185CC3D300B6BE29 /* AppDelegate.m */,
+				6980155118AA7C4D009BF75A /* FavoritesTableView.h */,
+				6980155218AA7C4D009BF75A /* FavoritesTableView.m */,
 				694B3B96189A9A8100465863 /* HelpViewController.h */,
 				694B3B97189A9A8100465863 /* HelpViewController.m */,
 				696DA4F118A13E7900CE9AB1 /* MyTableViewController.h */,
@@ -423,6 +428,7 @@
 				6972F19A18984B3C00A8E619 /* LoadObjectsFromFile.m in Sources */,
 				69D095CC185CC3D300B6BE29 /* AppDelegate.m in Sources */,
 				69521283185F4D9400ACC79E /* SpecialsViewController.m in Sources */,
+				6980155318AA7C4D009BF75A /* FavoritesTableView.m in Sources */,
 				69D095C8185CC3D300B6BE29 /* main.m in Sources */,
 				69CC9D8D189AFA6F00A14B2C /* DetailViewController.m in Sources */,
 				69521286185F54E300ACC79E /* MyNavigationController.m in Sources */,
