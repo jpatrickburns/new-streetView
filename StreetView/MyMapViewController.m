@@ -197,7 +197,7 @@
             // Coordinate fits into the region
             
             //need to add quirks.plist when complete!
-            NSArray *myFiles = @[@"historical",@"attractions",@"neighborhoods"];
+            NSArray *myFiles = @[@"historic",@"attractions",@"neighborhoods"];
             [self loadUpAnnotationsWithFiles:myFiles];
 
             [self centerOnUser:self];

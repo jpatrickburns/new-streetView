@@ -100,11 +100,12 @@ NSMutableArray *myFavs;
         //add location to end of myFavs array
         [myFavs addObject:_currLoc];
         
-        NSLog(@"myFavs now contains:%@",myFavs);
+        // NSLog(@"myFavs now contains:%@",myFavs);
         
+        //write defaults
         [myDefaults setObject:myFavs forKey:@"savedLocations"];
         [myDefaults synchronize];
-        NSLog(@"Retrieved %lu entries from defaults:%@",(unsigned long)[[myDefaults objectForKey:@"savedLocations"] count],[myDefaults objectForKey:@"savedLocations"]);
+        NSLog(@"Retrieved %lu entries from defaults:\r%@",(unsigned long)[[myDefaults objectForKey:@"savedLocations"] count],[[myDefaults objectForKey:@"savedLocations"] valueForKey:@"title"]);
 
     }
   

@@ -46,7 +46,7 @@
     
 	// Load up text from passed MapAnnotation.
     
-    NSLog(@"locInfo contains:%@",_locInfo);
+    //NSLog(@"locInfo contains:%@",_locInfo);
     
     _myNavItem.title=_locInfo.title;
     _info.text = _locInfo.info;
