@@ -104,7 +104,7 @@ NSMutableArray *myFavs;
         
         [myDefaults setObject:myFavs forKey:@"savedLocations"];
         [myDefaults synchronize];
-        NSLog(@"Retrieved from defaults:%@",[myDefaults objectForKey:@"savedLocations"]);
+        NSLog(@"Retrieved %lu entries from defaults:%@",(unsigned long)[[myDefaults objectForKey:@"savedLocations"] count],[myDefaults objectForKey:@"savedLocations"]);
 
     }
   

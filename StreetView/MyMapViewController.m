@@ -18,7 +18,6 @@
 //actions
 - (IBAction)centerOnUser:(id)sender;
 - (IBAction)segChanged:(id)sender;
-- (IBAction)goHome:(id)sender;
 - (void)loadUpAnnotationsWithFiles:(NSArray *)fileNames;
 - (float)updatePinDistance:(CLLocationCoordinate2D)pinLoc;
 - (IBAction)share:(id)sender;
@@ -198,7 +197,7 @@
             // Coordinate fits into the region
             
             //need to add quirks.plist when complete!
-            NSArray *myFiles = @[@"historic",@"attractions",@"neighborhoods"];
+            NSArray *myFiles = @[@"historical",@"attractions",@"neighborhoods"];
             [self loadUpAnnotationsWithFiles:myFiles];
 
             [self centerOnUser:self];
