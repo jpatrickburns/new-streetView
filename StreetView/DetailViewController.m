@@ -8,6 +8,7 @@
 
 #import "DetailViewController.h"
 #import "ViewController.h"
+#import "HelpViewController.h"
 
 @interface DetailViewController ()
 
@@ -101,6 +102,7 @@
         [alert show];
     }
 }
+
 -(void)viewDidDisappear:(BOOL)animated
 {
     [self setLocInfo:nil];
@@ -111,5 +113,16 @@
     [self setInfo:nil];
     
     [super viewDidDisappear:YES];
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([[segue identifier] isEqualToString:@"detailHelp"])
+    {
+        HelpViewController *dest =[segue destinationViewController];
+        //pass values
+        dest.helpImage = [UIImage imageNamed:@"detailHelpScreen"];
+    }
+
 }
 @end

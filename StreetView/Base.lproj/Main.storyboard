@@ -391,7 +391,7 @@
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="PS4-20-F7t"/>
                                     <barButtonItem image="help" style="plain" id="4CT-kG-fbh">
                                         <connections>
-                                            <action selector="goHome:" destination="pcE-Z3-UBx" id="hrb-8R-JFb"/>
+                                            <segue destination="jYq-DI-SVS" kind="modal" identifier="detailHelp" modalTransitionStyle="partialCurl" id="so4-dj-fo2"/>
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="SoL-pT-JCP"/>
@@ -493,5 +493,6 @@
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="Q2g-7k-kEJ"/>
+        <segue reference="so4-dj-fo2"/>
     </inferredMetricsTieBreakers>
 </document>
