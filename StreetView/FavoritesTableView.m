@@ -81,16 +81,17 @@ NSMutableArray *myFavs;
 
 -(void)doSetUp
 {
-    //load up defaults, if existant
-    NSUserDefaults *myDefaults = [NSUserDefaults standardUserDefaults];
-    if ([myDefaults objectForKey:@"savedLocations"]!=nil) {
+    //load up file, if exists
+    if (<#condition#>) {
+
+//    NSUserDefaults *myDefaults = [NSUserDefaults standardUserDefaults];
+    
+        NSLog(@"file exists!");
         
-        NSLog(@"User defaults exist");
-        
-        myFavs = [[NSMutableArray alloc]initWithObjects:[myDefaults objectForKey:@"savedLocations"],nil];
+//        myFavs = [[NSMutableArray alloc]initWithObjects:[myDefaults objectForKey:@"savedLocations"],nil];
         
     }else{
-        NSLog(@"User defaults don't exist");
+        NSLog(@"File doesn't exist");
 
         myFavs = [[NSMutableArray alloc]init];
     }
@@ -103,9 +104,10 @@ NSMutableArray *myFavs;
         // NSLog(@"myFavs now contains:%@",myFavs);
         
         //write defaults
-        [myDefaults setObject:myFavs forKey:@"savedLocations"];
-        [myDefaults synchronize];
-        NSLog(@"Retrieved %lu entries from defaults:\r%@",(unsigned long)[[myDefaults objectForKey:@"savedLocations"] count],[[myDefaults objectForKey:@"savedLocations"] valueForKey:@"title"]);
+        
+//        [myDefaults setObject:myFavs forKey:@"savedLocations"];
+//        [myDefaults synchronize];
+//        NSLog(@"Retrieved %lu entries from defaults:\r%@",(unsigned long)[[myDefaults objectForKey:@"savedLocations"] count],[[myDefaults objectForKey:@"savedLocations"] valueForKey:@"title"]);
 
     }
   

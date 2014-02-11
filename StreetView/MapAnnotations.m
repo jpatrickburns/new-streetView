@@ -39,23 +39,23 @@
     [encoder encodeDouble:_coordinate.latitude forKey:@"lat"];
     [encoder encodeDouble:_coordinate.longitude forKey:@"lon"];
 
-
 }
 
 - (id)initWithCoder:(NSCoder *)decoder
 {
-    self = [super init];
-    if (self)
-    {
-        self.title = [decoder decodeObjectForKey:@"title"];
-        self.subtitle = [decoder decodeObjectForKey:@"subtitle"];
-        self.info = [decoder decodeObjectForKey:@"info"];
-        self.pic = [decoder decodeObjectForKey:@"pic"];
-        self.kind = [decoder decodeObjectForKey:@"kind"];
-        self.coordinate= CLLocationCoordinate2DMake([decoder decodeDoubleForKey:@"lat"],
-                                                    [decoder decodeDoubleForKey:@"lon"]);
-    }
+    NSString *title = [decoder decodeObjectForKey:@"title"];
+    NSString *subtitle = [decoder decodeObjectForKey:@"subtitle"];
+    NSString *info = [decoder decodeObjectForKey:@"info"];
+    NSString *pic = [decoder decodeObjectForKey:@"pic"];
+    NSString *kind = [decoder decodeObjectForKey:@"kind"];
+    float lat= [decoder decodeDoubleForKey:@"lat"];
+    float lon= [decoder decodeDoubleForKey:@"lon"];
     
+    self = [self initWithLatitude:lat longitude:lon title:title];
+    self.subtitle = subtitle;
+    self.info = info;
+    self.pic = pic;
+    self.kind = kind;
     return self;
 }
 

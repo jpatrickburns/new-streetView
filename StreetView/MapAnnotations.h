@@ -22,9 +22,6 @@
 //@property (nonatomic) float lat;
 //@property (nonatomic) float lon;
 
-
-
-
 - (id)initWithLatitude:(float)lat
              longitude:(float)lon
                  title:(NSString *)title;

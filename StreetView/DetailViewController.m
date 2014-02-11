@@ -150,17 +150,17 @@
     {
         FavoritesTableView *dest =[segue destinationViewController];
         //convert to a NSDictionary so we can eventually store in defaults
-        NSDictionary *myDict = [[NSDictionary alloc] initWithObjectsAndKeys:
-                                _locInfo.title,@"title",
-                                _locInfo.subtitle,@"subtitle",
-                                [NSNumber numberWithDouble:_locInfo.coordinate.latitude],@"lat",
-                                [NSNumber numberWithDouble:_locInfo.coordinate.longitude],@"lon",
-                                _locInfo.info,@"info",
-                                _locInfo.kind,@"kind",
-                                _locInfo.pic,@"pic",
-                                nil];
+//        NSDictionary *myDict = [[NSDictionary alloc] initWithObjectsAndKeys:
+//                                _locInfo.title,@"title",
+//                                _locInfo.subtitle,@"subtitle",
+//                                [NSNumber numberWithDouble:_locInfo.coordinate.latitude],@"lat",
+//                                [NSNumber numberWithDouble:_locInfo.coordinate.longitude],@"lon",
+//                                _locInfo.info,@"info",
+//                                _locInfo.kind,@"kind",
+//                                _locInfo.pic,@"pic",
+//                                nil];
         //pass dictionary
-        dest.currLoc = myDict;
+        dest.currLoc = _locInfo;
     }
 
 }
