@@ -11,5 +11,5 @@
 
 @interface FavoritesTableView : UITableViewController<UITableViewDataSource,UITableViewDelegate>
 
-@property MapAnnotations *currLoc;
+@property NSDictionary *currLoc;
 @end

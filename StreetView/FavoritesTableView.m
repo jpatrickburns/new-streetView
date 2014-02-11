@@ -8,9 +8,20 @@
 
 #import "FavoritesTableView.h"
 
+
 @interface FavoritesTableView ()
 
+//properties
+
+
+//actions
+
+- (void) doSetUp;
+
 @end
+
+
+NSMutableArray *myFavs;
 
 @implementation FavoritesTableView
 
@@ -26,14 +37,14 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    NSLog(@"CurrLoc contains:%@",_currLoc);
 
-    // Uncomment the following line to preserve selection between presentations.
+    [self doSetUp];
+    
+        // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
 - (void)didReceiveMemoryWarning
@@ -46,9 +57,8 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-#warning Potentially incomplete method implementation.
     // Return the number of sections.
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -68,6 +78,37 @@
     return cell;
 }
 
+
+-(void)doSetUp
+{
+    //load up defaults, if existant
+    NSUserDefaults *myDefaults = [NSUserDefaults standardUserDefaults];
+    if ([myDefaults objectForKey:@"savedLocations"]!=nil) {
+        
+        NSLog(@"User defaults exist");
+        
+        myFavs = [[NSMutableArray alloc]initWithObjects:[myDefaults objectForKey:@"savedLocations"],nil];
+        
+    }else{
+        NSLog(@"User defaults don't exist");
+
+        myFavs = [[NSMutableArray alloc]init];
+    }
+    
+    //if there's a new passed current location
+    if (_currLoc != nil) {
+        //add location to end of myFavs array
+        [myFavs addObject:_currLoc];
+        
+        NSLog(@"myFavs now contains:%@",myFavs);
+        
+        [myDefaults setObject:myFavs forKey:@"savedLocations"];
+        [myDefaults synchronize];
+        NSLog(@"Retrieved from defaults:%@",[myDefaults objectForKey:@"savedLocations"]);
+
+    }
+  
+}
 /*
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath

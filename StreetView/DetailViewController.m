@@ -149,10 +149,19 @@
     if ([[segue identifier] isEqualToString:@"addFav"])
     {
         FavoritesTableView *dest =[segue destinationViewController];
-        //pass values
-        dest.currLoc = sender;
+        //convert to a NSDictionary so we can eventually store in defaults
+        NSDictionary *myDict = [[NSDictionary alloc] initWithObjectsAndKeys:
+                                _locInfo.title,@"title",
+                                _locInfo.subtitle,@"subtitle",
+                                [NSNumber numberWithDouble:_locInfo.coordinate.latitude],@"lat",
+                                [NSNumber numberWithDouble:_locInfo.coordinate.longitude],@"lon",
+                                _locInfo.info,@"info",
+                                _locInfo.kind,@"kind",
+                                _locInfo.pic,@"pic",
+                                nil];
+        //pass dictionary
+        dest.currLoc = myDict;
     }
-
 
 }
 @end
