@@ -10,6 +10,7 @@
 #import "LoadObjectsFromFile.h"
 #import "MapAnnotations.h"
 #import "DetailViewController.h"
+#import "HelpViewController.h"
 
 
 @interface MyMapViewController ()
@@ -333,10 +334,16 @@
     if ([[segue identifier] isEqualToString:@"showDetailFromMap"])
     {
         DetailViewController *dest =[segue destinationViewController];
-        
         //pass values
         dest.locInfo = sender;
     }
+    if ([[segue identifier] isEqualToString:@"mapHelp"])
+    {
+        HelpViewController *dest =[segue destinationViewController];
+        //pass values
+        dest.helpImage = [UIImage imageNamed:@"mapHelpScreen"];
+    }
+
 }
 
 #pragma mark - sharing panel

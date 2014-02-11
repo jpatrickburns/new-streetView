@@ -9,5 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface HelpViewController : UIViewController
+@property (strong, nonatomic) IBOutlet UIImageView *help;
+@property (strong, nonatomic) UIImage *helpImage;
 
 @end

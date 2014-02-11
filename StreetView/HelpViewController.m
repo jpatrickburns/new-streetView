@@ -27,12 +27,13 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    _help.image = _helpImage;
 }
 
 //hide status bar
-- (BOOL)prefersStatusBarHidden{
-    return YES;
-}
+//- (BOOL)prefersStatusBarHidden{
+//    return YES;
+//}
 
 
 - (void)didReceiveMemoryWarning

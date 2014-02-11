@@ -13,7 +13,7 @@
                         <viewControllerLayoutGuide type="bottom" id="dJr-oz-JAm"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="241" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="top" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="tailTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zvR-N1-feX">
@@ -39,7 +39,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="top" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="tailTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JK0-fF-QtI">
-                                <rect key="frame" x="46" y="249" width="100" height="120"/>
+                                <rect key="frame" x="46" y="205" width="100" height="120"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <state key="normal" title="Neighborhoods" backgroundImage="neighborhood">
@@ -50,7 +50,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="top" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="tailTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cCQ-T3-IQF">
-                                <rect key="frame" x="174" y="249" width="100" height="120"/>
+                                <rect key="frame" x="174" y="205" width="100" height="120"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="sn3-eE-3SJ"/>
@@ -64,7 +64,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="top" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="tailTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ox1-EB-Z5S">
-                                <rect key="frame" x="46" y="423" width="100" height="120"/>
+                                <rect key="frame" x="46" y="335" width="100" height="120"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <state key="normal" title="What’s Near Me?" backgroundImage="where">
@@ -75,7 +75,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="top" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="tailTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yr6-Ag-nWL">
-                                <rect key="frame" x="174" y="423" width="100" height="120"/>
+                                <rect key="frame" x="174" y="335" width="100" height="120"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <state key="normal" title="Special Offers" backgroundImage="special">
@@ -116,7 +116,7 @@
             <objects>
                 <tableViewController id="7CO-Q3-aYX" customClass="MyTableViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Lna-yH-tcS">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -175,25 +175,24 @@
                         <viewControllerLayoutGuide type="bottom" id="cAX-rk-by7"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="gP8-Tf-UYm">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="C9M-jR-QH2">
-                                <rect key="frame" x="0.0" y="-65" width="321" height="633"/>
+                                <rect key="frame" x="0.0" y="-65" width="321" height="545"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <connections>
                                     <outlet property="delegate" destination="pcE-Z3-UBx" id="h6Z-Yq-AoB"/>
                                 </connections>
                             </mapView>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" barStyle="black" translatesAutoresizingMaskIntoConstraints="NO" id="n9d-X7-RXF">
-                                <rect key="frame" x="0.0" y="524" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="436" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <items>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="BQj-Ur-mnR"/>
                                     <barButtonItem image="help" style="plain" id="MGQ-AL-JXy">
                                         <connections>
-                                            <action selector="goHome:" destination="pcE-Z3-UBx" id="3hd-HC-e78"/>
-                                            <segue destination="jYq-DI-SVS" kind="modal" modalTransitionStyle="partialCurl" id="9oD-gG-xdd"/>
+                                            <segue destination="jYq-DI-SVS" kind="modal" identifier="mapHelp" modalTransitionStyle="partialCurl" id="9oD-gG-xdd"/>
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="xdK-dt-9rC"/>
@@ -258,48 +257,14 @@
         <scene sceneID="C0i-80-FSx">
             <objects>
                 <viewController modalTransitionStyle="partialCurl" id="jYq-DI-SVS" customClass="HelpViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Km2-dC-pZ8"/>
-                        <viewControllerLayoutGuide type="bottom" id="BMN-Az-Tt1"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="eCr-Yo-LRD">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="bottom" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mapHelpScreen" translatesAutoresizingMaskIntoConstraints="NO" id="Bnx-Tc-acg">
-                                <rect key="frame" x="0.0" y="328" width="320" height="240"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="320" id="7hv-6U-bcS"/>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="320" id="eX8-Qs-6Zj"/>
-                                    <constraint firstAttribute="height" constant="240" id="goJ-pv-zDu"/>
-                                </constraints>
-                            </imageView>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="Iyb-ZB-LOU">
-                                <rect key="frame" x="20" y="357" width="280" height="65"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="280" id="83T-YR-ffQ"/>
-                                    <constraint firstAttribute="height" constant="65" id="H7f-6s-xC1"/>
-                                </constraints>
-                                <string key="text">Click on pins for more details. When you find a new place to explore, you can tweet, post to Facebook, or email your friends to share your discoveries.</string>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBold" family="Helvetica Neue" pointSize="13"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="BMN-Az-Tt1" firstAttribute="top" secondItem="Bnx-Tc-acg" secondAttribute="bottom" id="0Pd-mj-sy4"/>
-                            <constraint firstItem="Iyb-ZB-LOU" firstAttribute="leading" secondItem="eCr-Yo-LRD" secondAttribute="leading" constant="20" symbolic="YES" id="1Bw-2W-ZjJ"/>
-                            <constraint firstAttribute="trailing" secondItem="Iyb-ZB-LOU" secondAttribute="trailing" constant="20" symbolic="YES" id="OjF-SK-tHa"/>
-                            <constraint firstItem="BMN-Az-Tt1" firstAttribute="top" secondItem="Bnx-Tc-acg" secondAttribute="bottom" id="TYJ-4P-7ru"/>
-                            <constraint firstItem="BMN-Az-Tt1" firstAttribute="top" secondItem="Bnx-Tc-acg" secondAttribute="bottom" id="ep9-5p-Brd"/>
-                            <constraint firstItem="Bnx-Tc-acg" firstAttribute="leading" secondItem="eCr-Yo-LRD" secondAttribute="leading" id="j54-wR-Gk0"/>
-                            <constraint firstItem="BMN-Az-Tt1" firstAttribute="top" secondItem="Iyb-ZB-LOU" secondAttribute="bottom" constant="146" id="skJ-gD-ysn"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" id="fQI-6y-Qhk"/>
+                    <imageView key="view" contentMode="bottom" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="320" placeholderIntrinsicHeight="480" id="Ix9-3n-cU9">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </imageView>
+                    <connections>
+                        <outlet property="help" destination="Ix9-3n-cU9" id="Hut-PQ-9RQ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="r0u-3o-9qD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -314,16 +279,16 @@
                         <viewControllerLayoutGuide type="bottom" id="KBv-pO-5qb"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="bjR-vN-n71">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6gw-Zz-sZF">
-                                <rect key="frame" x="0.0" y="-2" width="320" height="570"/>
+                                <rect key="frame" x="0.0" y="-2" width="320" height="482"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </webView>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="oRj-k4-8bV">
-                                <rect key="frame" x="150" y="395" width="20" height="20"/>
+                                <rect key="frame" x="150" y="307" width="20" height="20"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </activityIndicatorView>
                         </subviews>
@@ -356,7 +321,7 @@
                         <viewControllerLayoutGuide type="bottom" id="T4i-aj-uio"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="tpN-5x-e89">
-                        <rect key="frame" x="0.0" y="74" width="320" height="494"/>
+                        <rect key="frame" x="0.0" y="74" width="320" height="406"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" mapType="standard" zoomEnabled="NO" scrollEnabled="NO" rotateEnabled="NO" pitchEnabled="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zRP-b3-zPH">
@@ -386,7 +351,7 @@
                                 </constraints>
                             </imageView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="top" bounces="NO" pagingEnabled="YES" delaysContentTouches="NO" canCancelContentTouches="NO" bouncesZoom="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VQf-Wh-f6r">
-                                <rect key="frame" x="20" y="177" width="280" height="273"/>
+                                <rect key="frame" x="20" y="177" width="280" height="185"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
@@ -414,7 +379,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" barStyle="black" translatesAutoresizingMaskIntoConstraints="NO" id="b84-tk-evl">
-                                <rect key="frame" x="0.0" y="450" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="362" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <items>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="cZv-Tt-4eO"/>
@@ -514,7 +479,6 @@
         <image name="help" width="44" height="44"/>
         <image name="historical" width="100" height="120"/>
         <image name="home" width="44" height="44"/>
-        <image name="mapHelpScreen" width="320" height="240"/>
         <image name="mapPoint" width="44" height="44"/>
         <image name="neighborhood" width="100" height="120"/>
         <image name="special" width="100" height="120"/>
@@ -525,7 +489,7 @@
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
-        <simulatedScreenMetrics key="destination" type="retina4"/>
+        <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="Q2g-7k-kEJ"/>

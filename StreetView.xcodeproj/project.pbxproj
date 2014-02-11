@@ -158,15 +158,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		69395CC418994CF9007876FF /* map stuff */ = {
-			isa = PBXGroup;
-			children = (
-				69395CC118994C35007876FF /* MapAnnotations.h */,
-				69395CC218994C35007876FF /* MapAnnotations.m */,
-			);
-			name = "map stuff";
-			sourceTree = "<group>";
-		};
 		69651AF4189C3B2300E1E564 /* pics */ = {
 			isa = PBXGroup;
 			children = (
@@ -243,7 +234,6 @@
 				69D095D3185CC3D400B6BE29 /* Images.xcassets */,
 				69D095CA185CC3D300B6BE29 /* AppDelegate.h */,
 				69D095CB185CC3D300B6BE29 /* AppDelegate.m */,
-				69651AF4189C3B2300E1E564 /* pics */,
 				694B3B96189A9A8100465863 /* HelpViewController.h */,
 				694B3B97189A9A8100465863 /* HelpViewController.m */,
 				696DA4F118A13E7900CE9AB1 /* MyTableViewController.h */,
@@ -262,8 +252,10 @@
 				69D095D1185CC3D300B6BE29 /* ViewController.m */,
 				69D6F26218A58BF7005314AB /* ColorSets.h */,
 				69D6F26318A58BF7005314AB /* ColorSets.m */,
+				69395CC118994C35007876FF /* MapAnnotations.h */,
+				69395CC218994C35007876FF /* MapAnnotations.m */,
+				69651AF4189C3B2300E1E564 /* pics */,
 				6972F1971898494300A8E619 /* plists */,
-				69395CC418994CF9007876FF /* map stuff */,
 				69D095C2185CC3D200B6BE29 /* Supporting Files */,
 			);
 			path = StreetView;
