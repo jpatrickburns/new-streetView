@@ -37,12 +37,12 @@ NSMutableArray *myFavs;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
+    
     [self doSetUp];
     
-        // Uncomment the following line to preserve selection between presentations.
+    // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
- 
+    
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
@@ -82,17 +82,26 @@ NSMutableArray *myFavs;
 -(void)doSetUp
 {
     //load up file, if exists
-    if (<#condition#>) {
-
-//    NSUserDefaults *myDefaults = [NSUserDefaults standardUserDefaults];
     
+    NSUserDefaults *myDefaults = [NSUserDefaults standardUserDefaults];
+    //make a mutable array to hold any locations saved
+    NSMutableArray *myFavs;
+    
+    //if there are saved locations
+    if ([myDefaults objectForKey:@"savedLocations"]) {
+        
         NSLog(@"file exists!");
         
-//        myFavs = [[NSMutableArray alloc]initWithObjects:[myDefaults objectForKey:@"savedLocations"],nil];
+        //get saved data and put in a temporary array
+        NSData *theData = [myDefaults dataForKey:@"savedLocations"];
+        //this assumes your custom object used NSCode protocol
+        NSArray *temp = (NSArray *)[NSKeyedUnarchiver unarchiveObjectWithData:theData];
+        NSLog(@"temp contains:%@",temp);
+        myFavs = [temp mutableCopy];
         
     }else{
+        
         NSLog(@"File doesn't exist");
-
         myFavs = [[NSMutableArray alloc]init];
     }
     
@@ -101,66 +110,65 @@ NSMutableArray *myFavs;
         //add location to end of myFavs array
         [myFavs addObject:_currLoc];
         
-        // NSLog(@"myFavs now contains:%@",myFavs);
+        NSLog(@"myFavs now contains:%@",myFavs);
         
         //write defaults
         
-//        [myDefaults setObject:myFavs forKey:@"savedLocations"];
-//        [myDefaults synchronize];
-//        NSLog(@"Retrieved %lu entries from defaults:\r%@",(unsigned long)[[myDefaults objectForKey:@"savedLocations"] count],[[myDefaults objectForKey:@"savedLocations"] valueForKey:@"title"]);
-
+        NSData *encodedObject = [NSKeyedArchiver archivedDataWithRootObject:myFavs];
+        [myDefaults setObject:encodedObject forKey:@"savedLocations"];
+        
     }
-  
+    
 }
 /*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
+ // Override to support conditional editing of the table view.
+ - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
+ {
+ // Return NO if you do not want the specified item to be editable.
+ return YES;
+ }
+ */
 
 /*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    }   
-    else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
+ // Override to support editing the table view.
+ - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+ {
+ if (editingStyle == UITableViewCellEditingStyleDelete) {
+ // Delete the row from the data source
+ [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+ }
+ else if (editingStyle == UITableViewCellEditingStyleInsert) {
+ // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
+ }
+ }
+ */
 
 /*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
-{
-}
-*/
+ // Override to support rearranging the table view.
+ - (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
+ {
+ }
+ */
 
 /*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
+ // Override to support conditional rearranging of the table view.
+ - (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
+ {
+ // Return NO if you do not want the item to be re-orderable.
+ return YES;
+ }
+ */
 
 /*
-#pragma mark - Navigation
-
-// In a story board-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-
+ #pragma mark - Navigation
+ 
+ // In a story board-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+ {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
+ 
  */
 
 @end
