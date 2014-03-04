@@ -12,4 +12,6 @@
 @interface FavoritesTableView : UITableViewController<UITableViewDataSource,UITableViewDelegate>
 
 @property MapAnnotations *currLoc;
+@property (strong, nonatomic) IBOutlet UITableView *myTableView;
+
 @end

@@ -155,7 +155,7 @@
 
 -(void)mapView:(MKMapView *)mapView didSelectAnnotationView:(MKAnnotationView *)view
 {
-    MapAnnotations *selectedAnnotation = view.annotation;
+    MapAnnotations *selectedAnnotation = (MapAnnotations *)view.annotation;
         NSLog(@"Selected mapView annotation %@", selectedAnnotation.title);
     
     // figure out distance to user
@@ -237,7 +237,7 @@
     if ([annotation isKindOfClass:[MapAnnotations class]]) {
         
         //recast annotation so we can access kind property
-        MapAnnotations *theAnnotation = annotation;
+        MapAnnotations *theAnnotation = (MapAnnotations *)annotation;
         
         // try for reuse of pins
         

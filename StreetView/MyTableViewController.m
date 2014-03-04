@@ -87,8 +87,8 @@ ColorSets *myColorSet;
     [super viewDidLoad];
     
     //set delegate and data source
-    _myTableView.delegate = self;
-    _myTableView.dataSource = self;
+//    _myTableView.delegate = self;
+//    _myTableView.dataSource = self;
     
     //Load up from the passed kind of file
     // NSLog(@"Received %@ from segue.",_myKind);
@@ -130,7 +130,7 @@ ColorSets *myColorSet;
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // get a sorted array of all the keys in myLocation
+    // get a sorted array of all the keys in myLocations
     
     NSArray *temp= [_myLocations allKeys];
     

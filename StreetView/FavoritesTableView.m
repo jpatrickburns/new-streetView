@@ -34,13 +34,14 @@ NSMutableArray *myFavs;
     return self;
 }
 
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
     [self doSetUp];
-    
-    // Uncomment the following line to preserve selection between presentations.
+
+
+     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
@@ -63,17 +64,35 @@ NSMutableArray *myFavs;
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-#warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return 0;
+    NSLog(@"There are %lu locations in myFavs.",(unsigned long)myFavs.count);
+    return myFavs.count;
+
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"Cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    NSLog(@"In cellForRowAtIndexPath");
     
-    // Configure the cell...
+    static NSString *MyIdentifier = @"favCell";
+    
+       // Try to retrieve from the table view a now-unused cell with the given identifier.
+    UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:MyIdentifier];
+    
+    // If no cell is available, create a new one using the given identifier.
+    if (cell == nil) {
+        // Use the subtitle cell style.
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:MyIdentifier];
+    }
+    
+    // Set up the cell.
+    
+   MapAnnotations *annotation = [myFavs objectAtIndex:indexPath.row];
+    
+    NSLog(@"chunk for cell:%@", annotation);
+    
+    cell.textLabel.text = annotation.title;
+    cell.detailTextLabel.text = annotation.title;
     
     return cell;
 }
@@ -85,7 +104,6 @@ NSMutableArray *myFavs;
     
     NSUserDefaults *myDefaults = [NSUserDefaults standardUserDefaults];
     //make a mutable array to hold any locations saved
-    NSMutableArray *myFavs;
     
     //if there are saved locations
     if ([myDefaults objectForKey:@"savedLocations"]) {
@@ -116,6 +134,7 @@ NSMutableArray *myFavs;
         
         NSData *encodedObject = [NSKeyedArchiver archivedDataWithRootObject:myFavs];
         [myDefaults setObject:encodedObject forKey:@"savedLocations"];
+        [myDefaults synchronize];
         
     }
     
