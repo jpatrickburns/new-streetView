@@ -17,13 +17,18 @@
 
 
 -(void)viewDidAppear:(BOOL)animated{
-    //[self.navigationController.navigationBar setBarTintColor:[UIColor whiteColor]];
+    //see if there are any favorites
+    NSUserDefaults *myDefaults = [NSUserDefaults standardUserDefaults];
+    //if there are saved locations, enable button
+
+    _favButton.enabled = (bool)[myDefaults objectForKey:@"savedLocations"];
 
 }
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -58,6 +63,11 @@
         [self performSegueWithIdentifier:@"table" sender:which];
     }
     NSLog(@"Pushed %@.",which);
+}
+
+- (IBAction)showFavs:(id)sender
+{
+   [self performSegueWithIdentifier:@"toFav" sender:nil]; 
 }
 
 // for segue to table view

@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "MapAnnotations.h"
+#import "DetailViewController.h"
 
 @interface FavoritesTableView : UITableViewController<UITableViewDataSource,UITableViewDelegate>
 

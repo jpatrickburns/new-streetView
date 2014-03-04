@@ -128,7 +128,7 @@
     if (_currLoc != nil) {
         
         if ([_myFavs containsObject:_currLoc]) {
-            UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Sorry..." message:@"That location has already been saved." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+            UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Sorry..." message:[NSString stringWithFormat:@"The %@ location has already been saved.",_currLoc.title] delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
             [alert show];
         }else{
             //add location to end of myFavs array
@@ -145,28 +145,33 @@
         }
     }
 }
-/*
- // Override to support conditional editing of the table view.
- - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
- {
- // Return NO if you do not want the specified item to be editable.
- return YES;
- }
- */
 
-/*
- // Override to support editing the table view.
- - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
- {
- if (editingStyle == UITableViewCellEditingStyleDelete) {
- // Delete the row from the data source
- [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
- }
- else if (editingStyle == UITableViewCellEditingStyleInsert) {
- // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
- }
- }
- */
+#pragma mark - Table View Delegate methods
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    
+}
+
+-(void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+
+}
+
+
+#pragma mark - Navigation
+
+// In a story board-based application, you will often want to do a little preparation before navigation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    // Get the new view controller
+    DetailViewController *dest = [segue destinationViewController];
+    //get an index for the selected cell
+    NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
+    MapAnnotations *passedAnnotation =_myFavs[indexPath.row];
+    // Pass the selected object to the new view controller.
+    dest.locInfo = passedAnnotation;
+}
 
 
 // Override to support rearranging the table view.

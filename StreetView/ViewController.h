@@ -10,5 +10,7 @@
 
 @interface ViewController : UIViewController
 - (IBAction)changeScene:(id)sender;
+- (IBAction)showFavs:(id)sender;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *favButton;
 
 @end
