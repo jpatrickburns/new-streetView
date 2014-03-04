@@ -65,7 +65,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    NSLog(@"There are %lu locations in myFavs.",(unsigned long)_myFavs.count);
+    //NSLog(@"There are %lu locations in myFavs.",(unsigned long)_myFavs.count);
     return _myFavs.count;
     
 }
@@ -134,6 +134,7 @@
             //add location to end of myFavs array
             [_myFavs addObject:_currLoc];
             
+            NSLog(@"There are %lu locations in myFavs.",(unsigned long)_myFavs.count);
             NSLog(@"myFavs now contains:%@",_myFavs);
             
             //write defaults

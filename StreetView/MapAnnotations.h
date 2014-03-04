@@ -25,4 +25,7 @@
 - (id)initWithLatitude:(float)lat
              longitude:(float)lon
                  title:(NSString *)title;
+
+-(BOOL)isEqual:(id)other;
+
 @end

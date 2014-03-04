@@ -59,4 +59,13 @@
     return self;
 }
 
+- (NSUInteger)hash
+{
+    return [self.title hash];
+}
+
+-(BOOL)isEqual:(id)other
+{
+    return [[self title] isEqualToString:[other title]];
+}
 @end
