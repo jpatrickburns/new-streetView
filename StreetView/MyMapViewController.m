@@ -18,7 +18,6 @@
 //actions
 - (IBAction)centerOnUser:(id)sender;
 - (IBAction)segChanged:(id)sender;
-- (IBAction)goHome:(id)sender;
 - (void)loadUpAnnotationsWithFiles:(NSArray *)fileNames;
 - (float)updatePinDistance:(CLLocationCoordinate2D)pinLoc;
 - (IBAction)share:(id)sender;
@@ -57,12 +56,12 @@
     self.navigationItem.title = @"What’s Near Me?";
     
     NSLog(@"Authorization status is %u",[CLLocationManager authorizationStatus]);
-   
-    if ([CLLocationManager locationServicesEnabled] && [CLLocationManager authorizationStatus]==3) {
+    //if location Services are available, and app either authorized or indeterminate
+    if ([CLLocationManager locationServicesEnabled] && ([CLLocationManager authorizationStatus]==3 ||
+                                                        [CLLocationManager authorizationStatus]==0)) {
         
         //set location manager's delegate
         _locationManager.delegate=self;
-        
         
         //tell location manager to monitor changes
         [_locationManager startMonitoringSignificantLocationChanges];
@@ -156,7 +155,7 @@
 
 -(void)mapView:(MKMapView *)mapView didSelectAnnotationView:(MKAnnotationView *)view
 {
-    MapAnnotations *selectedAnnotation = view.annotation;
+    MapAnnotations *selectedAnnotation = (MapAnnotations *)view.annotation;
         NSLog(@"Selected mapView annotation %@", selectedAnnotation.title);
     
     // figure out distance to user
@@ -238,7 +237,7 @@
     if ([annotation isKindOfClass:[MapAnnotations class]]) {
         
         //recast annotation so we can access kind property
-        MapAnnotations *theAnnotation = annotation;
+        MapAnnotations *theAnnotation = (MapAnnotations *)annotation;
         
         // try for reuse of pins
         

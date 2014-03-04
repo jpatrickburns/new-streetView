@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="13B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="n96-Iq-dHg">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="13C64" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="n96-Iq-dHg">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
     </dependencies>
@@ -312,6 +312,55 @@
             </objects>
             <point key="canvasLocation" x="1355" y="-918"/>
         </scene>
+        <!--Favorites Table View-->
+        <scene sceneID="9bg-n9-m5v">
+            <objects>
+                <tableViewController id="7pZ-F5-3P3" customClass="FavoritesTableView" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="QdD-4a-mJy">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="favCell" textLabel="Fk2-JC-hRM" detailTextLabel="eRe-Wz-9eE" style="IBUITableViewCellStyleSubtitle" id="VvM-Wj-NXq">
+                                <rect key="frame" x="0.0" y="66" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="VvM-Wj-NXq" id="Z9j-RN-iyA">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Fk2-JC-hRM">
+                                            <rect key="frame" x="15" y="3" width="34" height="22"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="eRe-Wz-9eE">
+                                            <rect key="frame" x="15" y="25" width="43" height="15"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <sections/>
+                        <connections>
+                            <outlet property="dataSource" destination="7pZ-F5-3P3" id="JoO-gn-lU1"/>
+                            <outlet property="delegate" destination="7pZ-F5-3P3" id="r6t-Ol-FkM"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="uhm-Gn-CRH"/>
+                    <connections>
+                        <outlet property="myTableView" destination="QdD-4a-mJy" id="HDI-bz-SDn"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kRz-lK-kxq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2293" y="86"/>
+        </scene>
         <!--Detail View Controller-->
         <scene sceneID="G5Y-uo-aPv">
             <objects>
@@ -388,6 +437,12 @@
                                             <action selector="goHome:" destination="bbd-y8-txb" id="kqX-EN-LTe"/>
                                         </connections>
                                     </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="oAe-rV-T53"/>
+                                    <barButtonItem style="plain" systemItem="bookmarks" id="ZM2-8p-Z73">
+                                        <connections>
+                                            <action selector="saveFav:" destination="bbd-y8-txb" id="I9F-Kq-DK7"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="PS4-20-F7t"/>
                                     <barButtonItem image="help" style="plain" id="4CT-kG-fbh">
                                         <connections>
@@ -443,6 +498,7 @@
                         <outlet property="myPic" destination="I30-Ac-mX3" id="JmZ-uh-SgS"/>
                         <outlet property="mySubtitle" destination="6yo-6B-qOV" id="p4A-eJ-et0"/>
                         <outlet property="tinyMap" destination="zRP-b3-zPH" id="KNF-gL-45H"/>
+                        <segue destination="7pZ-F5-3P3" kind="push" identifier="addFav" id="Oab-TH-jyZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wZq-hq-5oD" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -492,7 +548,7 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="Q2g-7k-kEJ"/>
+        <segue reference="hID-38-EmP"/>
         <segue reference="so4-dj-fo2"/>
     </inferredMetricsTieBreakers>
 </document>

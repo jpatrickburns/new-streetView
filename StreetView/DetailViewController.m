@@ -9,11 +9,19 @@
 #import "DetailViewController.h"
 #import "ViewController.h"
 #import "HelpViewController.h"
+#import "FavoritesTableView.h"
+
 
 @interface DetailViewController ()
 
+//properties
+
+
+//actions
 - (IBAction)share:(id)sender;
 - (IBAction)goHome:(id)sender;
+- (IBAction)saveFav:(id)sender;
+
 
 @end
 
@@ -38,7 +46,7 @@
     
 	// Load up text from passed MapAnnotation.
     
-    NSLog(@"locInfo contains:%@",_locInfo);
+    //NSLog(@"locInfo contains:%@",_locInfo);
     
     _myNavItem.title=_locInfo.title;
     _info.text = _locInfo.info;
@@ -89,6 +97,21 @@
     [self.navigationController popToRootViewControllerAnimated:YES];
 }
 
+- (IBAction)saveFav:(id)sender {
+    UIAlertView *confirm = [[UIAlertView alloc]initWithTitle:@"Save location to Favorites?" message:@"Do you want to save the current location to your favorites?" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Yes, please.", nil];
+    [confirm show];
+}
+
+-(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    //if they clicked yes
+    if (buttonIndex==1) {
+        NSLog(@"They picked yes!");
+        //perform segue
+        [self performSegueWithIdentifier:@"addFav" sender:_locInfo];
+    }
+}
+
 - (IBAction)getDirections:(id)sender
 {
     if ([CLLocationManager locationServicesEnabled]) {
@@ -105,7 +128,7 @@
 
 -(void)viewDidDisappear:(BOOL)animated
 {
-    [self setLocInfo:nil];
+//    [self setLocInfo:nil];
     [self setMyNavItem:nil];
     [self setMyPic:nil];
     [self setMySubtitle:nil];
@@ -122,6 +145,13 @@
         HelpViewController *dest =[segue destinationViewController];
         //pass values
         dest.helpImage = [UIImage imageNamed:@"detailHelpScreen"];
+    }
+    if ([[segue identifier] isEqualToString:@"addFav"])
+    {
+        FavoritesTableView *dest =[segue destinationViewController];
+
+        //pass MapAnnotation
+        dest.currLoc = _locInfo;
     }
 
 }

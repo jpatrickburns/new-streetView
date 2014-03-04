@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <MapKit/MapKit.h>
-@interface MapAnnotations : NSObject <MKAnnotation>
+@interface MapAnnotations : NSObject <MKAnnotation,NSCoding>
 
 @property (nonatomic,readonly) CLLocationCoordinate2D coordinate;
 @property (nonatomic,copy) NSString *title;
@@ -21,8 +21,6 @@
 // Don't need these if we have coordinate
 //@property (nonatomic) float lat;
 //@property (nonatomic) float lon;
-
-
 
 - (id)initWithLatitude:(float)lat
              longitude:(float)lon

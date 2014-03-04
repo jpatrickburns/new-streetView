@@ -26,7 +26,37 @@
 
 -(NSString *)description
 {
-    return [NSString stringWithFormat:@"Annotation containing:\r lat:%f\r lon:%f\r title:%@\r subtitle:%@ and Kind:%@",self.coordinate.latitude, self.coordinate.longitude,self.title,self.subtitle, self.kind];
+    return [NSString stringWithFormat:@"MapAnnotation containing:\r lat:%f\r lon:%f\r title:%@\r subtitle:%@\r  kind:%@",_coordinate.latitude, _coordinate.longitude,_title,_subtitle, _kind];
+}
+
+- (void)encodeWithCoder:(NSCoder *)encoder
+{
+[encoder encodeObject:_title forKey:@"title"];
+    [encoder encodeObject:_subtitle forKey:@"subtitle"];
+    [encoder encodeObject:_info forKey:@"info"];
+    [encoder encodeObject:_pic forKey:@"pic"];
+    [encoder encodeObject:_kind forKey:@"kind"];
+    [encoder encodeDouble:_coordinate.latitude forKey:@"lat"];
+    [encoder encodeDouble:_coordinate.longitude forKey:@"lon"];
+
+}
+
+- (id)initWithCoder:(NSCoder *)decoder
+{
+    NSString *title = [decoder decodeObjectForKey:@"title"];
+    NSString *subtitle = [decoder decodeObjectForKey:@"subtitle"];
+    NSString *info = [decoder decodeObjectForKey:@"info"];
+    NSString *pic = [decoder decodeObjectForKey:@"pic"];
+    NSString *kind = [decoder decodeObjectForKey:@"kind"];
+    float lat= [decoder decodeDoubleForKey:@"lat"];
+    float lon= [decoder decodeDoubleForKey:@"lon"];
+    
+    self = [self initWithLatitude:lat longitude:lon title:title];
+    self.subtitle = subtitle;
+    self.info = info;
+    self.pic = pic;
+    self.kind = kind;
+    return self;
 }
 
 @end
