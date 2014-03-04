@@ -21,8 +21,6 @@
 @end
 
 
-NSMutableArray *myFavs;
-
 @implementation FavoritesTableView
 
 - (id)initWithStyle:(UITableViewStyle)style
@@ -35,13 +33,15 @@ NSMutableArray *myFavs;
 }
 
 
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     [self doSetUp];
-
-
-     // Uncomment the following line to preserve selection between presentations.
+    
+    self.title = @"Saved Locations";
+    
+    // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
@@ -65,18 +65,18 @@ NSMutableArray *myFavs;
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    NSLog(@"There are %lu locations in myFavs.",(unsigned long)myFavs.count);
-    return myFavs.count;
-
+    NSLog(@"There are %lu locations in myFavs.",(unsigned long)_myFavs.count);
+    return _myFavs.count;
+    
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSLog(@"In cellForRowAtIndexPath");
+    //NSLog(@"In cellForRowAtIndexPath");
     
     static NSString *MyIdentifier = @"favCell";
     
-       // Try to retrieve from the table view a now-unused cell with the given identifier.
+    // Try to retrieve from the table view a now-unused cell with the given identifier.
     UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:MyIdentifier];
     
     // If no cell is available, create a new one using the given identifier.
@@ -87,9 +87,9 @@ NSMutableArray *myFavs;
     
     // Set up the cell.
     
-   MapAnnotations *annotation = [myFavs objectAtIndex:indexPath.row];
+    MapAnnotations *annotation = [_myFavs objectAtIndex:indexPath.row];
     
-    NSLog(@"chunk for cell:%@", annotation);
+    //NSLog(@"chunk for cell:%@", annotation);
     
     cell.textLabel.text = annotation.title;
     cell.detailTextLabel.text = annotation.title;
@@ -101,6 +101,7 @@ NSMutableArray *myFavs;
 -(void)doSetUp
 {
     //load up file, if exists
+    NSLog(@"_currLoc contains:%@",_currLoc);
     
     NSUserDefaults *myDefaults = [NSUserDefaults standardUserDefaults];
     //make a mutable array to hold any locations saved
@@ -115,29 +116,33 @@ NSMutableArray *myFavs;
         //this assumes your custom object used NSCode protocol
         NSArray *temp = (NSArray *)[NSKeyedUnarchiver unarchiveObjectWithData:theData];
         NSLog(@"temp contains:%@",temp);
-        myFavs = [temp mutableCopy];
+        _myFavs = [temp mutableCopy];
         
     }else{
         
         NSLog(@"File doesn't exist");
-        myFavs = [[NSMutableArray alloc]init];
+        _myFavs = [[NSMutableArray alloc]init];
     }
     
     //if there's a new passed current location
     if (_currLoc != nil) {
-        //add location to end of myFavs array
-        [myFavs addObject:_currLoc];
         
-        NSLog(@"myFavs now contains:%@",myFavs);
-        
-        //write defaults
-        
-        NSData *encodedObject = [NSKeyedArchiver archivedDataWithRootObject:myFavs];
-        [myDefaults setObject:encodedObject forKey:@"savedLocations"];
-        [myDefaults synchronize];
-        
+        if ([_myFavs containsObject:_currLoc]) {
+            UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Sorry..." message:@"That location has already been saved." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+            [alert show];
+        }else{
+            //add location to end of myFavs array
+            [_myFavs addObject:_currLoc];
+            
+            NSLog(@"myFavs now contains:%@",_myFavs);
+            
+            //write defaults
+            
+            NSData *encodedObject = [NSKeyedArchiver archivedDataWithRootObject:_myFavs];
+            [myDefaults setObject:encodedObject forKey:@"savedLocations"];
+            [myDefaults synchronize];
+        }
     }
-    
 }
 /*
  // Override to support conditional editing of the table view.
@@ -162,12 +167,13 @@ NSMutableArray *myFavs;
  }
  */
 
-/*
- // Override to support rearranging the table view.
- - (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
- {
- }
- */
+
+// Override to support rearranging the table view.
+- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
+{
+    NSLog(@"Rearranged an item");
+}
+
 
 /*
  // Override to support conditional rearranging of the table view.

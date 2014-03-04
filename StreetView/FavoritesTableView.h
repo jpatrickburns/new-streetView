@@ -13,5 +13,5 @@
 
 @property MapAnnotations *currLoc;
 @property (strong, nonatomic) IBOutlet UITableView *myTableView;
-
+@property (strong, nonatomic) NSMutableArray *myFavs;
 @end

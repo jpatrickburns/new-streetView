@@ -56,12 +56,12 @@
     self.navigationItem.title = @"What’s Near Me?";
     
     NSLog(@"Authorization status is %u",[CLLocationManager authorizationStatus]);
-   
-    if ([CLLocationManager locationServicesEnabled] && [CLLocationManager authorizationStatus]==3) {
+    //if location Services are available, and app either authorized or indeterminate
+    if ([CLLocationManager locationServicesEnabled] && ([CLLocationManager authorizationStatus]==3 ||
+                                                        [CLLocationManager authorizationStatus]==0)) {
         
         //set location manager's delegate
         _locationManager.delegate=self;
-        
         
         //tell location manager to monitor changes
         [_locationManager startMonitoringSignificantLocationChanges];

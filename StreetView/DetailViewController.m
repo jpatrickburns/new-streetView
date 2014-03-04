@@ -128,7 +128,7 @@
 
 -(void)viewDidDisappear:(BOOL)animated
 {
-    [self setLocInfo:nil];
+//    [self setLocInfo:nil];
     [self setMyNavItem:nil];
     [self setMyPic:nil];
     [self setMySubtitle:nil];
@@ -149,17 +149,8 @@
     if ([[segue identifier] isEqualToString:@"addFav"])
     {
         FavoritesTableView *dest =[segue destinationViewController];
-        //convert to a NSDictionary so we can eventually store in defaults
-//        NSDictionary *myDict = [[NSDictionary alloc] initWithObjectsAndKeys:
-//                                _locInfo.title,@"title",
-//                                _locInfo.subtitle,@"subtitle",
-//                                [NSNumber numberWithDouble:_locInfo.coordinate.latitude],@"lat",
-//                                [NSNumber numberWithDouble:_locInfo.coordinate.longitude],@"lon",
-//                                _locInfo.info,@"info",
-//                                _locInfo.kind,@"kind",
-//                                _locInfo.pic,@"pic",
-//                                nil];
-        //pass dictionary
+
+        //pass MapAnnotation
         dest.currLoc = _locInfo;
     }
 
