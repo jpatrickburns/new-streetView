@@ -55,9 +55,16 @@
 
 -(void) saveFavorites
 {
-    NSData *encodedObject = [NSKeyedArchiver archivedDataWithRootObject:_myFavs];
-    [_myDefaults setObject:encodedObject forKey:@"savedLocations"];
-    [_myDefaults synchronize];
+    if (_myFavs.count ==0) {
+        [_myDefaults removeObjectForKey:@"savedLocations"];
+        //leave page and go back
+        [self.navigationController popViewControllerAnimated:YES];
+    }else{
+        
+        NSData *encodedObject = [NSKeyedArchiver archivedDataWithRootObject:_myFavs];
+        [_myDefaults setObject:encodedObject forKey:@"savedLocations"];
+        [_myDefaults synchronize];
+    }
 }
 
 -(void)doSetUp
@@ -152,7 +159,7 @@
     NSLog(@"Hit swiped delete button on row %lD.",(long)indexPath.row);
     //delete selected cell from data source array
     [_myFavs removeObjectAtIndex:indexPath.row];
-    [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+    [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
     [self saveFavorites];
 }
 
@@ -166,16 +173,15 @@
 
 -(void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
 {
-
+    
 }
-
 
 /*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
-{
-    NSLog(@"Rearranged an item from row %ld to row %ld.", (long)fromIndexPath.row,(long)toIndexPath.row);
-}
+ // Override to support rearranging the table view.
+ - (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
+ {
+ NSLog(@"Rearranged an item from row %ld to row %ld.", (long)fromIndexPath.row,(long)toIndexPath.row);
+ }
  */
 
 /*

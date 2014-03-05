@@ -17,8 +17,11 @@
 
 
 -(void)viewDidAppear:(BOOL)animated{
+    NSLog(@"In home viewDidAppear");
+    [super viewDidAppear:YES];
     //see if there are any favorites
     NSUserDefaults *myDefaults = [NSUserDefaults standardUserDefaults];
+    
     //if there are saved locations, enable button
 
     _favButton.enabled = (bool)[myDefaults objectForKey:@"savedLocations"];
@@ -47,6 +50,10 @@
     return UIInterfaceOrientationMaskPortrait;
 }
 
+- (IBAction)done:(UIStoryboardSegue *)segue {
+    NSLog(@"Popping back to this view controller!");
+    // reset UI elements etc here
+}
 
 - (IBAction)changeScene:(id)sender {
     UIButton *btn = (UIButton *)sender;
