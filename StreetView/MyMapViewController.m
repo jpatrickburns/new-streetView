@@ -167,8 +167,11 @@
     // activate share button
     _shareBtn.enabled = YES;
     
-    //Center on selected annotation
-    [self.myMapView setCenterCoordinate:selectedAnnotation.coordinate animated:YES];
+    //make a viewable region
+     _region = MKCoordinateRegionMakeWithDistance(selectedAnnotation.coordinate, 2000, 2000);
+    
+    //Center and zoom in on selected annotation
+    [self.myMapView setRegion:_region animated:YES];
 
 }
 
@@ -381,7 +384,7 @@ NSArray *activityItems = @[_currentAnnotation.title, _currentAnnotation.subtitle
 
 - (IBAction)centerOnUser:(id)sender
 {
-    _region = MKCoordinateRegionMakeWithDistance(_location, 2000, 2000);
+    _region = MKCoordinateRegionMakeWithDistance(_location, 4000, 4000);
     [_myMapView setRegion:_region animated:YES];
     [_myMapView deselectAnnotation:[_myMapView.selectedAnnotations objectAtIndex:0] animated:YES];
     

@@ -12,7 +12,7 @@
 @interface FavoritesTableView ()
 
 //properties
-
+@property NSUserDefaults *myDefaults;
 
 //actions
 
@@ -33,7 +33,6 @@
 }
 
 
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -52,6 +51,57 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+-(void) saveFavorites
+{
+    NSData *encodedObject = [NSKeyedArchiver archivedDataWithRootObject:_myFavs];
+    [_myDefaults setObject:encodedObject forKey:@"savedLocations"];
+    [_myDefaults synchronize];
+}
+
+-(void)doSetUp
+{
+    //load up file, if exists
+    NSLog(@"_currLoc contains:%@",_currLoc);
+    
+    _myDefaults = [NSUserDefaults standardUserDefaults];
+    //make a mutable array to hold any locations saved
+    
+    //if there are saved locations
+    if ([_myDefaults objectForKey:@"savedLocations"]) {
+        
+        NSLog(@"file exists!");
+        
+        //get saved data and put in a temporary array
+        NSData *theData = [_myDefaults dataForKey:@"savedLocations"];
+        //this assumes your custom object used NSCode protocol
+        NSArray *temp = (NSArray *)[NSKeyedUnarchiver unarchiveObjectWithData:theData];
+        NSLog(@"temp contains:%@",temp);
+        _myFavs = [temp mutableCopy];
+        
+    }else{
+        NSLog(@"File doesn't exist");
+        _myFavs = [[NSMutableArray alloc]init];
+    }
+    
+    //if there's a new passed current location
+    if (_currLoc != nil) {
+        
+        if ([_myFavs containsObject:_currLoc]) {
+            UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Sorry..." message:[NSString stringWithFormat:@"The %@ location has already been saved.",_currLoc.title] delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+            [alert show];
+        }else{
+            //add location to end of myFavs array
+            [_myFavs addObject:_currLoc];
+            
+            NSLog(@"There are %lu locations in myFavs.",(unsigned long)_myFavs.count);
+            //NSLog(@"myFavs now contains:%@",_myFavs);
+            
+            //write defaults
+            [self saveFavorites];
+        }
+    }
 }
 
 #pragma mark - Table view data source
@@ -97,54 +147,15 @@
     return cell;
 }
 
-
--(void)doSetUp
+-(void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    //load up file, if exists
-    NSLog(@"_currLoc contains:%@",_currLoc);
-    
-    NSUserDefaults *myDefaults = [NSUserDefaults standardUserDefaults];
-    //make a mutable array to hold any locations saved
-    
-    //if there are saved locations
-    if ([myDefaults objectForKey:@"savedLocations"]) {
-        
-        NSLog(@"file exists!");
-        
-        //get saved data and put in a temporary array
-        NSData *theData = [myDefaults dataForKey:@"savedLocations"];
-        //this assumes your custom object used NSCode protocol
-        NSArray *temp = (NSArray *)[NSKeyedUnarchiver unarchiveObjectWithData:theData];
-        NSLog(@"temp contains:%@",temp);
-        _myFavs = [temp mutableCopy];
-        
-    }else{
-        
-        NSLog(@"File doesn't exist");
-        _myFavs = [[NSMutableArray alloc]init];
-    }
-    
-    //if there's a new passed current location
-    if (_currLoc != nil) {
-        
-        if ([_myFavs containsObject:_currLoc]) {
-            UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Sorry..." message:[NSString stringWithFormat:@"The %@ location has already been saved.",_currLoc.title] delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
-            [alert show];
-        }else{
-            //add location to end of myFavs array
-            [_myFavs addObject:_currLoc];
-            
-            NSLog(@"There are %lu locations in myFavs.",(unsigned long)_myFavs.count);
-            NSLog(@"myFavs now contains:%@",_myFavs);
-            
-            //write defaults
-            
-            NSData *encodedObject = [NSKeyedArchiver archivedDataWithRootObject:_myFavs];
-            [myDefaults setObject:encodedObject forKey:@"savedLocations"];
-            [myDefaults synchronize];
-        }
-    }
+    NSLog(@"Hit swiped delete button on row %lD.",(long)indexPath.row);
+    //delete selected cell from data source array
+    [_myFavs removeObjectAtIndex:indexPath.row];
+    [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+    [self saveFavorites];
 }
+
 
 #pragma mark - Table View Delegate methods
 
@@ -159,9 +170,27 @@
 }
 
 
+/*
+// Override to support rearranging the table view.
+- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
+{
+    NSLog(@"Rearranged an item from row %ld to row %ld.", (long)fromIndexPath.row,(long)toIndexPath.row);
+}
+ */
+
+/*
+ // Override to support conditional rearranging of the table view.
+ - (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
+ {
+ // Return NO if you do not want the item to be re-orderable.
+ return YES;
+ }
+ */
+
 #pragma mark - Navigation
 
-// In a story board-based application, you will often want to do a little preparation before navigation
+// Segue to the detail view on selection
+
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     // Get the new view controller
@@ -174,32 +203,5 @@
 }
 
 
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
-{
-    NSLog(@"Rearranged an item");
-}
-
-
-/*
- // Override to support conditional rearranging of the table view.
- - (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
- {
- // Return NO if you do not want the item to be re-orderable.
- return YES;
- }
- */
-
-/*
- #pragma mark - Navigation
- 
- // In a story board-based application, you will often want to do a little preparation before navigation
- - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
- {
- // Get the new view controller using [segue destinationViewController].
- // Pass the selected object to the new view controller.
- }
- 
- */
 
 @end
