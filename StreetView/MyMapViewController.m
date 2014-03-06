@@ -8,7 +8,6 @@
 
 #import "MyMapViewController.h"
 #import "LoadObjectsFromFile.h"
-#import "MapAnnotations.h"
 #import "DetailViewController.h"
 #import "HelpViewController.h"
 
@@ -21,6 +20,8 @@
 - (void)loadUpAnnotationsWithFiles:(NSArray *)fileNames;
 - (float)updatePinDistance:(CLLocationCoordinate2D)pinLoc;
 - (IBAction)share:(id)sender;
+- (IBAction)getDirections:(id)sender;
+- (void)centerOnPin:(MapAnnotations *)pin;
 
 //properties
 @property (weak, nonatomic) IBOutlet UISegmentedControl *segmentedControl;
@@ -28,7 +29,7 @@
 @property (nonatomic) BOOL firstRun;
 
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *shareBtn;
-@property (strong, nonatomic) MapAnnotations *currentAnnotation;
+
 
 @end
 
@@ -46,15 +47,15 @@
 - (void)viewDidLoad
 {
     _firstRun=YES;
-    
     [super viewDidLoad];
     
     //show user location
     self.myMapView.showsUserLocation=YES;
-
+    
     //change the title to the current section
     self.navigationItem.title = @"What’s Near Me?";
     
+    //check authorization status
     NSLog(@"Authorization status is %u",[CLLocationManager authorizationStatus]);
     //if location Services are available, and app either authorized or indeterminate
     if ([CLLocationManager locationServicesEnabled] && ([CLLocationManager authorizationStatus]==3 ||
@@ -69,28 +70,32 @@
         //    start with the center of Atlanta
         CLLocationCoordinate2D center=CLLocationCoordinate2DMake(33.748995,-84.387982);
         _region=MKCoordinateRegionMakeWithDistance(center, 50000, 50000);
-        
         [_myMapView setRegion:_region animated:YES];
-
+        
     }else{
-
-    UIAlertView *alert=[[UIAlertView alloc]initWithTitle:@"Sorry..."
-                                                 message:@"Location Services aren’t enabled for this app. Please change in settings."
-                                                delegate:self cancelButtonTitle:@"O.K."
-                                       otherButtonTitles:nil, nil];
-    [alert show];
+        
+        UIAlertView *alert=[[UIAlertView alloc]initWithTitle:@"Sorry..."
+                                                     message:@"Location Services aren’t enabled for this app. Please change in settings."
+                                                    delegate:self cancelButtonTitle:@"O.K."
+                                           otherButtonTitles:nil, nil];
+        [alert show];
     }
     
 	// Do any additional setup after loading the view.
+}
+
+-(void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:YES];
+    NSLog(@"Authorization status is %u",[CLLocationManager authorizationStatus]);
 }
 
 -(void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex
 {
     
     NSLog(@"Dismissed alert.");
+    [self.navigationController popViewControllerAnimated:YES];
     
-[self.navigationController popViewControllerAnimated:YES];
-
 }
 
 -(void)viewWillAppear:(BOOL)animated
@@ -100,7 +105,7 @@
     self.navigationController.navigationBar.translucent = YES;
     UIColor *myPurple = [UIColor colorWithRed:178/255.0 green:127/255.0 blue:228/255.0 alpha:1];
     [self.navigationController.navigationBar setBarTintColor:myPurple];
-
+    
 }
 
 //Load up a buncha locations
@@ -109,32 +114,32 @@
     
     NSLog(@"In loadUpAnnotationsWithFiles");
     
-        for (NSString *myKind in fileNames) {
+    for (NSString *myKind in fileNames) {
+        
+        NSLog(@"loading %@",myKind);
+        
+        _myLocations = [LoadObjectsFromFile loadFromFile:myKind ofType:@"plist"];
+        
+        //loop through and make annotations
+        
+        for (NSString *loc in _myLocations) {
+            NSDictionary *myDict =[_myLocations objectForKey:loc];
             
-            NSLog(@"loading %@",myKind);
+            //create instance of custom class MapAnnotations
+            MapAnnotations *myAnnotation = [[MapAnnotations alloc]
+                                            initWithLatitude:[myDict[@"latitude"] floatValue]
+                                            longitude:[myDict[@"longitude"] floatValue]
+                                            title:myDict[@"title"]];
+            //add additional properties
             
-              _myLocations = [LoadObjectsFromFile loadFromFile:myKind ofType:@"plist"];
-    
-            //loop through and make annotations
-            
-            for (NSString *loc in _myLocations) {
-                NSDictionary *myDict =[_myLocations objectForKey:loc];
-                
-                //create instance of custom class MapAnnotations
-                MapAnnotations *myAnnotation = [[MapAnnotations alloc]
-                                                initWithLatitude:[[myDict objectForKey:@"latitude"] floatValue]
-                                                longitude:[[myDict objectForKey:@"longitude"] floatValue]
-                                                title:[myDict objectForKey:@"title"]];
-                //add additional properties
-                
-                myAnnotation.kind = myKind;
-                myAnnotation.info = [myDict objectForKey:@"info"];
-                myAnnotation.pic = [myDict objectForKey:@"pic"];
-                [self.myMapView addAnnotation:myAnnotation];
-                //NSLog(@"Annotation contains: %@",myAnnotation.kind);
-            }
+            myAnnotation.kind = myKind;
+            myAnnotation.info = myDict[@"info"];
+            myAnnotation.pic = myDict[@"pic"];
+            myAnnotation.subtitle = myDict[@"subtitle"];
+            [self.myMapView addAnnotation:myAnnotation];
+            //NSLog(@"Annotation contains: %@",myAnnotation.kind);
         }
-
+    }
 }
 
 
@@ -156,7 +161,7 @@
 -(void)mapView:(MKMapView *)mapView didSelectAnnotationView:(MKAnnotationView *)view
 {
     MapAnnotations *selectedAnnotation = (MapAnnotations *)view.annotation;
-        NSLog(@"Selected mapView annotation %@", selectedAnnotation.title);
+    NSLog(@"Selected mapView annotation %@", selectedAnnotation.title);
     
     // figure out distance to user
     // selectedAnnotation.distance = [self updatePinDistance:selectedAnnotation.coordinate];
@@ -168,11 +173,11 @@
     _shareBtn.enabled = YES;
     
     //make a viewable region
-     _region = MKCoordinateRegionMakeWithDistance(selectedAnnotation.coordinate, 2000, 2000);
+    _region = MKCoordinateRegionMakeWithDistance(selectedAnnotation.coordinate, 2000, 2000);
     
     //Center and zoom in on selected annotation
     [self.myMapView setRegion:_region animated:YES];
-
+    
 }
 
 -(void)mapView:(MKMapView *)mapView didDeselectAnnotationView:(MKAnnotationView *)view
@@ -191,19 +196,17 @@
     
     if (_firstRun) {
         
-        //test to see if in region
-        
         //convert region to mapRect
-        
         if (MKMapRectContainsPoint(_myMapView.visibleMapRect, MKMapPointForCoordinate(_location))) {
-            
-            // Coordinate fits into the region
             
             //need to add quirks.plist when complete!
             NSArray *myFiles = @[@"historic",@"attractions",@"neighborhoods"];
             [self loadUpAnnotationsWithFiles:myFiles];
-
             [self centerOnUser:self];
+            if (self.showPin) {
+                [self centerOnPin:_currentAnnotation];
+            }
+
             
         }else{
             //send alert and return home
@@ -213,14 +216,13 @@
                                                otherButtonTitles:nil, nil];
             [alert show];
         }
-                    _firstRun=NO;
+        _firstRun=NO;
     }
 }
 
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations
 {
-     NSLog(@"In didUpdateLocations");
- 
+    NSLog(@"In didUpdateLocations");
 }
 
 #pragma mark - annotation stuff
@@ -321,12 +323,14 @@
     }
 }
 
+
+
 -(void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control
 {
     NSLog(@"%@",(MapAnnotations *)view.annotation);
     
     //trigger segue and send object with data
-        [self performSegueWithIdentifier:@"showDetailFromMap" sender:view.annotation];
+    [self performSegueWithIdentifier:@"showDetailFromMap" sender:view.annotation];
     
 }
 
@@ -345,21 +349,19 @@
         //pass values
         dest.helpImage = [UIImage imageNamed:@"mapHelpScreen"];
     }
-
+    
 }
 
 #pragma mark - sharing panel
 
 - (IBAction)share:(id)sender
 {
-    
-    
-NSArray *activityItems = @[_currentAnnotation.title, _currentAnnotation.subtitle, [NSString stringWithFormat:@"%f",_currentAnnotation.coordinate.longitude]];
+    NSArray *activityItems = @[_currentAnnotation.title, _currentAnnotation.subtitle, [NSString stringWithFormat:@"%f",_currentAnnotation.coordinate.longitude]];
     UIActivityViewController *sharingView = [[UIActivityViewController alloc] initWithActivityItems:activityItems applicationActivities:nil];
-
+    
     sharingView.excludedActivityTypes = @[UIActivityTypeCopyToPasteboard, UIActivityTypePostToFlickr];
     
-[self presentViewController:sharingView animated:YES completion:nil];
+    [self presentViewController:sharingView animated:YES completion:nil];
 }
 
 
@@ -382,12 +384,35 @@ NSArray *activityItems = @[_currentAnnotation.title, _currentAnnotation.subtitle
     }
 }
 
+- (IBAction)getDirections:(id)sender
+{
+    if ([CLLocationManager locationServicesEnabled]) {
+        MKPlacemark* place = [[MKPlacemark alloc] initWithCoordinate: _currentAnnotation.coordinate addressDictionary: nil];
+        MKMapItem* destination = [[MKMapItem alloc] initWithPlacemark: place];
+        destination.name = _currentAnnotation.title;
+        [MKMapItem openMapsWithItems: @[destination]
+                       launchOptions: @{MKLaunchOptionsDirectionsModeKey:MKLaunchOptionsDirectionsModeDriving}];
+    }else{
+        UIAlertView *alert=[[UIAlertView alloc]initWithTitle:@"Sorry..." message:@"Location Services aren’t enabled. Please change in settings." delegate:nil cancelButtonTitle:@"O.K." otherButtonTitles:nil, nil];
+        [alert show];
+    }
+}
 - (IBAction)centerOnUser:(id)sender
 {
     _region = MKCoordinateRegionMakeWithDistance(_location, 4000, 4000);
     [_myMapView setRegion:_region animated:YES];
     [_myMapView deselectAnnotation:[_myMapView.selectedAnnotations objectAtIndex:0] animated:YES];
     
+}
+
+- (void)centerOnPin:(MapAnnotations *)pin
+{
+    _region = MKCoordinateRegionMakeWithDistance(pin.coordinate, 2000, 2000);
+    [_myMapView setRegion:_region animated:YES];
+    // MapAnnotations *centerPin = [_myMapView annotations] ];
+    NSLog(@"The visible annotations are:%@",[_myMapView annotationsInMapRect:_myMapView.visibleMapRect]);
+    //[_myMapView selectAnnotation:centerPin animated:YES];
+    self.showPin = NO;
 }
 
 - (IBAction)goHome:(id)sender {
@@ -406,15 +431,14 @@ NSArray *activityItems = @[_currentAnnotation.title, _currentAnnotation.subtitle
 -(void)viewWillDisappear:(BOOL)animated
 {
     [self.navigationController.navigationBar setBarTintColor:[UIColor whiteColor]];
-
     [super viewWillDisappear:YES];
 }
 
 -(void)viewDidDisappear:(BOOL)animated
 {
-    [self setMyMapView:nil];
-    [self setLocationManager:nil];
-    [self setLocationManager:nil];
+    //    [self setMyMapView:nil];
+    //    [self setLocationManager:nil];
+    //    [self setLocationManager:nil];
     [super viewDidDisappear:YES];
 }
 

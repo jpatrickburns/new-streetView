@@ -10,6 +10,7 @@
 #import "ViewController.h"
 #import "HelpViewController.h"
 #import "FavoritesTableView.h"
+#import "MyMapViewController.h"
 
 
 @interface DetailViewController ()
@@ -152,6 +153,14 @@
 
         //pass MapAnnotation
         dest.currLoc = _locInfo;
+    }
+    if ([[segue identifier] isEqualToString:@"toMap"])
+    {
+        MyMapViewController *dest =[segue destinationViewController];
+        
+        //pass MapAnnotation
+        [dest setCurrentAnnotation:_locInfo];
+        [dest setShowPin:YES];
     }
 
 }
