@@ -88,6 +88,10 @@
 {
     [super viewDidAppear:YES];
     NSLog(@"Authorization status is %u",[CLLocationManager authorizationStatus]);
+    if (self.showPin) {
+        [self centerOnPin:_currentAnnotation];
+    }
+
 }
 
 -(void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex
@@ -203,12 +207,9 @@
             NSArray *myFiles = @[@"historic",@"attractions",@"neighborhoods"];
             [self loadUpAnnotationsWithFiles:myFiles];
             [self centerOnUser:self];
-            if (self.showPin) {
-                [self centerOnPin:_currentAnnotation];
-            }
-
             
-        }else{
+        }else 
+{
             //send alert and return home
             UIAlertView *alert=[[UIAlertView alloc]initWithTitle:@"Sorry..."
                                                          message:@"You aren’t in the region described in this application."
@@ -217,7 +218,9 @@
             [alert show];
         }
         _firstRun=NO;
+        
     }
+
 }
 
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations
@@ -407,7 +410,7 @@
 
 - (void)centerOnPin:(MapAnnotations *)pin
 {
-    _region = MKCoordinateRegionMakeWithDistance(pin.coordinate, 2000, 2000);
+    _region = MKCoordinateRegionMakeWithDistance(pin.coordinate, 1000, 1000);
     [_myMapView setRegion:_region animated:YES];
     // MapAnnotations *centerPin = [_myMapView annotations] ];
     NSLog(@"The visible annotations are:%@",[_myMapView annotationsInMapRect:_myMapView.visibleMapRect]);
@@ -415,9 +418,6 @@
     self.showPin = NO;
 }
 
-- (IBAction)goHome:(id)sender {
-    [self.navigationController popViewControllerAnimated:YES];
-}
 
 - (float)updatePinDistance:(CLLocationCoordinate2D)pinLoc
 {

@@ -129,7 +129,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="myCell" textLabel="OE2-bN-bYc" detailTextLabel="rCZ-1K-twf" style="IBUITableViewCellStyleSubtitle" id="BEg-xz-lQl">
-                                <rect key="frame" x="0.0" y="86" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="BEg-xz-lQl" id="C5D-s4-9zh">
                                     <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
@@ -197,6 +197,12 @@
                                 <rect key="frame" x="0.0" y="436" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <items>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="mIq-Wt-lPd"/>
+                                    <barButtonItem image="home" style="plain" id="hKk-Ut-GNA">
+                                        <connections>
+                                            <segue destination="vXZ-lx-hvc" kind="push" identifier="toHome" id="S8f-1x-3m2"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="BQj-Ur-mnR"/>
                                     <barButtonItem image="help" style="plain" id="MGQ-AL-JXy">
                                         <connections>
@@ -210,7 +216,7 @@
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="aY3-he-TgP"/>
-                                    <barButtonItem image="back" style="plain" id="wAr-25-j8g">
+                                    <barButtonItem image="toMap" style="plain" id="wAr-25-j8g">
                                         <connections>
                                             <action selector="getDirections:" destination="pcE-Z3-UBx" id="z6V-47-V34"/>
                                         </connections>
@@ -549,13 +555,13 @@
     <resources>
         <image name="atl" width="100" height="120"/>
         <image name="attractions" width="100" height="120"/>
-        <image name="back" width="44" height="44"/>
         <image name="help" width="44" height="44"/>
         <image name="historical" width="100" height="120"/>
         <image name="home" width="44" height="44"/>
         <image name="mapPoint" width="44" height="44"/>
         <image name="neighborhood" width="100" height="120"/>
         <image name="special" width="100" height="120"/>
+        <image name="toMap" width="44" height="44"/>
         <image name="userLoc" width="44" height="44"/>
         <image name="where" width="100" height="120"/>
     </resources>
@@ -566,9 +572,10 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="so4-dj-fo2"/>
-        <segue reference="Q2g-7k-kEJ"/>
+        <segue reference="9oD-gG-xdd"/>
         <segue reference="Pbf-LC-Is1"/>
+        <segue reference="Q2g-7k-kEJ"/>
         <segue reference="Oab-TH-jyZ"/>
+        <segue reference="S8f-1x-3m2"/>
     </inferredMetricsTieBreakers>
 </document>
