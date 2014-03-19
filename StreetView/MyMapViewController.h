@@ -19,5 +19,7 @@
 @property (nonatomic) MKCoordinateRegion region;
 @property (strong, nonatomic) MapAnnotations *currentAnnotation;
 @property (nonatomic) BOOL showPin;
+@property (nonatomic) BOOL firstRun;
+
 
 @end

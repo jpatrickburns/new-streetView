@@ -572,10 +572,10 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="9oD-gG-xdd"/>
-        <segue reference="Pbf-LC-Is1"/>
-        <segue reference="Q2g-7k-kEJ"/>
-        <segue reference="Oab-TH-jyZ"/>
+        <segue reference="hpP-fK-XdG"/>
         <segue reference="S8f-1x-3m2"/>
+        <segue reference="RGh-F8-5PY"/>
+        <segue reference="9oD-gG-xdd"/>
+        <segue reference="Q2g-7k-kEJ"/>
     </inferredMetricsTieBreakers>
 </document>

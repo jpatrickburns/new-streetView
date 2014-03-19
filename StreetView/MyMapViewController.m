@@ -26,8 +26,6 @@
 //properties
 @property (weak, nonatomic) IBOutlet UISegmentedControl *segmentedControl;
 @property (strong, nonatomic) NSDictionary *myLocations;
-@property (nonatomic) BOOL firstRun;
-
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *shareBtn;
 
 
@@ -48,20 +46,24 @@
 {
     [super viewDidLoad];
     
-    _firstRun=YES;
+    //_firstRun=YES;
     
     //show user location
     self.myMapView.showsUserLocation=YES;
     
     //change the title to the current section
-    self.navigationItem.title = @"What’s Near Me?";
+    if (_showPin) {
+        self.navigationItem.title = @"Location";
+    }else{
+        self.navigationItem.title = @"What’s Near Me?";
+    }
     
     //check authorization status
     NSLog(@"Authorization status is %u",[CLLocationManager authorizationStatus]);
     //if location Services are available, and app either authorized or indeterminate
     if ([CLLocationManager locationServicesEnabled] && ([CLLocationManager authorizationStatus]==3 ||
-                                                        [CLLocationManager authorizationStatus]==0)) {
-        
+                                                        [CLLocationManager authorizationStatus]==0))
+    {
         //set location manager's delegate
         _locationManager.delegate=self;
         
@@ -73,6 +75,8 @@
         _region=MKCoordinateRegionMakeWithDistance(center, 50000, 50000);
         [_myMapView setRegion:_region animated:YES];
         
+        //then we wait for location updates...
+        
     }else{
         
         UIAlertView *alert=[[UIAlertView alloc]initWithTitle:@"Sorry..."
@@ -82,16 +86,25 @@
         [alert show];
     }
     
-	// Do any additional setup after loading the view.
 }
+
+
+
+// Do any additional setup after loading the view.
+
+
 
 -(void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:YES];
     NSLog(@"Authorization status is %u",[CLLocationManager authorizationStatus]);
+    
     if (self.showPin) {
-        [_myMapView addAnnotation:_currentAnnotation];
         [self centerOnPin:_currentAnnotation];
+        _showPin = NO;
+        //_firstRun = NO;
+    }else{
+        [self centerOnUser:self];
     }
 }
 
@@ -106,7 +119,9 @@
 -(void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:YES];
-    // _firstRun=YES;
+    _firstRun = YES;
+    
+    NSLog(@"BOOL check. showPin:%i, firstRun:%i",_showPin,_firstRun);
     self.navigationController.navigationBar.translucent = YES;
     UIColor *myPurple = [UIColor colorWithRed:178/255.0 green:127/255.0 blue:228/255.0 alpha:1];
     [self.navigationController.navigationBar setBarTintColor:myPurple];
@@ -117,7 +132,7 @@
 {
     //create instance of custom class MapAnnotations
     
-
+    
     MapAnnotations *myAnnotation = [[MapAnnotations alloc]
                                     initWithLatitude:[loc[@"latitude"] floatValue]
                                     longitude:[loc[@"longitude"] floatValue]
@@ -129,8 +144,8 @@
     myAnnotation.pic = loc[@"pic"];
     myAnnotation.subtitle = loc[@"subtitle"];
     [_myMapView addAnnotation:myAnnotation];
-    NSLog(@"myAnnotation contains: %@",myAnnotation);
-
+    //NSLog(@"myAnnotation contains: %@",myAnnotation);
+    
 }
 
 //Load up a buncha locations
@@ -146,9 +161,9 @@
         //loop through and make annotations
         
         for (NSString *loc in _myLocations) {
-            NSDictionary *myDict =[_myLocations objectForKey:loc];
-            // NSLog(@"myDict contains: %@",myDict);
-            [self createAnnotationWith:myDict andKind:myKind];
+            NSDictionary *myLoc =[_myLocations objectForKey:loc];
+            // NSLog(@"myDict contains: %@",myLoc);
+            [self createAnnotationWith:myLoc andKind:myKind];
             
         }
     }
@@ -230,7 +245,7 @@
             
             //NSLog(@"My annotation kind is: %@",theAnnotation.kind);
             
-            if ([theAnnotation.kind isEqualToString:@"historic"]) {
+            if ([theAnnotation.kind isEqualToString:@"historical"]) {
                 myPins.image = [UIImage imageNamed:@"pushPinRed"];
             }
             if ([theAnnotation.kind isEqualToString:@"attractions"]) {
@@ -311,40 +326,45 @@
 
 -(void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation
 {
-    NSLog(@"In didUpdateUserLocation");
+    NSLog(@"In didUpdateUserLocation and firstRun = %i",_firstRun);
+    
     _location = userLocation.coordinate;
+    
     NSLog(@"Our new location is:%f,%f",_location.latitude,_location.longitude);
-    //if it's the first run
-    if (_firstRun) {
+    
+    //check to see if in region
+    if (MKMapRectContainsPoint(_myMapView.visibleMapRect, MKMapPointForCoordinate(_location)))
+    {
+        //Load files - need to add quirks.plist when complete!
+        NSArray *myFiles = @[@"historical",@"attractions",@"neighborhoods"];
+        [self loadUpAnnotationsWithFiles:myFiles];
         
-        //convert region to mapRect - see if in region
-        
-        if (MKMapRectContainsPoint(_myMapView.visibleMapRect, MKMapPointForCoordinate(_location))) {
-            
-            //Load files - need to add quirks.plist when complete!
-            NSArray *myFiles = @[@"historical",@"attractions",@"neighborhoods"];
-            [self loadUpAnnotationsWithFiles:myFiles];
-            [self centerOnUser:self];
-            
-        }else{
-            //send alert and return home
-            
-            if (!_showPin) {
-                UIAlertView *alert=[[UIAlertView alloc]initWithTitle:@"Sorry..."
-                                                             message:@"You aren’t in the region described in this application."
-                                                            delegate:self cancelButtonTitle:@"O.K."
-                                                   otherButtonTitles:nil, nil];
-                [alert show];
-            }
+    }else{
+        //send alert and return home
+        if (!_showPin) {
+            UIAlertView *alert=[[UIAlertView alloc]initWithTitle:@"Sorry..."
+                                                         message:@"You aren’t in the region described in this application."
+                                                        delegate:self cancelButtonTitle:@"O.K."
+                                               otherButtonTitles:nil, nil];
+            [alert show];
         }
-        _firstRun=NO;
     }
+    
+//    //if it's the first run
+//    if (_firstRun) {
+//        if (!_showPin) {
+//            [self centerOnUser:self];
+//        }
+//    }
+//    
+//    _firstRun = NO;
     
 }
 
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations
 {
     NSLog(@"In didUpdateLocations");
+    
 }
 
 // for segue to detail view
@@ -410,6 +430,7 @@
         [alert show];
     }
 }
+
 - (IBAction)centerOnUser:(id)sender
 {
     _region = MKCoordinateRegionMakeWithDistance(_location, 4000, 4000);
@@ -423,7 +444,7 @@
     _region = MKCoordinateRegionMakeWithDistance(pin.coordinate, 1000, 1000);
     [_myMapView setRegion:_region animated:YES];
     // MapAnnotations *centerPin = [_myMapView annotations] ];
-    NSLog(@"The visible annotations are:%@",[_myMapView annotationsInMapRect:_myMapView.visibleMapRect]);
+    //NSLog(@"The visible annotations are:%@",[_myMapView annotationsInMapRect:_myMapView.visibleMapRect]);
     //[_myMapView selectAnnotation:centerPin animated:YES];
     self.showPin = NO;
 }
@@ -446,7 +467,7 @@
 
 -(void)viewDidDisappear:(BOOL)animated
 {
-    //    [self setMyMapView:nil];
+    //[self setMyMapView:nil];
     //    [self setLocationManager:nil];
     //    [self setLocationManager:nil];
     [super viewDidDisappear:YES];

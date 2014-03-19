@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "MyTableViewController.h"
+#import "MyMapViewController.h"
 
 @interface ViewController ()
 
@@ -23,9 +24,9 @@
     NSUserDefaults *myDefaults = [NSUserDefaults standardUserDefaults];
     
     //if there are saved locations, enable button
-
+    
     _favButton.enabled = (bool)[myDefaults objectForKey:@"savedLocations"];
-
+    
 }
 - (void)viewDidLoad
 {
@@ -60,13 +61,13 @@
     NSString *which = btn.currentTitle;
     
     if ([which isEqualToString:@"What’s Near Me?"]){
-        [self performSegueWithIdentifier:@"map" sender:nil];
+        [self performSegueWithIdentifier:@"map" sender:self];
         
     }else if ([which isEqualToString:@"Special Offers"]){
-        [self performSegueWithIdentifier:@"special" sender:nil];
+        [self performSegueWithIdentifier:@"special" sender:self];
         NSLog(@"Pushed Special Offers");
     }else{
-
+        
         [self performSegueWithIdentifier:@"table" sender:which];
     }
     NSLog(@"Pushed %@.",which);
@@ -74,18 +75,26 @@
 
 - (IBAction)showFavs:(id)sender
 {
-   [self performSegueWithIdentifier:@"toFav" sender:nil]; 
+    [self performSegueWithIdentifier:@"toFav" sender:nil];
 }
 
-// for segue to table view
+// for segue - passing values
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    MyTableViewController *dest =[segue destinationViewController];
-
+    
+    
     if ([[segue identifier] isEqualToString:@"table"])
     {
-            dest.myKind = sender;
-        }
+        MyTableViewController *dest =[segue destinationViewController];
+        dest.myKind = sender;
+    }
+    if ([[segue identifier] isEqualToString:@"map"])
+    {
+        MyMapViewController *dest =[segue destinationViewController];
+        dest.firstRun = YES;
+        NSLog(@"Sent stuff to Map");
+    }
+    
 }
 
 @end
