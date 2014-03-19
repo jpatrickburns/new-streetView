@@ -17,6 +17,7 @@
 @property (strong, nonatomic) CLLocationManager *locationManager;
 @property (nonatomic,readonly)CLLocationCoordinate2D location;
 @property (nonatomic) MKCoordinateRegion region;
+@property (nonatomic) MKCoordinateRegion startView;
 @property (strong, nonatomic) MapAnnotations *currentAnnotation;
 @property (nonatomic) BOOL showPin;
 @property (nonatomic) BOOL firstRun;

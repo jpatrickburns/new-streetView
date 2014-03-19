@@ -51,6 +51,10 @@
     //show user location
     self.myMapView.showsUserLocation=YES;
     
+    //Load files - need to add quirks.plist when complete!
+    NSArray *myFiles = @[@"historical",@"attractions",@"neighborhoods"];
+    [self loadUpAnnotationsWithFiles:myFiles];
+    
     //change the title to the current section
     if (_showPin) {
         self.navigationItem.title = @"Location";
@@ -65,15 +69,15 @@
                                                         [CLLocationManager authorizationStatus]==0))
     {
         //set location manager's delegate
-        _locationManager.delegate=self;
+        _locationManager.delegate = self;
         
         //tell location manager to monitor changes
         [_locationManager startMonitoringSignificantLocationChanges];
         
         //    start with the center of Atlanta
-        CLLocationCoordinate2D center=CLLocationCoordinate2DMake(33.748995,-84.387982);
-        _region=MKCoordinateRegionMakeWithDistance(center, 50000, 50000);
-        [_myMapView setRegion:_region animated:YES];
+        CLLocationCoordinate2D center = CLLocationCoordinate2DMake(33.748995,-84.387982);
+        _startView = MKCoordinateRegionMakeWithDistance(center, 50000, 50000);
+        [_myMapView setRegion:_startView animated:YES];
         
         //then we wait for location updates...
         
@@ -81,7 +85,7 @@
         
         UIAlertView *alert=[[UIAlertView alloc]initWithTitle:@"Sorry..."
                                                      message:@"Location Services aren’t enabled for this app. Please change in settings."
-                                                    delegate:self cancelButtonTitle:@"O.K."
+                                                    delegate:nil cancelButtonTitle:@"O.K."
                                            otherButtonTitles:nil, nil];
         [alert show];
     }
@@ -104,6 +108,17 @@
         _showPin = NO;
         //_firstRun = NO;
     }else{
+        //check to see if in region
+        if (!MKMapRectContainsPoint(_myMapView.visibleMapRect, MKMapPointForCoordinate(_location)))
+            //send alert and return home
+            if (!_showPin) {
+                UIAlertView *alert=[[UIAlertView alloc]initWithTitle:@"Sorry..."
+                                                             message:@"You aren’t in the region described in this application."
+                                                            delegate:self cancelButtonTitle:@"O.K."
+                                                   otherButtonTitles:nil, nil];
+                [alert show];
+            }
+
         [self centerOnUser:self];
     }
 }
@@ -332,32 +347,15 @@
     
     NSLog(@"Our new location is:%f,%f",_location.latitude,_location.longitude);
     
-    //check to see if in region
-    if (MKMapRectContainsPoint(_myMapView.visibleMapRect, MKMapPointForCoordinate(_location)))
-    {
-        //Load files - need to add quirks.plist when complete!
-        NSArray *myFiles = @[@"historical",@"attractions",@"neighborhoods"];
-        [self loadUpAnnotationsWithFiles:myFiles];
-        
-    }else{
-        //send alert and return home
-        if (!_showPin) {
-            UIAlertView *alert=[[UIAlertView alloc]initWithTitle:@"Sorry..."
-                                                         message:@"You aren’t in the region described in this application."
-                                                        delegate:self cancelButtonTitle:@"O.K."
-                                               otherButtonTitles:nil, nil];
-            [alert show];
-        }
-    }
     
-//    //if it's the first run
-//    if (_firstRun) {
-//        if (!_showPin) {
-//            [self centerOnUser:self];
-//        }
-//    }
-//    
-//    _firstRun = NO;
+    //    //if it's the first run
+    //    if (_firstRun) {
+    //        if (!_showPin) {
+    //            [self centerOnUser:self];
+    //        }
+    //    }
+    //
+    //    _firstRun = NO;
     
 }
 
@@ -433,6 +431,7 @@
 
 - (IBAction)centerOnUser:(id)sender
 {
+
     _region = MKCoordinateRegionMakeWithDistance(_location, 4000, 4000);
     [_myMapView setRegion:_region animated:YES];
     [_myMapView deselectAnnotation:[_myMapView.selectedAnnotations objectAtIndex:0] animated:YES];
