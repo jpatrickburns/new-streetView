@@ -46,8 +46,9 @@
 
 - (void)viewDidLoad
 {
-    _firstRun=YES;
     [super viewDidLoad];
+    
+    _firstRun=YES;
     
     //show user location
     self.myMapView.showsUserLocation=YES;
@@ -89,9 +90,9 @@
     [super viewDidAppear:YES];
     NSLog(@"Authorization status is %u",[CLLocationManager authorizationStatus]);
     if (self.showPin) {
+        [_myMapView addAnnotation:_currentAnnotation];
         [self centerOnPin:_currentAnnotation];
     }
-
 }
 
 -(void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex
@@ -112,6 +113,26 @@
     
 }
 
+- (void)createAnnotationWith:(id)loc andKind:(NSString *)kind
+{
+    //create instance of custom class MapAnnotations
+    
+
+    MapAnnotations *myAnnotation = [[MapAnnotations alloc]
+                                    initWithLatitude:[loc[@"latitude"] floatValue]
+                                    longitude:[loc[@"longitude"] floatValue]
+                                    title:loc[@"title"]];
+    //add additional properties
+    
+    myAnnotation.kind = kind;
+    myAnnotation.info = loc[@"info"];
+    myAnnotation.pic = loc[@"pic"];
+    myAnnotation.subtitle = loc[@"subtitle"];
+    [_myMapView addAnnotation:myAnnotation];
+    NSLog(@"myAnnotation contains: %@",myAnnotation);
+
+}
+
 //Load up a buncha locations
 
 - (void)loadUpAnnotationsWithFiles:(NSArray *)fileNames{
@@ -119,29 +140,16 @@
     NSLog(@"In loadUpAnnotationsWithFiles");
     
     for (NSString *myKind in fileNames) {
-        
         NSLog(@"loading %@",myKind);
-        
         _myLocations = [LoadObjectsFromFile loadFromFile:myKind ofType:@"plist"];
         
         //loop through and make annotations
         
         for (NSString *loc in _myLocations) {
             NSDictionary *myDict =[_myLocations objectForKey:loc];
+            // NSLog(@"myDict contains: %@",myDict);
+            [self createAnnotationWith:myDict andKind:myKind];
             
-            //create instance of custom class MapAnnotations
-            MapAnnotations *myAnnotation = [[MapAnnotations alloc]
-                                            initWithLatitude:[myDict[@"latitude"] floatValue]
-                                            longitude:[myDict[@"longitude"] floatValue]
-                                            title:myDict[@"title"]];
-            //add additional properties
-            
-            myAnnotation.kind = myKind;
-            myAnnotation.info = myDict[@"info"];
-            myAnnotation.pic = myDict[@"pic"];
-            myAnnotation.subtitle = myDict[@"subtitle"];
-            [self.myMapView addAnnotation:myAnnotation];
-            //NSLog(@"Annotation contains: %@",myAnnotation.kind);
         }
     }
 }
@@ -188,44 +196,6 @@
 {
     // Deactivate share button
     _shareBtn.enabled = NO;
-}
-
-#pragma mark - user location stuff
-
--(void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation
-{
-    NSLog(@"In didUpdateUserLocation");
-    _location = userLocation.coordinate;
-    NSLog(@"Our new location is:%f,%f",_location.latitude,_location.longitude);
-    
-    if (_firstRun) {
-        
-        //convert region to mapRect
-        if (MKMapRectContainsPoint(_myMapView.visibleMapRect, MKMapPointForCoordinate(_location))) {
-            
-            //need to add quirks.plist when complete!
-            NSArray *myFiles = @[@"historic",@"attractions",@"neighborhoods"];
-            [self loadUpAnnotationsWithFiles:myFiles];
-            [self centerOnUser:self];
-            
-        }else 
-{
-            //send alert and return home
-            UIAlertView *alert=[[UIAlertView alloc]initWithTitle:@"Sorry..."
-                                                         message:@"You aren’t in the region described in this application."
-                                                        delegate:self cancelButtonTitle:@"O.K."
-                                               otherButtonTitles:nil, nil];
-            [alert show];
-        }
-        _firstRun=NO;
-        
-    }
-
-}
-
-- (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations
-{
-    NSLog(@"In didUpdateLocations");
 }
 
 #pragma mark - annotation stuff
@@ -335,6 +305,46 @@
     //trigger segue and send object with data
     [self performSegueWithIdentifier:@"showDetailFromMap" sender:view.annotation];
     
+}
+
+#pragma mark - user location stuff
+
+-(void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation
+{
+    NSLog(@"In didUpdateUserLocation");
+    _location = userLocation.coordinate;
+    NSLog(@"Our new location is:%f,%f",_location.latitude,_location.longitude);
+    //if it's the first run
+    if (_firstRun) {
+        
+        //convert region to mapRect - see if in region
+        
+        if (MKMapRectContainsPoint(_myMapView.visibleMapRect, MKMapPointForCoordinate(_location))) {
+            
+            //Load files - need to add quirks.plist when complete!
+            NSArray *myFiles = @[@"historical",@"attractions",@"neighborhoods"];
+            [self loadUpAnnotationsWithFiles:myFiles];
+            [self centerOnUser:self];
+            
+        }else{
+            //send alert and return home
+            
+            if (!_showPin) {
+                UIAlertView *alert=[[UIAlertView alloc]initWithTitle:@"Sorry..."
+                                                             message:@"You aren’t in the region described in this application."
+                                                            delegate:self cancelButtonTitle:@"O.K."
+                                                   otherButtonTitles:nil, nil];
+                [alert show];
+            }
+        }
+        _firstRun=NO;
+    }
+    
+}
+
+- (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations
+{
+    NSLog(@"In didUpdateLocations");
 }
 
 // for segue to detail view
